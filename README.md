@@ -1,4 +1,4 @@
-# gispro-python-deploy
+# GaiaBuilder
 ArcGIS Enterprise is often part of a large IT ecosystem. A DTAP is used for databases, applications and when GIS is part of it, also ArcGIS Enterprise or standalone ArcGIS Server. Manually administering the services in ArcGIS Enterprise this Developement, Test, Acceptance and Production street is time consuming and prone to errors. Furtermore, it is not integrated with the continuous deployment which is used for the GIS application consuming the services.
 Integrating publishing the mapservices into the continuous deployment therefore has the following advantages:
 * Better quality, because mapservices will be published exactly the same from the configuration
@@ -6,6 +6,6 @@ Integrating publishing the mapservices into the continuous deployment therefore 
 * Faster publishing, let the build server publish 4 mapservices in parallel, while you're working on something else
 * Keep track of changes in the mapservices using Source Control Management (GIT or SVN)
 
-gispro-python-deploy helps you achieve better quality and faster publishing with a set of advanced Python scripts designed for ArcGIS Enterprise and ArcGIS Pro.  
+GaiaBuilder helps you achieve better quality and faster publishing with a set of advanced Python scripts designed for ArcGIS Enterprise and ArcGIS Pro.  
 
 
