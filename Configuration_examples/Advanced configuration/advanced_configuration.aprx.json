@@ -1,0 +1,105 @@
+{
+    "action": "publishSD",
+    "name": "advanced_configuration",
+    "serviceType": "MapServer",
+    "aprx": "advanced_configuration.aprx",
+	"lyrx": "advanced_configuration.lyrx",
+	"lyrxjson": "advanced_configuration.lyrx.json",
+    "tags": "Lyrx",
+	"credits":"Copyright notice",
+	"uselimitations":"This mapservice is only for demo purposes",
+	"portalFolder":"Test",
+    "capabilities": "Map,Query,Data",
+    "maxIdleTime": 1800,
+    "antialiasingMode": "None",
+    "textAntialiasingMode":"Force",
+    "maxRecordCount":1000,
+    "recycleInterval": 24,
+	"sharedSoc": "true",	
+    "protected": "true",
+	"layerDescriptionTemplate": "The {layerName} is published from {dataset} with {definitionExpression}",
+	"layerTitleTemplate": "Layer: {layerName}",
+	"layerSnippetTemplate" : "Layer: {layerName} ",
+	"registerMapserviceLayers": "true",
+	"registerMapserviceTables": "true",
+	"registerFeatureserviceLayers": "true",
+	"registerFeatureserviceTables": "true",
+	"FeatureService":{
+		"tags": "Tag, FeatureService",
+		"portaldescription": "FeatureService with an advanced configuration",
+		"portalTitle": "Windmolens FeatureService",
+    	"summary": "FeatureService with an advanced configuration"
+	},
+	"MapService":{
+		"tags": "Tag, Mapservice",		
+		"portaldescription": "Mapservice with an advanced configuration",
+		"portalTitle": "Advanced configuration Mapservice",
+    	"summary": "Mapservice with an advanced configuration"
+	},
+	"servers":{
+	  "TEST": {
+		"serverFolder": "Test",
+		"datasources": [
+		    
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["TestDemoGroep"]
+		}
+	  },
+	  "ACCEPTANCE": {
+		"serverFolder": "Acc",
+		"portalFolder":"Acc",		
+		"datasources": [
+		  
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["AccDemoGroep"]
+		}
+	  },
+	  "PRODUCTION": {
+		"serverFolder": "Prod",
+		"portalFolder":"Prod",
+        "content_status": "authoritative",
+		"datasources": [
+		  
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["DemoGroep"]
+		}
+	  }
+  },
+  "extensions": [
+	{
+		"typeName": "FeatureServer",
+		"capabilities": "Create,Query,Update,Uploads,Editing",
+		"enabled": "true",
+		"maxUploadFileSize": 0,
+		"allowedUploadFileTypes": "",
+		"properties": {
+		  "creatorPresent": "false",
+		  "dataInGdb": "true",
+		  "xssPreventionEnabled": "true",
+		  "allowGeometryUpdates": "true",
+		  "allowOthersToQuery": "true",
+		  "syncEnabled": "false",
+		  "editorTrackingTimeZoneID": "UTC",
+		  "enableZDefaults": "false",
+		  "realm": "",
+		  "allowOthersToDelete": "false",
+		  "allowTrueCurvesUpdates": "false",
+		  "datasetInspected": "true",
+		  "editorTrackingRespectsDayLightSavingTime": "false",
+		  "zDefaultValue": "0",
+		  "editorTrackingTimeInUTC": "true",
+		  "enableOwnershipBasedAccessControl": "false",
+		  "allowOthersToUpdate": "false"
+		}
+	  }   
+  ]
+}

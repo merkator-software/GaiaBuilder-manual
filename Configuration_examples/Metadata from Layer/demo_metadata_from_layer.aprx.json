@@ -1,0 +1,58 @@
+{
+    "action": "publishSD",
+    "name": "demo_metadata_from_layer",
+    "serviceType": "MapServer",
+    "aprx": "demo_metadata_from_layer.aprx",
+	"mapx": "demo_metadata_from_layer.mapx",
+	"mapxjson": "demo_metadata_from_layer.mapx.json",
+	"metadatafromlayer": "true",
+	"portalFolder":"Test",
+    "capabilities": "Map,Query,Data",
+    "maxIdleTime": 1800,
+    "antialiasingMode": "None",
+    "textAntialiasingMode":"Force",
+    "maxRecordCount":1000,
+    "recycleInterval": 24,
+	"sharedSoc": "true",	
+    "protected": "true",
+	"servers":{
+	  "TEST": {
+		"serverFolder": "Test",
+		"datasources": [
+		    
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["TestDemoGroep"]
+		}
+	  },
+	  "ACCEPTANCE": {
+		"serverFolder": "Acc",
+		"portalFolder":"Acc",		
+		"datasources": [
+		  
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["AccDemoGroep"]
+		}
+	  },
+	  "PRODUCTION": {
+		"serverFolder": "Prod",
+		"portalFolder":"Prod",
+        "content_status": "authoritative",
+		"datasources": [
+		  
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["DemoGroep"]
+		}
+	  }
+  },
+  "extensions": [    
+  ]
+}

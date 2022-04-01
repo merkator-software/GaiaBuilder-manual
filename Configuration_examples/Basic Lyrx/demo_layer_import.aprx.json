@@ -1,0 +1,62 @@
+{
+    "action": "publishSD",
+    "name": "demo_layer_import",
+    "serviceType": "MapServer",
+    "aprx": "demo_layer_import.aprx",
+	"lyrx": "demo_layer_import.lyrx",
+	"lyrxjson": "demo_layer_import.lyrx.json",
+	"summary": "This demo mapservice is created from a layer file",
+	"portaldescription": "This demo mapservice is created from a layer file",
+    "tags": "Lyrx",
+	"credits":"Copyright notice",
+	"uselimitations":"This mapservice is only for demo purposes",
+	"portalFolder":"Test",
+    "capabilities": "Map,Query,Data",
+    "maxIdleTime": 1800,
+    "antialiasingMode": "None",
+    "textAntialiasingMode":"Force",
+    "maxRecordCount":1000,
+    "recycleInterval": 24,
+	"sharedSoc": "true",	
+    "protected": "true",
+	"servers":{
+	  "TEST": {
+		"serverFolder": "Test",
+		"datasources": [
+		    
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["TestDemoGroep"]
+		}
+	  },
+	  "ACCEPTANCE": {
+		"serverFolder": "Acc",
+		"portalFolder":"Acc",		
+		"datasources": [
+		  
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["AccDemoGroep"]
+		}
+	  },
+	  "PRODUCTION": {
+		"serverFolder": "Prod",
+		"portalFolder":"Prod",
+        "content_status": "authoritative",
+		"datasources": [
+		  
+		],
+		"sharing": {
+			"public": "false",
+			"organization": "false",
+			"groups":["DemoGroep"]
+		}
+	  }
+  },
+  "extensions": [    
+  ]
+}
