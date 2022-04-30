@@ -3,77 +3,74 @@
     "name": "demo_map_import",
     "serviceType": "MapServer",
     "aprx": "demo_map_import.aprx",
-	"lyrx": "demo_map_import.lyrx",
-	"lyrxjson": "demo_map_import.lyrx.json",
-	"summary": "This demo mapservice is created from a map file",
-	"portaldescription": "This demo mapservice is created from a map file",
-    "tags": "Lyrx",
-	"credits":"Copyright notice",
-	"uselimitations":"This mapservice is only for demo purposes",
-	"portalFolder":"Test",
+    "lyrx": "demo_map_import.lyrx",
+    "lyrxjson": "demo_map_import.lyrx.json",
+    "summary": "This demo mapservice contains a tile cache for fast rendering",
+    "portaldescription": "This demo mapservice contains a tile cache for fast rendering",
+    "tags": "Lyrx, Tile Cache",
+    "credits":"Copyright notice",
+    "uselimitations":"This mapservice is only for demo purposes",
+    "portalFolder":"Test",
     "capabilities": "Map,Query,Data",
     "maxIdleTime": 1800,
     "antialiasingMode": "None",
     "textAntialiasingMode":"Force",
     "maxRecordCount":1000,
     "recycleInterval": 24,
-	"sharedSoc": "true",	
+    "sharedSoc": "true",
     "protected": "true",
-	"cachedirectory" : "E:\\arcgis\\arcgisserver\\directories\\arcgiscache",
-	"forcedeletetiles" : "true",
-	"forcedeletecache": "true",
-	"forcecreatetiles" : "true",
-	"tilingscheme" : {
-		"numOfScales" :11,
-		"scales":[6144000,3072000,1536000,768000,384000,192000,96000,48000,24000,12000,6000],
-		"dots_per_inch": 96,
-		"tileOrigin_x": -285401.91999999998,
-		"tileOrigin_y": 903401.92000000004,
-		"tile_size": "256 x 256",
-		"cache_tile_format": "MIXED",
-		"tileCompressionQuality": 75,
-		"storage_format": "COMPACT",
-		"update_extent": "MAXOF",
-		"num_of_caching_service_instances":2
-	},
-	"servers":{
-	  "TEST": {
-		"serverFolder": "Test",
-		"datasources": [
-		    
-		],
-		"sharing": {
-			"public": "false",
-			"organization": "false",
-			"groups":["TestDemoGroep"]
-		}
-	  },
-	  "ACCEPTANCE": {
-		"serverFolder": "Acc",
-		"portalFolder":"Acc",		
-		"datasources": [
-		  
-		],
-		"sharing": {
-			"public": "false",
-			"organization": "false",
-			"groups":["AccDemoGroep"]
-		}
-	  },
-	  "PRODUCTION": {
-		"serverFolder": "Prod",
-		"portalFolder":"Prod",
+    "cachedirectory" : "E:\\arcgis\\arcgisserver\\directories\\arcgiscache",
+    "forcedeletetiles" : "true",
+    "forcedeletecache": "true",
+    "forcecreatetiles" : "true",
+    "tilingscheme" : {
+        "numOfScales" :11,
+        "scales":[6144000,3072000,1536000,768000,384000,192000,96000,48000,24000,12000,6000],
+        "dots_per_inch": 96,
+        "tileOrigin_x": -285401.91999999998,
+        "tileOrigin_y": 903401.92000000004,
+        "tile_size": "256 x 256",
+        "cache_tile_format": "MIXED",
+        "tileCompressionQuality": 75,
+        "storage_format": "COMPACT",
+        "update_extent": "MAXOF",
+        "num_of_caching_service_instances":2
+    },
+    "servers":{
+      "TEST": {
+        "serverFolder": "Test",
+        "datasources": [
+        ],
+        "sharing": {
+            "public": "false",
+            "organization": "false",
+            "groups":["TestDemoGroep"]
+        }
+      },
+      "ACCEPTANCE": {
+        "serverFolder": "Acc",
+        "portalFolder":"Acc",
+        "datasources": [
+        ],
+        "sharing": {
+            "public": "false",
+            "organization": "false",
+            "groups":["AccDemoGroep"]
+        }
+      },
+      "PRODUCTION": {
+        "serverFolder": "Prod",
+        "portalFolder":"Prod",
         "content_status": "authoritative",
-		"datasources": [
-		  
-		],
-		"sharing": {
-			"public": "false",
-			"organization": "false",
-			"groups":["DemoGroep"]
-		}
-	  }
+        "datasources": [
+        ],
+        "sharing": {
+            "public": "false",
+            "organization": "false",
+            "groups":["DemoGroep"]
+        }
+      }
   },
-  "extensions": [    
+  "extensions": [
   ]
 }

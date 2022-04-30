@@ -1,0 +1,19 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  name: 'Default'
+
+steps:
+- script: '"C:\Program Files\ArcGIS\Server\framework\runtime\ArcGIS\bin\Python\Scripts\propy.bat" "C:\GaiaBuilder\ProPublishToolsContent\InstallContent.py" -f content.json -s ENVIRONMENT '
+  env: 
+    USER : 'portaladmin'
+    PASSWORD: $(portaladmin)
+
+
+
