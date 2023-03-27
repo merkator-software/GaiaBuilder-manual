@@ -1,0 +1,72 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- develop
+
+pool:
+  name: 'Default'
+
+
+steps:
+- powershell: |
+      ## get all the changed files
+      $files = $(git diff HEAD HEAD~ --name-only)
+      $temp = $files -split ' '
+      $count = $temp.Length
+      Write-Host "Total changed files $count files"
+      ## define the list of .aprx.json files to be build
+      $build = @()
+      For ($i=0; $i -lt $temp.Length; $i++)
+      {
+        $name=$temp[$i]
+        If ($name -match '.aprx.json$')
+        {
+          If (-Not $build.Contains($name))
+          {
+            $build += $name
+            Write-Host "Added $name to build list"
+          }
+          Else
+          {
+            Write-Host "File $name already added to build list"
+          }
+        }
+        Else
+        {
+          ## construct the .aprx.json filename from the map or layer file name
+          $mapfileparts = $name.Split(".")
+          $mapfile = -join($mapfileparts[0] ,'.aprx.json')
+          $mapfilepath = Join-Path (Resolve-Path .\).Path $mapfile
+          If(Test-Path $mapfilepath)
+          {
+            If (-Not $build.Contains($mapfile))
+            {
+              $build += $mapfile
+              Write-Host "Added $mapfile to build list"
+            }
+            Else
+            {
+              Write-Host "File $mapfile already added to build list"
+            }
+          }
+          Else
+          {
+            Write-Host "could not find the $mapfile in workdirectory, ignoring this file for the build"
+          }
+        }
+      }
+      For ($i=0; $i -lt $build.Length; $i++)
+      {
+        $buildthis = $build[$i]
+        $arguments = "C:\GaiaBuilderServerTools\InstallMapservice_lite.py -f $buildthis -s EDN_T -r false -m true -c true -d false -h true -i true -a true -z true -q true -t true"
+        Write-Host $arguments
+        ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
+        Start-Process -FilePath "C:\Program Files\ArcGIS\Server\framework\runtime\ArcGIS\bin\Python\Scripts\propy.bat" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
+      }
+  env: 
+    USER : 'portaladmin'
+    PASSWORD: $(portaladmin)
+
