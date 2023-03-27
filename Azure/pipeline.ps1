@@ -31,13 +31,14 @@ For ($i=0; $i -lt $temp.Length; $i++)
     $fulldir = Join-Path $dir $path_no_file
     
     $cffile = Join-Path $fulldir "content.json"
+    $aprxjsonfile = Join-Path $fulldir $filename
     
     If ($name -match '.aprx.json$')
     {
-        If (-Not $build.Contains($name))
+        If (-Not $build.Contains($aprxjsonfile))
         {
-            $build += $name
-            Write-Host "Added APRX.JSON $name to build list"
+            $build += $aprxjsonfile
+            Write-Host "Added APRX.JSON $aprxjsonfile to build list"
         }
         Else
         {
@@ -64,7 +65,6 @@ For ($i=0; $i -lt $temp.Length; $i++)
         $matched  = 0
         For ($j=0; $j -lt $mapfileparts.Length -and $matched -lt 1; $j++)
         {
-            Write-Host $mapfileparts[$j]
             if ($mapfileparts[$j] -match 'lyrx' -or $mapfileparts[$j] -match 'mapx' -or $mapfileparts[$j] -match 'aprx') 
             {
                 $matched = 1
