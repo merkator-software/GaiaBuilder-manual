@@ -81,7 +81,7 @@ For ($i=0; $i -lt $temp.Length; $i++)
                 }
             }
         }
-        $match_pattern = -join($match_pattern,'.*.aprx.json')
+        $match_pattern = -join($match_pattern,'.*aprx.json')
         Write-Host $match_pattern $name
         $mapfiles = Get-ChildItem (Resolve-Path .\) -Recurse -Include $match_pattern
         For ($j=0; $j -lt $mapfiles.Length; $j++)
