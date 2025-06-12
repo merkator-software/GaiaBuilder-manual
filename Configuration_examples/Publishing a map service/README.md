@@ -679,8 +679,9 @@ You are an ArcGIS Pro user who knows how to:
 
 8. **(Optional) Edit server configuration manually**
    For advanced scenarios, edit the server JSON directly to override publishing behavior.
-<details>
-<summary>Expand for example Map.Server.json on our server</summary>
+
+<Details>
+<Summary>Expand for example Map.Server.json on our server</Summary>
 
 ```json
 {
@@ -764,16 +765,19 @@ You are an ArcGIS Pro user who knows how to:
     }
 }
 ```
-</details>
+</Details>
 
 9. **Commit and push to version control**
    Store the JSON files in Git (or other VCS) for reproducible deployments and rollback support.
+
+   <Details><Summary>List of the files stored in git on our environment</Summary>
 
    * `5a371e21be223df6691b919542cc8d4b.data.json`
    * `Map.aprx.json`
    * `Map.mapx.json`
    * `Map.Server.json`
    * `thumbnail.PNG`
+</Details>
 
 10. **Integrate into your CI/CD system**
     You can run GaiaBuilder in any automation environment:
