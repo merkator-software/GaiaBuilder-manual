@@ -822,14 +822,15 @@ python $scriptPath $args
 
 ### 🔐 Environment Variables
 
-Set these values securely in your CI/CD system:
+The -u and -p arguments are not safe to use in most CI environments and are intended for standalone use only.
+Instead, set these values securely using your CI/CD environment's secret store:
 
 ```yaml
 env:
   USER: $(USER)
   PASSWORD: $(PASSWORD)
 ```
-
+This ensures your credentials do not appear in logs or version control.
 ---
 
 ## 🧾 GaiaBuilder CLI Options
