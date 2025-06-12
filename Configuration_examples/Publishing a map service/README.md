@@ -34,8 +34,9 @@ You are an ArcGIS Pro user who knows how to:
 
 4. **Export to GaiaBuilder JSON**
 
-   Use the **GaiaBuilder Add-In** to export map and its metadata into a JSON configuration file, give this a .mapx.json name to illustrate this is the map without credentials, safe to store in a repro in a hardened environment
-   
+   Use the **GaiaBuilder Add-In** to export map and its metadata into a JSON configuration file, give this a .mapx.json name to illustrate this is the map without credentials, safe to store in a repo in a hardened environment
+   * No credentials or sensitive information is exported, this is merged in the build step instead.
+
    ![Export Map To JSON](export_map_to_json.png)
 
    * `Map.mapx.json`
