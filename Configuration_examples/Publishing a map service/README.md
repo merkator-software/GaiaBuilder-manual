@@ -830,7 +830,9 @@ env:
   USER: $(USER)
   PASSWORD: $(PASSWORD)
 ```
+
 This ensures your credentials do not appear in logs or version control.
+
 ---
 
 ## 🧾 GaiaBuilder CLI Options
