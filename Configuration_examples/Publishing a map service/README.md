@@ -803,18 +803,18 @@ conda activate "$env:CondaEnv_GaiaBuilder"
 $scriptPath = "C:\GaiaBuilder\InstallMapservice_lite.py"
 
 $args = @(
-  "-f", $env:manual_build_list,   # JSON list of services to publish
-  "-s", $env:server,              # Target server name or URL
-  "-r", "false",                  # Restart ArcGIS Server (default: false)
-  "-q", "true",                   # Quiet mode (suppress verbose output)
-  "-c", "true",                   # Clean temp files
-  "-d", "false",                  # Debug output (true/false)
-  "-h", "true",                   # Enable MD5 hashing
-  "-i", "true",                   # Import service configuration
-  "-a", "true",                   # Apply metadata
-  "-z", "true",                   # Zip final build
-  "-m", "true",                   # Move zipped files to output location
-  "-t", "false"                   # Test mode (true = dry-run)
+  "-f", $env:manual_build_list,   # Required: JSON config file (MapService definition)
+  "-s", $env:server,              # Required: Server config name from JSON / global INI
+  "-r", "false",                  # Optional (default true): Replace datasources
+  "-q", "true",                   # Optional (default false): Restore .mapx.json to .mapx (use with -m true and -r false)
+  "-c", "true",                   # Optional (default true): Create .sd service definition file
+  "-d", "false",                  # Optional (default false): Delete service (removes related items)
+  "-h", "true",                   # Optional (default true): Stop service before replace
+  "-i", "true",                   # Optional (default true): Install .sd to server (requires -c or .sd in PUB folder)
+  "-a", "true",                   # Optional (default true): Configure service from JSON
+  "-z", "true",                   # Optional (default true): Start service after install
+  "-m", "true",                   # Optional (default false): Import .mapx into empty ArcGIS Pro project
+  "-t", "false"                   # Optional (default false): Create/update tile cache
 )
 
 python $scriptPath $args
@@ -832,22 +832,9 @@ env:
 
 ---
 
-## 🧾 GaiaBuilder CLI Options – Summary
+## 🧾 GaiaBuilder CLI Options
 
-| Flag | Description                                          |
-| ---- | ---------------------------------------------------- |
-| `-f` | Input: JSON file with list of services to deploy     |
-| `-s` | ArcGIS Server URL or identifier                      |
-| `-r` | Restart ArcGIS service after deploy (default: false) |
-| `-q` | Quiet mode (minimal output)                          |
-| `-c` | Clean build directories                              |
-| `-d` | Debug output                                         |
-| `-h` | Generate MD5 hash                                    |
-| `-i` | Import configuration from JSON                       |
-| `-a` | Apply metadata (title, description, groups)          |
-| `-z` | Zip output                                           |
-| `-m` | Move zip to publish location                         |
-| `-t` | Test mode (simulate deployment)                      |
+InstallMapserviceTool and the light version (without an arcpy dependency) command line options are documented [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallMapserviceTool)
 
 
 ---
