@@ -675,7 +675,7 @@ You are an ArcGIS Pro user who knows how to:
    Optional if each environment has its own dedicated Portal.
 
 7. **Configure server settings**
-   Use `GaiaBuilder.Server.json` to specify server URLs, connection credentials, and service directories.
+   Use `GaiaBuilder.ini` to specify server URLs, connection credentials in the Connections folder using fully configured .ags files, and service directories/portals per environment on the server, this guides assumed this is configured correctly.
 
 8. **(Optional) Edit server configuration manually**
    For advanced scenarios, edit the server JSON directly to override publishing behavior.
