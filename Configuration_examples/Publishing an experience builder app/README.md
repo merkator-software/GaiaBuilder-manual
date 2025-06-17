@@ -1,6 +1,6 @@
 # Publishing an Experience Builder App
 
-This guide builds on the steps described in [Publishing a Map Service](../Publishing_a_map_service/README.md). This means there is already a webmap published in Portal.
+This guide builds on the steps described in [Publishing a Map Service](../Publishing%20a%20map%20service/README.md). This means there is already a webmap published in Portal.
 
 In this section, you'll learn how to publish an Experience Builder app using your previously published map service.
 
