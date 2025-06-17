@@ -20,7 +20,7 @@ Before starting, ensure you have:
 - Access to ArcGIS Enterprise Portal with Experience Builder enabled, or a standalone developer edition of Experience Builder as described [here](https://developers.arcgis.com/experience-builder/guide/install-guide/).
 
 ### Overview
-[ArcGIS Pro] → [GaiaBuilder Add-In] → [mapx.json] → [Git] → [CI/CD] → [Portal]
+[ArcGIS Pro] → [GaiaBuilder Add-In] → [content.json] → [Git] → [CI/CD] → [Portal]
 
 # ✅ Step-by-Step Deployment Flow
 
