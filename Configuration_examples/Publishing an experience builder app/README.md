@@ -27,7 +27,7 @@ Before starting, ensure you have:
 ### Step 1: Prepare Your Experience Builder App
 
 1. Log in to ArcGIS Enterprise Portal and open your existing Experience Builder project.
-2. Verify your previously published map service is added as a data source and configured correctly.
+2. In our case we have verified our previously published map service is added as a data source and configured correctly.
 
 ### Step 2: Export Your Experience Builder App Configuration
 
