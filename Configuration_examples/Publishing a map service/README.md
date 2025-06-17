@@ -13,7 +13,22 @@ You are an ArcGIS Pro user who knows how to:
 ---
 ### Overview
 
-[ArcGIS Pro] → [GaiaBuilder Add-In] → [mapx.json] → [Git] → [CI/CD] → [Portal]
+```mermaid
+graph TD
+  pro[ArcGIS Pro]
+  addon[GaiaBuilder Add-In (Context Menu)]
+  mapx[mapx.json]
+  git[Git (version controlled)]
+  pipeline[CI/CD Pipeline]
+  portal[ArcGIS Enterprise Portal]
+
+  pro --> addon
+  addon --> mapx
+  mapx --> git
+  git --> pipeline
+  pipeline --> portal
+```
+
 
 ### ✅ Step-by-Step Deployment Flow
 
