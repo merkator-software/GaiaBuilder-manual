@@ -213,7 +213,7 @@ conda activate "$env:CondaEnv_GaiaBuilder"
 $scriptPath = "C:\GaiaBuilder\InstallContent_lite.py"
 
 $args = @(
-    "-f", $env:manual_build_list,   # JSON config file
+    "-f", $env:manual_build_list,   # Relative path to the JSON config file
     "-s", $env:server               # Server config name
 )
 
