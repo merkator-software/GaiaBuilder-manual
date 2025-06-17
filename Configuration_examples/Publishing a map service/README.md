@@ -38,15 +38,17 @@ graph LR
    Use “Share as Web Map” to publish the map to your Portal.
 
 3. **Configure the Portal item**
+   
    Set:
-
    * 🔖 Thumbnail
-   * 📄 Metadata
+   * 📄 Title
+   * 🔗 Description
+   * 🏷️Summary
    * 📜 Terms of use
    * 👥 Group permissions
    * 🏷️ Tags and categories
 
-4. **Export to GaiaBuilder JSON**
+5. **Export to GaiaBuilder JSON**
 
    Use the **GaiaBuilder Add-In** to export map and its metadata into a JSON configuration file, give this a .mapx.json name to illustrate this is the map without credentials, safe to store in a repo in a hardened environment
    * No credentials or sensitive information is exported, this is merged in the build step instead.
@@ -689,10 +691,7 @@ graph LR
    Required when your OTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
    Optional if each environment has its own dedicated Portal.
 
-7. **Configure server settings**
-   Use `GaiaBuilder.ini` to specify server URLs, connection credentials in the Connections folder using fully configured .ags files, and service directories/portals per environment on the server, this guides assumed this is configured correctly.
-
-8. **(Optional) Edit server configuration manually**
+7. **(Optional) Edit server configuration manually**
    For advanced scenarios, edit the server JSON directly to override publishing behavior.
 
 <Details>
@@ -782,7 +781,7 @@ graph LR
 ```
 </Details>
 
-9. **Commit and push to version control**
+8. **Commit and push to version control**
    Store the JSON files in Git (or other VCS) for reproducible deployments and rollback support.
 
    <Details><Summary>List of the files stored in git on our environment</Summary>
@@ -794,7 +793,7 @@ graph LR
    * `thumbnail.PNG`
 </Details>
 
-10. **Integrate into your CI/CD system**
+9. **Integrate into your CI/CD system**
     You can run GaiaBuilder in any automation environment:
 
 * GitHub Actions
@@ -817,7 +816,7 @@ conda activate "$env:CondaEnv_GaiaBuilder"
 $scriptPath = "C:\GaiaBuilder\InstallMapservice_lite.py"
 
 $args = @(
-  "-f", $env:manual_build_list,   # Required: JSON config file (MapService definition)
+  "-f", $env:manual_build_list,   # Required: Relative path to the JSON config file (MapService definition)
   "-s", $env:server,              # Required: Server config name from JSON / global INI
   "-r", "false",                  # Optional (default true): Replace datasources
   "-q", "true",                   # Optional (default false): Restore .mapx.json to .mapx (use with -m true and -r false)
