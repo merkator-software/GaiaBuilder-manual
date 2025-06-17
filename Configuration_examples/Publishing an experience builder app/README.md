@@ -46,9 +46,9 @@ graph LR
 2. In our case we have verified our previously published map service is added as a data source and configured correctly.
 3. Configure the Portal item Set:
 * 🔖 Thumbnail
-* 📄 Metadata
+* 📄 Summary
+* 🔗 Description
 * 📜 Terms of use
-* 👥 Group permissions
 * 🏷️ Tags and categories
 
 ### Step 2: Export Your Experience Builder App Configuration
