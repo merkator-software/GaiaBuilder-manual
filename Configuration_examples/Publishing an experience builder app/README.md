@@ -10,7 +10,7 @@ In this section, you'll learn how to publish an Experience Builder app using you
 
 You should be familiar with:
 
-- Completing the steps outlined in [Publishing a Map Service](../Publishing_a_map_service/README.md), as this guide builds upon that.
+- Completing the steps outlined in [Publishing a Map Service](../Publishing%20a%20map%20service/README.md), as this guide builds upon that.
 - Creating an Experience Builder app based on a template and configuring data sources.
 - Managing deployments through JSON configurations using GaiaBuilder.
 - Using version control systems such as Git, Subversion, or Bitbucket.
