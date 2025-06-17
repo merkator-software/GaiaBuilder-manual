@@ -30,7 +30,7 @@ graph LR
   portal[ArcGIS Enterprise Portal]
 
   pro --> addon
-  addon --> mapx
+  addon --> expb
   expb --> git
   git --> pipeline
   pipeline --> portal
