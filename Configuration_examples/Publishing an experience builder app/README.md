@@ -153,14 +153,7 @@ graph LR
 
 </details>
 
-### Step 4: Configure Content Metadata for Export
-
-1. Update the exported JSON configuration to match your target environment (DEV, TEST, ACC, PROD).
-2. Adjust URLs, item IDs, and environment-specific settings as needed.
-
-
-
-### Step 5: Commit and Push to Version Control
+### Step 4: Commit and Push to Version Control
 
 Store the JSON files in Git (or another VCS) for reproducible deployments and rollback support.
 
@@ -191,7 +184,7 @@ Store the JSON files in Git (or another VCS) for reproducible deployments and ro
 
 </details>
 
-### Step 6: Integrate into Your CI/CD System
+### Step 5: Integrate into Your CI/CD System
 
 You can run GaiaBuilder in automation environments such as:
 
