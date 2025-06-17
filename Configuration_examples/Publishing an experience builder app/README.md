@@ -1,6 +1,6 @@
 # Publishing an Experience Builder App
 
-This guide builds on the steps described in [Publishing a Map Service](../Publishing_a_map_service/README.md). Ensure you have completed those steps before proceeding.
+This guide builds on the steps described in [Publishing a Map Service](../Publishing_a_map_service/README.md). This means there is already a webmap published in Portal.
 
 In this section, you'll learn how to publish an Experience Builder app using your previously published map service.
 
@@ -24,9 +24,9 @@ Before starting, ensure you have:
 
 # ✅ Step-by-Step Deployment Flow
 
-### Step 1: Prepare Your Experience Builder App
+### Step 1: Prepare the Experience Builder App
 
-1. Log in to ArcGIS Enterprise Portal and open your existing Experience Builder project.
+1. Log in to ArcGIS Enterprise Portal and open a new 
 2. In our case we have verified our previously published map service is added as a data source and configured correctly.
 
 ### Step 2: Export Your Experience Builder App Configuration
