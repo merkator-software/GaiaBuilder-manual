@@ -21,7 +21,21 @@ Before starting, ensure you have:
 
 ### Overview
 ```mermaid 
-graph LR pro[ArcGIS Pro] addon[GaiaBuilder Add-In] content[content.json] git[Git Repository] cicd[CI/CD Pipeline] portal[ArcGIS Portal] pro --> addon addon --> content content -->|Contains definitions for| webmap[WebMap] content -->|Contains config for| experience[Experience Builder App] content --> git git --> cicd cicd --> portal
+graph LR
+  pro[ArcGIS Pro]
+  addon[GaiaBuilder Add-In]
+  content[content.json]
+  git[Git Repository]
+  cicd[CI/CD Pipeline]
+  portal[ArcGIS Portal]
+
+  pro --> addon
+  addon --> content
+  content -->|Contains definitions for| webmap[WebMap]
+  content -->|Contains config for| experience[Experience Builder App]
+  content --> git
+  git --> cicd
+  cicd --> portal
 ```
 
 # ✅ Step-by-Step Deployment Flow
