@@ -22,13 +22,15 @@ Before starting, ensure you have:
 ### Overview
 ```mermaid
 graph LR
+  dev[Create Webmap and Expb in DEV portal]
   pro[ArcGIS Pro]
   addon[GaiaBuilder Add-In]
   expb[content.json]
   git[Git Repository]
   pipeline[CI/CD Pipeline]
-  portal[ArcGIS Enterprise Portal]
+  portal[ArcGIS Enterprise PROD Portal]
 
+  dev --> pro
   pro --> addon
   addon --> expb
   expb --> git
