@@ -16,9 +16,9 @@ You are an ArcGIS Pro user who knows how to:
 ```mermaid
 graph TD
   pro[ArcGIS Pro]
-  addon[GaiaBuilder Add-In (Context Menu)]
+  addon[GaiaBuilder Add-In]
   mapx[mapx.json]
-  git[Git (version controlled)]
+  git[Git Repository]
   pipeline[CI/CD Pipeline]
   portal[ArcGIS Enterprise Portal]
 
@@ -28,7 +28,6 @@ graph TD
   git --> pipeline
   pipeline --> portal
 ```
-
 
 ### ✅ Step-by-Step Deployment Flow
 
