@@ -24,10 +24,16 @@ Before starting, ensure you have:
 
 # ✅ Step-by-Step Deployment Flow
 
-### Step 1: Prepare the Experience Builder App
+### Step 1: Create the Experience Builder App
 
-1. Log in to ArcGIS Enterprise Portal and open a new 
+1. Log in to ArcGIS Enterprise Portal and create a new experience. For this example a Fullscreen fixed template based on the 'Foldable' template was used.
 2. In our case we have verified our previously published map service is added as a data source and configured correctly.
+3. Configure the Portal item Set:
+🔖 Thumbnail
+📄 Metadata
+📜 Terms of use
+👥 Group permissions
+🏷️ Tags and categories
 
 ### Step 2: Export Your Experience Builder App Configuration
 
