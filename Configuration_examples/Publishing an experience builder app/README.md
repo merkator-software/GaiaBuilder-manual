@@ -40,9 +40,9 @@ graph LR
 
 # ✅ Step-by-Step Deployment Flow
 
-### Step 1: Create the Experience Builder App
+### Step 1: Create the new Webmap and Experience Builder App
 
-1. Log in to ArcGIS Enterprise Portal and create a new experience. For this example a Fullscreen fixed template based on the 'Foldable' template was used.
+1. Log in to ArcGIS Enterprise Portal and create a new experience (and webmap). For this example a Fullscreen fixed template based on the 'Foldable' template was used, and the webmap from the referenced example.
 2. In our case we have verified our previously published map service is added as a data source and configured correctly.
 3. Configure the Portal item Set:
 * 🔖 Thumbnail
