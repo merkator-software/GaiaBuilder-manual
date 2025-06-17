@@ -63,7 +63,7 @@ graph LR
 
 ### Step 3: Adjust Configuration for Environment-Specific URL or Title Rewrites
 
-1. Open `Content.json` in a text editor (e.g., VSCode) and review the environment-specific rewrites required.
+1. Open the `Content.json` configuration file in a text editor of your choice and inspect the rewrite rules applicable to the current deployment environment.
 
 <details><summary>Example Content.json Configuration</summary>
 
