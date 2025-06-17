@@ -20,7 +20,7 @@ Before starting, ensure you have:
 - Access to ArcGIS Enterprise Portal with Experience Builder enabled, or a standalone developer edition of Experience Builder as described [here](https://developers.arcgis.com/experience-builder/guide/install-guide/).
 
 ### Overview
-[ArcGIS Pro] → [GaiaBuilder Add-In] → [content.json] → [Git] → [CI/CD] → [Portal]
+```mermaid graph LR pro[ArcGIS Pro] addon[GaiaBuilder Add-In] content[content.json] git[Git Repository] cicd[CI/CD Pipeline] portal[ArcGIS Portal] pro --> addon addon --> content content -->|Contains definitions for| webmap[WebMap] content -->|Contains config for| experience[Experience Builder App] content --> git git --> cicd cicd --> portal ```
 
 # ✅ Step-by-Step Deployment Flow
 
