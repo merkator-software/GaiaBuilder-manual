@@ -14,7 +14,7 @@ You are an ArcGIS Pro user who knows how to:
 ### Overview
 
 ```mermaid
-graph TD
+graph LR
   pro[ArcGIS Pro]
   addon[GaiaBuilder Add-In]
   mapx[mapx.json]
