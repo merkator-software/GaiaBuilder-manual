@@ -54,6 +54,11 @@ graph LR
 ### Step 2: Export Your Experience Builder App Configuration
 
 1. Use the GaiaBuilder Add-In to export your Experience Builder app configuration as JSON, including all related resources.
+- 📁 **Set the location** for the `content.json` inside a Git-initialized or cloned folder.  
+- 🆔 **Add the required item IDs** — in our example, we manually select the web map `itemId` and the Experience Builder `itemId`.  
+- ✅ **Verify** that the web map and Experience Builder app are successfully listed in the overview.  
+- 🚫 **Uncheck** the **Dev** environment from publishing. Then, 🔐 **check** the required permissions, locks, and folder structure.  
+- 🌍 **Select** **DEV** as the source environment.
 
 ![create new content project](create_new_content_project.png)
 
