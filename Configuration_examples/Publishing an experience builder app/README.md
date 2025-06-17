@@ -41,7 +41,7 @@ Before starting, ensure you have:
 
 </details>
 
-### Step 4: Adjust Configuration for Environment-Specific URL or Title Rewrites
+### Step 3: Adjust Configuration for Environment-Specific URL or Title Rewrites
 
 1. Open `Content.json` in a text editor (e.g., VSCode) and review the environment-specific rewrites required.
 
@@ -131,7 +131,7 @@ Before starting, ensure you have:
 
 </details>
 
-### Step 3: Configure Content Metadata for Export
+### Step 4: Configure Content Metadata for Export
 
 1. Update the exported JSON configuration to match your target environment (DEV, TEST, ACC, PROD).
 2. Adjust URLs, item IDs, and environment-specific settings as needed.
