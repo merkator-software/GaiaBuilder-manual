@@ -35,11 +35,6 @@ Before starting, ensure you have:
 
 ![create new content project](create_new_content_project.png)
 
-### Step 3: Configure Content Metadata for Export
-
-1. Update the exported JSON configuration to match your target environment (DEV, TEST, ACC, PROD).
-2. Adjust URLs, item IDs, and environment-specific settings as needed.
-
 <details><summary>Example GaiaBuilder Content Project Configuration</summary>
 
 ![create gaiabuilder content project](create-gaia-content-project.png)
@@ -135,6 +130,13 @@ Before starting, ensure you have:
 ```
 
 </details>
+
+### Step 3: Configure Content Metadata for Export
+
+1. Update the exported JSON configuration to match your target environment (DEV, TEST, ACC, PROD).
+2. Adjust URLs, item IDs, and environment-specific settings as needed.
+
+
 
 ### Step 5: Commit and Push to Version Control
 
