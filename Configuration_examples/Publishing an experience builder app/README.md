@@ -53,14 +53,12 @@ graph LR
 
 ### Step 2: Export Your Experience Builder App Configuration
 
-1. Use the GaiaBuilder Add-In to export your Experience Builder app configuration (including resources) as JSON.
-- 📁 **Save** the `content.json` file in your Git repository folder.
-- 🆔 **Include** the required item IDs (web map and Experience Builder app).
-- ✅ **Confirm** both items appear correctly in the overview.
-- 💡 **Adjust environments** as needed by editing the `servers` section in `content.json` (see [Environments field reference](../../docs/Environments.md)).
-- 🌍 **Set** **DEV** as the source environment.
-
-> 💡 **Tip:** Initially, create and export your `content.json` using the GaiaBuilder Add-In UI. Later adjustments—such as environment-specific changes—can be made directly in a text editor or by re-exporting and overwriting the existing file. Track and manage these changes effectively using your version control system.
+1. Use the GaiaBuilder Add-In to export your Experience Builder app configuration as JSON, including all related resources.
+- 📁 **Set the location** for the `content.json` inside a Git-initialized or cloned folder.  
+- 🆔 **Add the required item IDs** — in our example, we manually select the web map `itemId` and the Experience Builder `itemId`.  
+- ✅ **Verify** that the web map and Experience Builder app are successfully listed in the overview.  
+- 💡 **Environments** In our example, we did not uncheck the **Dev** environment, this can be ammended by removing the `DEV` section under servers in a text editor, and  (see [Environments field reference](..\..\docs\Environments.md)), and then check that permissions, locks, and folder structure are set as needed for your deployment scenario.
+- 🌍 **Select** **DEV** as the source environment.
 
 ![create new content project](create_new_content_project.png)
 
@@ -204,7 +202,7 @@ You can run GaiaBuilder in automation environments such as:
 
 ---
 
-## 🧪 Generic Deployment Script (PowerShell)
+## 🚀 Generic Deployment Script (PowerShell)
 
 This example works on any runner or agent supporting PowerShell and Python (with Conda):
 
