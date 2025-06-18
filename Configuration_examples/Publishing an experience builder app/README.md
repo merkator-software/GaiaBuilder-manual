@@ -57,7 +57,7 @@ graph LR
 - 📁 **Save** the `content.json` file in your Git repository folder.
 - 🆔 **Include** the required item IDs (web map and Experience Builder app).
 - ✅ **Confirm** both items appear correctly in the overview.
-- 💡 **Adjust environments** as needed by editing the `servers` section in `content.json` (see [Environments field reference](..\..\docs\Environments.md)).
+- 💡 **Adjust environments** as needed by editing the `servers` section in `content.json` (see [Environments field reference](../../docs/Environments.md)).
 - 🌍 **Set** **DEV** as the source environment.
 
 > 💡 **Tip:** Initially, create and export your `content.json` using the GaiaBuilder Add-In UI. Later adjustments—such as environment-specific changes—can be made directly in a text editor or by re-exporting and overwriting the existing file. Track and manage these changes effectively using your version control system.
