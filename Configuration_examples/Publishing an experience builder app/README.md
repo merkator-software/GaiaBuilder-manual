@@ -53,12 +53,14 @@ graph LR
 
 ### Step 2: Export Your Experience Builder App Configuration
 
-1. Use the GaiaBuilder Add-In to export your Experience Builder app configuration as JSON, including all related resources.
-- 📁 **Set the location** for the `content.json` inside a Git-initialized or cloned folder.  
-- 🆔 **Add the required item IDs** — in our example, we manually select the web map `itemId` and the Experience Builder `itemId`.  
-- ✅ **Verify** that the web map and Experience Builder app are successfully listed in the overview.  
-- 🚫 **Uncheck** the **Dev** environment from publishing. Then, 🔐 **check** the required permissions, locks, and folder structure.  
-- 🌍 **Select** **DEV** as the source environment.
+1. Use the GaiaBuilder Add-In to export your Experience Builder app configuration (including resources) as JSON.
+- 📁 **Save** the `content.json` file in your Git repository folder.
+- 🆔 **Include** the required item IDs (web map and Experience Builder app).
+- ✅ **Confirm** both items appear correctly in the overview.
+- 💡 **Adjust environments** as needed by editing the `servers` section in `content.json` (see [Environments field reference](..\..\docs\Environments.md)).
+- 🌍 **Set** **DEV** as the source environment.
+
+> 💡 **Tip:** Initially, create and export your `content.json` using the GaiaBuilder Add-In UI. Later adjustments—such as environment-specific changes—can be made directly in a text editor or by re-exporting and overwriting the existing file. Track and manage these changes effectively using your version control system.
 
 ![create new content project](create_new_content_project.png)
 
@@ -70,9 +72,9 @@ graph LR
 
 ### Step 3: Adjust Configuration for Environment-Specific URL or Title Rewrites
 
-1. Open the `Content.json` configuration file in a text editor of your choice and inspect the rewrite rules applicable to the current deployment environment.
+1. Open the `content.json` configuration file in a text editor of your choice and inspect the rewrite rules applicable to the current deployment environment.
 
-<details><summary>Example Content.json Configuration</summary>
+<details><summary>Example content.json Configuration</summary>
 
 ```json
 {
