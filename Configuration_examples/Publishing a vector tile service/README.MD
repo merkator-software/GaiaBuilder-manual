@@ -43,8 +43,8 @@ graph LR
    Set:
    * 🔖 Thumbnail
    * 📄 Title
-   * 🔗 Description
-   * 🏷️Summary
+   * 📖 Description
+   * 📝 Summary
    * 📜 Terms of use
    * 👥 Group permissions
    * 🏷️ Tags and categories
