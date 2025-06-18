@@ -83,7 +83,7 @@ Example content.json server section output
 ## 🧭 Usage Guidelines
 
 - You usualy want to disable the environment which is the source during content selection E.G. DEV.
-- You can always configure the `servers` sections later, ammend using your prefered text editor. 
+- You can always configure the `servers` sections later, amend using your prefered text editor. 
 - Best practice in the virtual DTAP environment is to use consistent folder names and/or suffixes across environments to simplify item tracing.
 
 
