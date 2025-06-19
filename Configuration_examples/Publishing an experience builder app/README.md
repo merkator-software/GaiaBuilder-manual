@@ -204,7 +204,7 @@ You can run GaiaBuilder in automation environments such as:
 
 ## 🚀 Generic Deployment Script (PowerShell)
 
-This example works on any runner or agent supporting PowerShell and Python (with Conda):
+The example below works on any runner or agent supporting PowerShell and Python (with Conda). It uses the content.json created ($env:manual_build_list) above, including the relative path and the environment name ($env:server) where you want to push it to.
 
 ```powershell
 & "$env:CondaHook"
