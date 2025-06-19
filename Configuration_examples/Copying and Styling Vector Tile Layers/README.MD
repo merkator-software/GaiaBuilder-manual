@@ -1,24 +1,22 @@
-# Publishing a Vector Tile Service
+# Copying and Styling Vector Tile Layers
 
 In this example we demonstrate the publishing and sharing of a vector tile service in a virtual DTAP environment in ArcGIS Enterprise.
 
-## Prerequisits
+## Prerequisites
 
 ### 🧠 Assumptions
 
 You should be familiar with:
 
-* Copying portal or arcgis online items using [AGOL Assistant](https://assistant.esri-ps.com/) (also known as the **ArcGIS Assistant**)
 * High level knowledge of GaiaBuilder to manage deployments through JSON
 * Use source code management systems like Git, Subversion or Bitbucket, below we will reference this as VCS (Version control system)
-* AGOL Assistant has been registered as an APP in the portal environment
 
 ---
 ### Overview
 
 ```mermaid
 graph LR
-  dev[Clone Vector tile service in DEV portal]
+  dev[Clone and Style Vector tile service in DEV portal]
   pro[ArcGIS Pro]
   addon[GaiaBuilder Add-In]
   vt[content.json]
@@ -35,16 +33,29 @@ graph LR
 ```
 ### ✅ Step-by-Step Deployment Flow
 
-1. **🧬 Clone a vector tile layer using the AGOL Assistant**
-   Design your layer symbology, labels, pop-ups, etc.
+1. **🧬 Clone a vector tile layer**
+
+- 🔍 **Find a public vector tile layer** and copy its URL.  
+- ➕ In GaiaBuilder portal: **Content → Add Item → From URL**.  
+- 📋 **Paste the URL** → click **Next → Next → Save** (this imports the item).  
+- 🎨 Open the copied item and click **Edit in Vector Tile Style Editor**.  
+- 🖌️ **Adjust styles** like colors, lines, and symbols as needed.  
+- 💾 **Save your changes** (the original layer remains untouched).  
+- 🧩 **Use the new item ID/URL** in your GaiaBuilder configuration.
+
+<details><summary>Example Style editing</summary>
+
+![Vector Tile Style Editor](vector_tile_style_editor.png)
+
+</details>
 
 2. **⚙️ Configure the Portal item**
    
    Set:
-   * 🔖 Thumbnail
+   * 👍 Thumbnail
    * 📄 Title
-   * 🔗 Description
-   * 🏷️Summary
+   * 📖 Description
+   * 📝 Summary
    * 📜 Terms of use
    * 👥 Group permissions
    * 🏷️ Tags and categories
@@ -55,7 +66,7 @@ Use the **GaiaBuilder Add-In for Content** to export your Vector Tile Layer, inc
 - 📁 **Set the location** for the `content.json` inside a Git-initialized or cloned folder.  
 - 🆔 **Add the required item IDs** — in our example, we manually select the vector tile `itemId`.
 - ✅ **Verify** that the vector tile layer is successfully listed in the overview.  
-- 💡 **Environments** See [Environments field reference](..\..\docs\Environments.md)), and then check that permissions, locks, and folder structure are set as needed for your deployment scenario.
+- 💡 **Environments** See [Environments field reference](../../docs/Environments.md), and then check that permissions, locks, and folder structure are set as needed for your deployment scenario.
 - 🌍 **Select** **DEV** as the source environment.
 
 ![Create new content project](create_new_content_project.png)
@@ -181,6 +192,31 @@ Open the `content.json` configuration file in a text editor of your choice and i
 5. **🏷️ Commit and push to version control**
 
 Store the JSON files in Git (or another VCS) for reproducible deployments and rollback support.
+
+<details><summary>Example files stored in git</summary>
+
+📂 **Files stored in Git:**
+
+- 📄 **Vector Tile Layer (`65903e3f51ee417da2ec35e15fd81b73`)**
+  - 📑 `65903e3f51ee417da2ec35e15fd81b73.data.json`
+  - 📑 `65903e3f51ee417da2ec35e15fd81b73.json`
+  - 📑 `65903e3f51ee417da2ec35e15fd81b73.relations.json`
+  - 📑 `65903e3f51ee417da2ec35e15fd81b73.resources.json`
+  - 🖼️ `65903e3f51ee417da2ec35e15fd81b73.ago_downloaded.png`
+  - 📂 **resources**
+    - 📂 **sprites**
+      - 🧩 `sprite-1750316239867.json`
+      - 🖼️ `sprite-1750316239867.png`
+      - 🧩 `sprite-1750316239867@2x.json`
+      - 🖼️ `sprite-1750316239867@2x.png`
+    - 🎨 **styles**
+      - 🧾 `root.json`
+
+- ⚙️ **General Configuration**
+  - 📑 `content.json`
+
+</details>
+
 
 6. **🚀 Integrate into your CI/CD System**
 
