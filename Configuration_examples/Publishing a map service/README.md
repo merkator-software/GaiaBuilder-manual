@@ -807,7 +807,7 @@ graph LR
 
 ## 🧪 Generic Deployment Script (PowerShell)
 
-This example works on any runner or agent that supports PowerShell and Python (with Conda):
+This example works on any runner or agent that supports PowerShell and Python (with Conda) [^1]:
 
 ```powershell
 & "$env:CondaHook"
@@ -847,12 +847,10 @@ env:
 This ensures your credentials do not appear in logs or version control.
 
 ---
+After deployment, verify your map service in the ArcGIS REST Services Directory or ArcGIS Pro Catalog before promoting to higher environments.
 
-## 🧾 GaiaBuilder CLI Options
 
+[^1]: ## 🧾 GaiaBuilder CLI Options
 InstallMapserviceTool and the light version (without an arcpy dependency) command line options are documented [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallMapserviceTool)
 
-
----
-After deployment, verify your map service in the ArcGIS REST Services Directory or ArcGIS Pro Catalog before promoting to higher environments.
 

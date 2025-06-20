@@ -331,7 +331,7 @@ or is located using the python libraries provided by the GaiaBuilder Add-In.
 
 ## 🧪 Generic Deployment Script (PowerShell)
 
-This example works on any runner or agent that supports PowerShell and Python (with Conda):
+This example works on any runner or agent that supports PowerShell and Python (with Conda) [^1].
 ```powershell
 & "$env:CondaHook"
 conda activate "$env:CondaEnv_GaiaBuilder"
@@ -366,3 +366,8 @@ env:
 This ensures your credentials do not appear in logs or version control.
 
 ---
+
+[^1]: ## 🧾 GaiaBuilder CLI Options
+InstallMapserviceTool and the light version (without an arcpy dependency) command line options are documented [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallMapserviceTool)
+
+

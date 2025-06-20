@@ -220,7 +220,7 @@ Store the JSON files in Git (or another VCS) for reproducible deployments and ro
 
 6. **🚀 Integrate into your CI/CD System**
 
-This example works on any runner or agent supporting PowerShell and Python (with Conda):
+This example works on any runner or agent supporting PowerShell and Python (with Conda) [^1].
 
 ```powershell
 & "$env:CondaHook"
@@ -248,10 +248,7 @@ env:
 
 ---
 
-## 🧾 GaiaBuilder CLI Options
-
-Detailed documentation for `InstallContent_lite` and its command-line options is available [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallContentTool).
-
----
-
 After deployment, verify your map service in the ArcGIS REST Services Directory or ArcGIS Pro Catalog before promoting to higher environments.
+
+[^1]: ## 🧾 GaiaBuilder CLI Options
+Detailed documentation for `InstallContent_lite` and its command-line options is available [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallContentTool).
