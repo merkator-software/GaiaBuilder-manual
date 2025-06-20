@@ -204,7 +204,7 @@ You can run GaiaBuilder in automation environments such as:
 
 ## 🚀 Generic Deployment Script (PowerShell)
 
-The example below works on any runner or agent supporting PowerShell and Python (with Conda). It uses the content.json created ($env:manual_build_list) above, including the relative path and the environment name ($env:server) where you want to push it to.
+The example below works on any runner or agent supporting PowerShell and Python (with Conda). It uses the content.json created ($env:manual_build_list) above, including the relative path and the environment name ($env:server) where you want to push it to [^1].
 
 ```powershell
 & "$env:CondaHook"
@@ -232,10 +232,7 @@ env:
 
 ---
 
-## 🧾 GaiaBuilder CLI Options
-
-Detailed documentation for `InstallContent_lite` and its command-line options is available [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallContentTool).
-
----
-
 After deployment, verify your map service in the ArcGIS REST Services Directory or ArcGIS Pro Catalog before promoting to higher environments.
+
+[^1]: ## 🧾 GaiaBuilder CLI Options
+Detailed documentation for `InstallContent_lite` and its command-line options is available [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallContentTool).
