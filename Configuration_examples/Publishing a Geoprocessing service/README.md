@@ -17,7 +17,7 @@ You are an ArcGIS Pro user who knows how to:
 ```mermaid
 graph LR
   gaiabuilder[Copy the Template folder for GeoProcessingService]
-  configure[Ammend stage.py for each GP to run once.]
+  configure[Implement the runTheTool function in stage.py for each GP to run once.]
   gp[Create python toolbox and the GP tool]
   git[Git Repository]
   pipeline[CI/CD Pipeline]
