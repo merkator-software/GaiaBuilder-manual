@@ -85,6 +85,7 @@ vttx --> dev
 
 ![Create Vector Package](create_vector_package.png)
 </Details>
+
    - Ensure you set the **Tiling scheme** to `EXISTING` if you are using an existing tiling scheme, or leave it unchecked for the ArcGIS Online/Bing Maps/Google Maps tiling scheme.
    - Set the **Minimum scale** and **Maximum scale** according to your requirements.
    - Set the **Vector tile structure** to `INDEXED` for optimal performance.
@@ -107,7 +108,11 @@ Finish of the configuration of the portal item set:
 Note the id of the hosted vector tile service, as you will need it in step 4.
 
 ### Step 3 Export the mapx JSON configuration file (`vt.mapx.json`) without the index layer.
-1. Add at least the description of the map under metadata.
+1. Configure the description of the map under metadata in the map properties.
+<Details><summary>Example Map Properties</summary>
+
+![Map Properties](map_properties.png)
+</Details>
 
 ![Export Map To Json](export_map_to_json.png)
 
@@ -135,6 +140,8 @@ Note the id of the hosted vector tile service, as you will need it in step 4.
    * **Minimum scale**: `1155583.4197442674`
    * **Maximum scale**: `2256.998866688022`
    * **Vector tile structure**: `INDEXED`
+
+> The minimum and maximum scale values are copied from the vector layer index downloaded in Step 1, and should be multiples of 2 to be valid for vector tile services.
 
 2. Click **Run** and confirm success.
 
