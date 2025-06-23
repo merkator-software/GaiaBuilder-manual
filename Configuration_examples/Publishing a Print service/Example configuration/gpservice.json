@@ -1,0 +1,33 @@
+{
+  "action": "publishSD",
+  "printTemplateFolder": "Template",
+  "content_status": "authoritative",
+  "protected": "true",
+  "credits": "Copyright Contoso",
+  "description": "Contoso Python Geoprocessing service example.",
+  "extensions": [
+  ],
+  "executionType": "Asynchronous",
+  "copyData": "true",
+  "maxIdleTime": 1800,
+  "maxInstancesPerNode": 3,
+  "maxStartupTime": 300,
+  "maxUsageTime": 600,
+  "maxWaitTime": 60,
+  "minInstancesPerNode": 1,
+  "name": "Demo_Print_Service_DEV",
+  "portalFolder": "dev",
+  "portalLogo": "thumbnail_dev.jpg",
+  "recycleInterval": 24,
+  "recycleStartTime": "00:00",
+  "serverFolder": "DEV",
+  "categories": [
+    "/Categories/Democategory",
+    "/Categories/Administrative data"
+  ],
+  "serverconfiguration": "server.json",
+  "serviceType": "GPServer",
+  "summary": "Contoso GP service summary example.",
+  "tags": "Geoprocessing,Service,Contoso,Example",
+  "uselimitations": "For demonstration purposes only."
+}

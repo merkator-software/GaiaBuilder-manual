@@ -1,0 +1,64 @@
+{
+  "servers": {
+    "ACC": {
+      "serverFolder": "ACC",
+      "portalFolder": "acc",
+      "datasources": [
+      ],
+      "sharing": {
+        "groups": [
+          "Demo ACC"
+        ],
+        "organization": "false",
+        "public": "false"
+      },
+      "name": "Demo_Print_Service_ACC",
+      "portalLogo": "thumbnail_acc.jpg"
+    },
+    "PROD": {
+      "serverFolder": "PROD",
+      "portalFolder": "prod",
+      "datasources": [
+      ],
+      "sharing": {
+        "groups": [
+          "Demo PROD"
+        ],
+        "organization": "false",
+        "public": "false"
+      },
+      "name": "Demo_Print_Service_PROD",
+      "portalLogo": "thumbnail_prod.jpg"
+    },
+    "TEST": {
+      "serverFolder": "TEST",
+      "portalFolder": "test",
+      "datasources": [
+      ],
+      "sharing": {
+        "groups": [
+          "Demo TEST"
+        ],
+        "organization": "false",
+        "public": "false"
+      },
+      "name": "Demo_Print_Service_TEST",
+      "portalLogo": "thumbnail_test.jpg"
+    },
+    "DEV": {
+      "serverFolder": "DEV",
+      "portalFolder": "dev",
+      "datasources": [
+      ],
+      "sharing": {
+        "groups": [
+          "Demo DEV"
+        ],
+        "organization": "false",
+        "public": "false"
+      },
+      "name": "Demo_Print_Service_DEV",
+      "portalLogo": "thumbnail_dev.jpg"
+    }
+  }
+}
