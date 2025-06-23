@@ -21,7 +21,7 @@ graph LR
   gp[Create python toolbox and the GP tool]
   git[Git Repository]
   pipeline[CI/CD Pipeline]
-  portal[Published GP service on Enterpise Portal prod]
+  portal["Published GP service on Enterpise Portal (Prod)"]
   edit[Create gpservice.json]
   server[Create server.json]
 
@@ -91,13 +91,13 @@ For an overview what each attribute does, see the [GP JSON configuration](https:
 ```
 </Details>
 
-3. **Create `service.json`**
+3. **Create `server.json`**
 
-The `service.json` file defines the server configuration for the print service, including the server folder, portal folder, data sources, and sharing settings.
+The `server.json` file defines the server configuration for the GP service, including the server folder, portal folder, data sources, and sharing settings.
    
-<Details><Summary>Expand for example service.json</Summary>
+<Details><Summary>Expand for example server.json</Summary>
 
-The properties in the `service.json` file are used to configure the print service for different environments (e.g., DEV, TEST, ACC, PROD). Each environment has its own server folder, portal folder, data sources, and sharing settings.
+The properties in the `server.json` file are used to configure the print service for different environments (e.g., DEV, TEST, ACC, PROD). Each environment has its own server folder, portal folder, data sources, and sharing settings.
 
 ```json
 {
@@ -171,6 +171,21 @@ The properties in the `service.json` file are used to configure the print servic
 
 Modify the runTheTool function in stage.py and set the result to a result object. This function needs to run on ArcGIS enterprise server once to be able to create a Service Definition of the GP.
 
+The toolbox is the relative or absolute path to the Python toolbox file (pyt) that contains the GP tool. The function should import the toolbox and call the GP tool with the required parameters.
+
+The result parameter is the output of the GP tool, which will be used to create the Service Definition, the tool should be run with the parameters that you want to test. In this example, we are adding two numbers (1 and 2) using the `AddNumbers` GP tool.
+
+```python
+import arcpy
+
+def runTheTool(toolbox):
+    # Run the tool and set to a result object
+    arcpy.ImportToolbox(toolbox, 'basicmath') # The toolbox name is the alias used in the GP service
+    
+    result = arcpy.basicmath.AddNumbers(1,2)
+    return [result]
+```
+
 5. **Commit and push to version control**
 
    Store the JSON files, and layouts in the template folder in Git (or other VCS) for reproducible deployments and rollback support.
@@ -237,7 +252,7 @@ env:
 This ensures your credentials do not appear in logs or version control.
 
 ---
-After deployment, verify your map service in the ArcGIS REST Services Directory or ArcGIS Pro Catalog before promoting to higher environments.
+After deployment, verify your GP service in the ArcGIS REST Services Directory or ArcGIS Pro Catalog before promoting to higher environments.
 
 
 [^1]: ## 🧾 GaiaBuilder CLI Options
