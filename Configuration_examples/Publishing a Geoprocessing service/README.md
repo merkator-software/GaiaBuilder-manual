@@ -167,8 +167,11 @@ The properties in the `service.json` file are used to configure the print servic
 ```
 </Details>
 
+4. Modify the runTheTool function in stage.py
 
-3. **Commit and push to version control**
+Modify the runTheTool function in stage.py and set the result to a result object. This function needs to run on ArcGIS enterprise server once to be able to create a Service Definition of the GP.
+
+5. **Commit and push to version control**
 
    Store the JSON files, and layouts in the template folder in Git (or other VCS) for reproducible deployments and rollback support.
 
