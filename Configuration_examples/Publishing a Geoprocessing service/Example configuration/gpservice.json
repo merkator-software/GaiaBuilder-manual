@@ -1,0 +1,34 @@
+{
+  "action": "publishSD",
+  "stageScript": "stage.py",
+  "toolbox": "Demo_GP_Service.pyt",
+  "content_status": "authoritative",
+  "protected": "true",
+  "credits": "Copyright Contoso",
+  "description": "Contoso Python Geoprocessing service example.",
+  "extensions": [
+  ],
+  "executionType": "Asynchronous",
+  "copyData": "true",
+  "maxIdleTime": 1800,
+  "maxInstancesPerNode": 3,
+  "maxStartupTime": 300,
+  "maxUsageTime": 600,
+  "maxWaitTime": 60,
+  "minInstancesPerNode": 1,
+  "name": "Add_Number_Service_DEV",
+  "portalFolder": "dev",
+  "portalLogo": "gp_thumbnail_dev.png",
+  "recycleInterval": 24,
+  "recycleStartTime": "00:00",
+  "serverFolder": "DEV",
+  "categories": [
+    "/Categories/Democategory",
+    "/Categories/Administrative data"
+  ],
+  "serverconfiguration": "server.json",
+  "serviceType": "GPServer",
+  "summary": "Contoso GP service summary example.",
+  "tags": "Geoprocessing,Service,Contoso,Example,Basic math,Add",
+  "uselimitations": "For demonstration purposes only."
+}

@@ -1,0 +1,64 @@
+{
+  "servers": {
+    "ACC": {
+      "serverFolder": "ACC",
+      "portalFolder": "acc",
+      "datasources": [
+      ],
+      "sharing": {
+        "groups": [
+          "Demo ACC"
+        ],
+        "organization": "false",
+        "public": "false"
+      },
+      "name": "Add_Number_Service_ACC",
+      "portalLogo": "gp_thumbnail_acc.png"
+    },
+    "PROD": {
+      "serverFolder": "PROD",
+      "portalFolder": "prod",
+      "datasources": [
+      ],
+      "sharing": {
+        "groups": [
+          "Demo PROD"
+        ],
+        "organization": "false",
+        "public": "false"
+      },
+      "name": "Add_Number_Service_PROD",
+      "portalLogo": "gp_thumbnail_prod.png"
+    },
+    "TEST": {
+      "serverFolder": "TEST",
+      "portalFolder": "test",
+      "datasources": [
+      ],
+      "sharing": {
+        "groups": [
+          "Demo TEST"
+        ],
+        "organization": "false",
+        "public": "false"
+      },
+      "name": "Add_Number_Service_TEST",
+      "portalLogo": "gp_thumbnail_test.png"
+    },
+    "DEV": {
+      "serverFolder": "DEV",
+      "portalFolder": "dev",
+      "datasources": [
+      ],
+      "sharing": {
+        "groups": [
+          "Demo DEV"
+        ],
+        "organization": "false",
+        "public": "false"
+      },
+      "name": "Add_Number_Service_DEV",
+      "portalLogo": "gp_thumbnail_dev.png"
+    }
+  }
+}
