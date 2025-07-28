@@ -69,7 +69,7 @@ graph LR
 
 <Details><Summary>Example configuration for virtual DTAP environment strategy.</Summary>
 Our configuration has been designed to support a virtual DTAP (Development, Test, Acceptance, Production) environment strategy. Each environment has its own folder in the ArcGIS Portal and a dedicated server folder.
-The image server is a seperate ArcGIS Server site, which is configured and added to both the GaiaBuilder.ini file and registered in the GaiaBuilder Environment Registry hosted table.
+The image server is a seperate ArcGIS Server site, which is configured and added to both the GaiaBuilder.ini file and registerednotep in the GaiaBuilder Environment Registry hosted table.
 
 
 ![Our configuration](import_image_service_configuration.png)

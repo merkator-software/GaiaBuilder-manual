@@ -1,0 +1,92 @@
+{
+  "servers": {
+    "ACC": {
+      "name": "SD_Letters_Vector_Tile_ACC",
+      "datasources": [
+        {
+          "databasehint": "demo_acc"
+        }
+      ],
+      "portalFolder": "acc",
+      "portalTitle": "SD_Letters_Vector_Tile_ACC",
+      "portalLogo": "thumbnail_acc.png",
+      "rewrite_outputs": {
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/ACC"
+      },
+      "sharing": {
+        "esriEveryone": "false",
+        "groups": [
+          "Demo ACC"
+        ],
+        "organization": "false"
+      },
+      "vtpk": "vt_acc.vtpk"
+    },
+    "DEV": {
+      "name": "SD_Letters_Vector_Tile_DEV",
+      "datasources": [
+        {
+          "databasehint": "demo_dev"
+        }
+      ],
+      "portalFolder": "dev",
+      "portalTitle": "SD_Letters_Vector_Tile_DEV",
+      "portalLogo": "thumbnail_dev.png",
+      "rewrite_outputs": {
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+      },
+      "sharing": {
+        "esriEveryone": "false",
+        "groups": [
+          "Demo DEV"
+        ],
+        "organization": "false"
+      },
+      "vtpk": "vt_dev.vtpk"
+    },
+    "PROD": {
+      "datasources": [
+        {
+          "databasehint": "demo_prod"
+        }
+      ],
+      "name": "SD_Letters_Vector_Tile_PROD",
+      "portalFolder": "prod",
+      "portalTitle": "SD_Letters_Vector_Tile_PROD",
+      "portalLogo": "thumbnail_prod.png",
+      "rewrite_outputs": {
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/PROD"
+      },
+      "sharing": {
+        "esriEveryone": "false",
+        "groups": [
+          "Demo PROD"
+        ],
+        "organization": "false"
+      },
+      "vtpk": "vt_prod.vtpk"
+    },
+    "TEST": {
+      "datasources": [
+        {
+          "databasehint": "demo_test"
+        }
+      ],
+      "name": "SD_Letters_Vector_Tile_TEST",
+      "portalFolder": "test",
+      "portalTitle": "SD_Letters_Vector_Tile_TEST",
+      "portalLogo": "thumbnail_test.png",
+      "rewrite_outputs": {
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/TEST"
+      },
+      "sharing": {
+        "esriEveryone": "false",
+        "groups": [
+          "Demo TEST"
+        ],
+        "organization": "false"
+      },
+      "vtpk": "vt_test.vtpk"
+    }
+  }
+}

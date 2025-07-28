@@ -1,0 +1,78 @@
+{
+  "action": "deployContent",
+  "contentSelect": 1,
+  "sourcePortal": "https://demo.gaiabuilder.com/portal/",
+  "sourceGroup": "",
+  "sourceGroupId": "",
+  "sourceFolder": "",
+  "sourceFolderId": "",
+  "sourceUser": "demo.professional",
+  "portalLogo": null,
+  "portalFolder": "",
+  "protected": "false",
+  "content_status": "",
+  "contentUser": null,
+  "overwrite_existing": "false",
+  "allow_layer_delete": "false",
+  "allow_field_delete": "false",
+  "serverconfiguration": "server.json",
+  "items": [
+    {
+      "type": "Web Map",
+      "title": "DemoMap",
+      "name": "DemoMap",
+      "itemId": "0691dc321d7741efb9c9e5fe617183d5",
+      "sourceServiceItemId": "",
+      "descriptionjson": "0691dc321d7741efb9c9e5fe617183d5.json",
+      "datajson": "0691dc321d7741efb9c9e5fe617183d5.data.json",
+      "metadata": "",
+      "datafile": "",
+      "resourcejson": "0691dc321d7741efb9c9e5fe617183d5.resources.json",
+      "relationjson": "0691dc321d7741efb9c9e5fe617183d5.relations.json",
+      "servicejson": null,
+      "portalLogo": "wm_thumbnail_dev.png",
+      "rewrites": {
+        "environmentRewrite": "--DEV--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+      },
+      "sourceUrl": "https://demo.gaiabuilder.com/portal/sharing/rest/content/items/0691dc321d7741efb9c9e5fe617183d5",
+      "itemIdRewrites": [
+        "e9639468788547c791d8db3d44fcfe50",
+        "0691dc321d7741efb9c9e5fe617183d5"
+      ],
+      "categories": [],
+      "sharing": null,
+      "portalFolder": "dev"
+    },
+    {
+      "type": "Web Experience",
+      "title": "San Diego Letters --DEV--",
+      "name": "San Diego Letters --DEV--",
+      "itemId": "e9639468788547c791d8db3d44fcfe50",
+      "sourceServiceItemId": "",
+      "descriptionjson": "e9639468788547c791d8db3d44fcfe50.json",
+      "datajson": "e9639468788547c791d8db3d44fcfe50.data.json",
+      "metadata": "",
+      "datafile": "",
+      "resourcejson": "e9639468788547c791d8db3d44fcfe50.resources.json",
+      "relationjson": "e9639468788547c791d8db3d44fcfe50.relations.json",
+      "servicejson": null,
+      "portalLogo": "thumbnail_dev.png",
+      "rewrites": {
+        "thumbnail": "thumbnail_dev.png",
+        "environmentRewrite": "--DEV--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+      },
+      "sourceUrl": "https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=e9639468788547c791d8db3d44fcfe50",
+      "itemIdRewrites": [
+        "e9639468788547c791d8db3d44fcfe50",
+        "0691dc321d7741efb9c9e5fe617183d5"
+      ],
+      "categories": [],
+      "sharing": null,
+      "portalFolder": null
+    }
+  ],
+  "excluded_items": []
+  
+}

@@ -1,0 +1,59 @@
+{
+  "id": "0691dc321d7741efb9c9e5fe617183d5",
+  "owner": "demo.professional.plus",
+  "isOrgItem": true,
+  "guid": null,
+  "name": null,
+  "title": "DemoMap --DEV--",
+  "type": "Web Map",
+  "typeKeywords": [
+    "ArcGIS API for JavaScript",
+    "ArcGIS Online",
+    "Explorer Web Map",
+    "Map",
+    "Online Map",
+    "Web Map"
+  ],
+  "description": "",
+  "tags": [
+    "GaiaBuilder",
+    "Demo",
+    "Letters",
+    "Development"
+  ],
+  "snippet": "",
+  "thumbnail": "thumbnail/thumbnail1751447389950.png",
+  "documentation": null,
+  "extent": [
+    [
+      -117.1937626578258,
+      32.68975216622832
+    ],
+    [
+      -117.11479842442745,
+      32.7343826916825
+    ]
+  ],
+  "categories": [],
+  "spatialReference": "",
+  "accessInformation": "",
+  "classification": null,
+  "licenseInfo": "",
+  "culture": "english (united states)",
+  "properties": null,
+  "advancedSettings": null,
+  "url": "",
+  "proxyFilter": null,
+  "access": "org",
+  "subInfo": 0,
+  "largeThumbnail": null,
+  "banner": null,
+  "screenshots": [],
+  "ownerFolder": "271e3e5c6a834e88ba8045280aef07b7",
+  "protected": false,
+  "commentsEnabled": false,
+  "groupDesignations": null,
+  "apiToken1ExpirationDate": -1,
+  "apiToken2ExpirationDate": -1,
+  "lastViewed": -1
+}

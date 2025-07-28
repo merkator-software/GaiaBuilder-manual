@@ -1,0 +1,59 @@
+{
+  "id": "ec4c2c7525cb42d1a54fc76e59ca4953",
+  "owner": "demo.professional.plus",
+  "isOrgItem": true,
+  "guid": null,
+  "name": null,
+  "title": "San Diego Letters_MIL1",
+  "type": "Map Service",
+  "typeKeywords": [
+    "ArcGIS",
+    "ArcGIS Server",
+    "Data",
+    "Map Service",
+    "Metadata",
+    "Service"
+  ],
+  "description": null,
+  "tags": [
+    "GaiaBuilder",
+    "Demo",
+    "Dev"
+  ],
+  "snippet": null,
+  "thumbnail": "thumbnail/thumbnail.png",
+  "documentation": null,
+  "extent": [
+    [
+      -117.2733,
+      32.700761567
+    ],
+    [
+      -117.136398247,
+      32.8348
+    ]
+  ],
+  "categories": [],
+  "spatialReference": "WGS_1984_Web_Mercator_Auxiliary_Sphere",
+  "accessInformation": null,
+  "classification": null,
+  "licenseInfo": null,
+  "culture": "en-us",
+  "properties": null,
+  "advancedSettings": null,
+  "url": "https://demo.gaiabuilder.com/server/rest/services/San_Diego_Letters_MIL1/MapServer",
+  "proxyFilter": null,
+  "access": "org",
+  "subInfo": 0,
+  "largeThumbnail": null,
+  "banner": null,
+  "screenshots": [],
+  "ownerFolder": "271e3e5c6a834e88ba8045280aef07b7",
+  "protected": false,
+  "commentsEnabled": false,
+  "privateUrl": "https://demo.gaiabuilder.com/server/rest/services/San_Diego_Letters_MIL1/MapServer",
+  "groupDesignations": null,
+  "apiToken1ExpirationDate": -1,
+  "apiToken2ExpirationDate": -1,
+  "lastViewed": -1
+}

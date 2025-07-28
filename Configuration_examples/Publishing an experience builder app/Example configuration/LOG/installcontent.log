@@ -1,0 +1,84 @@
+Start restore content
+Using Python from exe: C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe
+load serviceDefinition
+Logged in to GIS as: demo.professional
+Data file for item 0ebb2abd8f6d4cffaa16133cbfe1f5de does not exist at path C:\com\azure\merkatordev\gaiabuilder_demo\sd_letters_app\0ebb2abd8f6d4cffaa16133cbfe1f5de\data\
+Found the GaiabuilderItemregistry
+Item registry update did not find any record for targetitemid 0ebb2abd8f6d4cffaa16133cbfe1f5de
+Updated targetitemid 0ebb2abd8f6d4cffaa16133cbfe1f5de
+Data file for item 3fbd66d654344dc9b02eaaea57ffec81 does not exist at path C:\com\azure\merkatordev\gaiabuilder_demo\sd_letters_app\3fbd66d654344dc9b02eaaea57ffec81\data\
+Portal logo file does not exist: 
+Replaced itemid in item url from https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=3fbd66d654344dc9b02eaaea57ffec81 to https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=3fbd66d654344dc9b02eaaea57ffec81
+Replaced url in item url property from https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=3fbd66d654344dc9b02eaaea57ffec81 to https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=3fbd66d654344dc9b02eaaea57ffec81
+Item registry update did not find any record for targetitemid 3fbd66d654344dc9b02eaaea57ffec81
+Updated targetitemid 3fbd66d654344dc9b02eaaea57ffec81
+Could not rewrite content, because rewrite input is None
+Could not rewrite content, because rewrite output is None
+Searching for targetitemurl with sourceurl  and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with UPPER(sourceurl)=UPPER('') AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+replaced old url  with new url  
+Searching for targetitemurl with sourceurl  and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with UPPER(sourceurl)=UPPER('') AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+replaced old url  with new url  
+Searching for targetitemurl with sourceurl  and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with UPPER(sourceurl)=UPPER('') AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+replaced old url  with new url  
+Searching for targetitemurl with sourceurl  and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with UPPER(sourceurl)=UPPER('') AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+replaced old url  with new url  
+Searching for targetitemid with sourceitemid 0ebb2abd8f6d4cffaa16133cbfe1f5de and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with sourceitemid='0ebb2abd8f6d4cffaa16133cbfe1f5de' AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+Error applying rewrites to resource file {'resource': 'config/config.json', 'created': 1750064295858, 'size': 30093, 'access': 'inherit'}
+Finished restoring the content
+Start restore content
+Using Python from exe: C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe
+load serviceDefinition
+Logged in to GIS as: demo.professional
+Data file for item 0691dc321d7741efb9c9e5fe617183d5 does not exist at path C:\com\azure\merkatordev\gaiabuilder_demo\sd_letters_app\0691dc321d7741efb9c9e5fe617183d5\data\
+Found the GaiabuilderItemregistry
+Item registry update did not find any record for targetitemid 0691dc321d7741efb9c9e5fe617183d5
+Updated targetitemid 0691dc321d7741efb9c9e5fe617183d5
+Data file for item e9639468788547c791d8db3d44fcfe50 does not exist at path C:\com\azure\merkatordev\gaiabuilder_demo\sd_letters_app\e9639468788547c791d8db3d44fcfe50\data\
+Portal logo file does not exist: 
+Replaced itemid in item url from https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=e9639468788547c791d8db3d44fcfe50 to https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=e9639468788547c791d8db3d44fcfe50
+Replaced url in item url property from https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=e9639468788547c791d8db3d44fcfe50 to https://demo.gaiabuilder.com/portal/apps/experiencebuilder/experience?id=e9639468788547c791d8db3d44fcfe50
+Item registry update did not find any record for targetitemid e9639468788547c791d8db3d44fcfe50
+Updated targetitemid e9639468788547c791d8db3d44fcfe50
+Could not rewrite content, because rewrite input is None
+Could not rewrite content, because rewrite output is None
+Searching for targetitemurl with sourceurl  and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with UPPER(sourceurl)=UPPER('') AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+replaced old url  with new url  
+Searching for targetitemurl with sourceurl  and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with UPPER(sourceurl)=UPPER('') AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+replaced old url  with new url  
+Searching for targetitemurl with sourceurl  and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with UPPER(sourceurl)=UPPER('') AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+replaced old url  with new url  
+Searching for targetitemurl with sourceurl  and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with UPPER(sourceurl)=UPPER('') AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+replaced old url  with new url  
+Searching for targetitemid with sourceitemid 0691dc321d7741efb9c9e5fe617183d5 and targetenvironment None in GaiabuilderItemregistry
+Query https://demo.gaiabuilder.com/server/rest/services/Hosted/Gaiabuilderitemregistry/FeatureServer/0 with sourceitemid='0691dc321d7741efb9c9e5fe617183d5' AND targetenvironment='None' AND copynumber=None
+Generated PortalContentClass workaround token using self.gis._con._create_token
+Request made with GIS._con
+Error applying rewrites to resource file {'resource': 'config/config.json', 'created': 1750148636107, 'size': 30452, 'access': 'inherit'}
+Finished restoring the content

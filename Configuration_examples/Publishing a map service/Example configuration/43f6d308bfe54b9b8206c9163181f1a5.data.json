@@ -1,0 +1,93 @@
+{
+    "layers": [
+        {
+            "id": 1,
+            "popupInfo": {
+                "expressionInfos": [],
+                "fieldInfos": [
+                    {
+                        "fieldName": "objectid",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": false,
+                        "label": "objectid",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "name",
+                        "isEditable": true,
+                        "label": "name",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "st_area(shape)",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": false,
+                        "label": "st_area(shape)",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "st_length(shape)",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": false,
+                        "label": "st_length(shape)",
+                        "visible": true
+                    }
+                ],
+                "mediaInfos": [],
+                "popupElements": [
+                    {
+                        "fieldInfos": [
+                            {
+                                "fieldName": "objectid",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": false,
+                                "label": "objectid",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "name",
+                                "isEditable": true,
+                                "label": "name",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "st_area(shape)",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": false,
+                                "label": "st_area(shape)",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "st_length(shape)",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": false,
+                                "label": "st_length(shape)",
+                                "visible": true
+                            }
+                        ],
+                        "type": "fields"
+                    }
+                ],
+                "title": "{name}"
+            }
+        }
+    ]
+}

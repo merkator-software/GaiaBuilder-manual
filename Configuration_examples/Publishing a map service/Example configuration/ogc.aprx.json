@@ -1,0 +1,138 @@
+{
+    "WFS": {
+        "extent": [
+            [
+                -117.169271695,
+                32.6977082010001
+            ],
+            [
+                -117.136398247,
+                32.7175979840001
+            ]
+        ],
+        "layerDataJson": "c3348726f08c489fa125682fb2486821.data.json",
+        "portalTitle": "Map",
+        "portaldescription": null,
+        "summary": null,
+        "tags": [
+            "Map",
+            "WFSServer"
+        ]
+    },
+    "action": "publishSD",
+    "allowedUploadFileTypes": "",
+    "antialiasingMode": "Fast",
+    "aprx": "Map.aprx",
+    "capabilities": "Map,Query,Data",
+    "categories": [],
+    "clientCachingAllowed": "true",
+    "contentUser": "demo.professional.plus",
+    "content_status": "",
+    "copydata": "false",
+    "credits": null,
+    "description": "",
+    "disableIdentifyRelates": "false",
+    "enableDynamicLayers": "true",
+    "exportTilesAllowed": "false",
+    "extensions": [
+        {
+            "allowedUploadFileTypes": "",
+            "capabilities": "",
+            "enabled": "true",
+            "maxUploadFileSize": 0,
+            "properties": {
+                "abstract": "",
+                "accessConstraints": "",
+                "administrativeArea": "",
+                "appSchemaPrefix": "Map",
+                "appSchemaURI": "<_server_>services/Map/MapServer/WFSServer",
+                "axisOrderWFS10": "LongLat",
+                "axisOrderWFS11": "LongLat",
+                "city": "",
+                "contactInstructions": "",
+                "country": "",
+                "customGetCapabilities": "false",
+                "deliveryPoint": "",
+                "electronicMailAddress": "",
+                "enableTransactions": "",
+                "facsimile": "",
+                "fees": "",
+                "hoursOfService": "",
+                "individualName": "",
+                "keyword": "",
+                "name": "",
+                "onlineResource": "<_server_>services/Map/MapServer/WFSServer",
+                "pathToCustomGetCapabilitiesFiles": "",
+                "phone": "",
+                "positionName": "",
+                "postalCode": "",
+                "providerName": "",
+                "providerSite": "",
+                "role": "",
+                "serviceType": "",
+                "serviceTypeVersion": "",
+                "title": ""
+            },
+            "typeName": "WFSServer"
+        }
+    ],
+    "extent": [
+        [
+            -117.169271695,
+            32.6977082010001
+        ],
+        [
+            -117.136398247,
+            32.7175979840001
+        ]
+    ],
+    "frameworkProperties": {},
+    "keepAliveInterval": 1800,
+    "layerDataJson": "43f6d308bfe54b9b8206c9163181f1a5.data.json",
+    "lyrx": null,
+    "lyrxjson": null,
+    "mapx": "Map.mapx",
+    "mapxjson": "Map.mapx.json",
+    "maxDomainCodeCount": "25000",
+    "maxExportTilesCount": "100000",
+    "maxIdleTime": 1800,
+    "maxImageHeight": "4096",
+    "maxImageWidth": "4096",
+    "maxInstancesPerNode": 2,
+    "maxRecordCount": "2000",
+    "maxSampleSize": "100000",
+    "maxStartupTime": 300,
+    "maxUploadFileSize": 0,
+    "maxUsageTime": 600,
+    "maxWaitTime": 60,
+    "minInstancesPerNode": 1,
+    "name": "Map",
+    "origin": {
+        "document": "Map.mapx.json",
+        "documentType": "Mapxjson",
+        "environments": "ACC_IMAGE,TEST,ACC,PROD,DEV",
+        "imagepath": "",
+        "importlayerconfig": "true",
+        "itemid": "Keep ArcGIS Enterprise assigned ItemIDs",
+        "metadatafromlayer": "false",
+        "server": "DEV",
+        "serviceType": "MapService",
+        "serviceurl": "43f6d308bfe54b9b8206c9163181f1a5"
+    },
+    "portalLogo": "thumbnail.png",
+    "portalTitle": "Map",
+    "portaldescription": null,
+    "protected": "false",
+    "recycleInterval": 24,
+    "recycleStartTime": "00:00",
+    "schemaLockingEnabled": "true",
+    "serverFolder": "",    
+    "serverconfiguration": "Map.server.json",
+    "serviceType": "MapServer",
+    "sharedSoc": "true",
+    "summary": null,
+    "supportedImageReturnTypes": "URL",
+    "tags": "Map,MapServer",
+    "textAntialiasingMode": "Force",
+    "uselimitations": null
+}

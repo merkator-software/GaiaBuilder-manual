@@ -1,0 +1,91 @@
+{
+  "servers": {
+    "DEV": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--DEV--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+      },
+      "portalLogo": "thumbnail_dev.png",
+      "portalFolder": "dev",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": [
+          "Demo DEV"
+        ]
+      },
+      "layersuffix": "",
+      "0691dc321d7741efb9c9e5fe617183d5": {
+        "portalLogo": "wm_thumbnail_dev.png"
+      }
+    },
+    "TEST": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--TEST--",
+        "thumbnail": "thumbnail_test.png",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/TEST"
+      },
+      "portalLogo": "thumbnail_test.png",
+      "portalFolder": "test",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": [
+          "Demo TEST"
+        ]
+      },
+      "layersuffix": "",
+      "0691dc321d7741efb9c9e5fe617183d5": {
+        "portalLogo": "wm_thumbnail_test.png"
+      }
+    },
+    "ACC": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--ACC--",
+        "thumbnail": "thumbnail_acc.png",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/ACC"
+      },
+      "portalLogo": "thumbnail_acc.png",
+      "portalFolder": "acc",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": [
+          "Demo ACC"
+        ]
+      },
+      "layersuffix": "",
+      "0691dc321d7741efb9c9e5fe617183d5": {
+        "portalLogo": "wm_thumbnail_acc.png"
+      }
+    },
+    "PROD": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--PROD--",
+        "webMapThumbnail": "thumbnail_prod.png",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/PROD"
+      },
+      "portalLogo": "thumbnail_prod.png",
+      "portalFolder": "prod",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": [
+          "Demo PROD"
+        ]
+      },
+      "layersuffix": "",
+      "0691dc321d7741efb9c9e5fe617183d5": {
+        "portalLogo": "wm_thumbnail_prod.png"
+      }
+    }
+  }
+}

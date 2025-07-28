@@ -1,0 +1,56 @@
+{
+  "operationalLayers": [
+    {
+      "id": "197ca6ac6ba-layer-6",
+      "title": "San Diego Letters_MIL1",
+      "url": "https://demo.gaiabuilder.com/server/rest/services/DEV/San_Diego_Letters_MIL1/MapServer",
+      "visibility": true,
+      "itemId": "fc9b8bc8972a13c8c821ba457ae044f5",
+      "layerType": "ArcGISMapServiceLayer"
+    }
+  ],
+  "baseMap": {
+    "baseMapLayers": [
+      {
+        "id": "VectorTile_2846",
+        "opacity": 1,
+        "title": "Dark Gray Base",
+        "visibility": true,
+        "layerType": "VectorTileLayer",
+        "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/5e9b3685f4c24d8781073dd928ebda50/resources/styles/root.json"
+      },
+      {
+        "id": "VectorTile_1645",
+        "opacity": 1,
+        "title": "Dark Gray Reference",
+        "visibility": true,
+        "layerType": "VectorTileLayer",
+        "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/747cb7a5329c478cbe6981076cc879c5/resources/styles/root.json",
+        "isReference": true
+      }
+    ],
+    "title": "Dark Gray Canvas"
+  },
+  "authoringApp": "ArcGISMapViewer",
+  "authoringAppVersion": "2025.1",
+  "initialState": {
+    "viewpoint": {
+      "targetGeometry": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -13045949.983216926,
+        "ymin": 3854195.7867486593,
+        "xmax": -13037159.724964142,
+        "ymax": 3860100.547183681
+      }
+    }
+  },
+  "spatialReference": {
+    "latestWkid": 3857,
+    "wkid": 102100
+  },
+  "timeZone": "system",
+  "version": "2.33"
+}
