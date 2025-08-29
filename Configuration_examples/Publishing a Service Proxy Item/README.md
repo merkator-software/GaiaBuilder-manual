@@ -267,10 +267,12 @@ python $scriptPath $args
 
 ### 🔐 Environment Variables
 
-Securely set these values using your CI/CD environment's secret store:
+Securely set these values using your CI/CD environment's secret store, note that the GIS_PROXY_USER can differ from the deployment agent with access to the :
 
 ```yaml
 env:
+    USER: $(USER)
+    PASSWORD: $(PASSWORD)
     GIS_PROXY_USER: $(GIS_PROXY_USER)
     GIS_PROXY_PASSWORD: $(GIS_PROXY_PASSWORD)
 ```
