@@ -1,0 +1,30 @@
+{
+  "layers": [
+    {
+      "layerName": "LetterFeatures",
+      "username": "demo",
+      "serviceLayerId": 3,
+      "databaseHint": "demo_test;"
+    },
+    {
+      "layerName": "Parcels of San Diego County",
+      "username": "demo",
+      "serviceLayerId": 4,
+      "databaseHint": "parcel_test;"
+    },
+    {
+      "layerName": "Trolley Lines",
+      "username": "demo",
+      "serviceLayerId": 1,
+      "databaseHint": "asset_info_test;"
+    },
+    {
+      "layerName": "Trolley Stations",
+      "username": "demo",
+      "serviceLayerId": 2,
+      "databaseHint": "asset_info_test;"
+    }
+  ],
+  "mapx": "map.mapx.json",
+  "defaulthint": "demo_test;"
+}

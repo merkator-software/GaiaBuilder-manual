@@ -1,0 +1,52 @@
+{
+    "servers": {
+        "ACC": {
+            "portalFolder": "acc",
+            "serverFolder": "ACC",
+            "portalLogo": "thumbnail_acc.png",
+            "portalTitle": "Multi DB Map Demo --ACC--_MIL1",
+            "datasources": [
+                {
+                    "datajson": "acc.databasehint.json"
+                }
+            ],
+            "sharingjson": "acc.sharing.json"
+        },
+        "DEV": {
+            "portalFolder": "dev",
+            "serverFolder": "DEV",
+            "portalLogo": "thumbnail_dev.png",
+            "portalTitle": "Multi DB Map Demo --DEV--_MIL1",
+            "datasources": [
+                {
+                    "datajson": "dev.databasehint.json"
+                }
+            ],
+            "sharingjson": "dev.sharing.json"
+        },
+        "PROD": {
+            "portalFolder": "prod",
+            "serverFolder": "PROD",
+            "portalLogo": "thumbnail_prod.png",
+            "portalTitle": "Multi DB Map Demo --PROD--_MIL1",
+            "datasources": [
+                {
+                    "datajson": "prod.databasehint.json"
+                }
+            ],
+            "sharingjson": "prod.sharing.json"
+        },
+        "TEST": {
+            "portalFolder": "test",
+            "serverFolder": "TEST",
+            "portalLogo": "thumbnail_test.png",
+            "portalTitle": "Multi DB Map Demo --TEST--_MIL1",
+            "datasources": [
+                {
+                    "datajson": "test.databasehint.json"
+                }
+            ],
+            "sharingjson": "test.sharing.json"
+        }
+    }
+}
