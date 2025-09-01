@@ -17,39 +17,50 @@ You are an ArcGIS Pro user who knows how to:
 
 ```mermaid
 graph LR
-  layer1["Add layer connect to db₁ (e.g. asset_info_dev)"]
-  layer2["Add layer connect to db₂ (e.g. parcel_dev)"]
-  layer3["Add layer connect to db₃ (e.g. demo_dev)"]
+  layer1["Add layer connected to db₁ (e.g. asset_info_dev)"]
+  layer2["Add layer connected to db₂ (e.g. parcel_dev)"]
+  layer3["Add layer connected to db₃ (e.g. demo_dev)"]
   pro[ArcGIS Pro]
   addon[GaiaBuilder Add-In]
   git[Git Repository]
   pipeline[CI/CD Pipeline]
   portal[ArcGIS Enterprise Portal]
-  webmap[Share webmap to server]
+  maplayer[Publish Web Layer to server]
   mapx[Export map to .mapx.json]
-  layer1 --> mapx
-  layer2 --> mapx
-  layer3 --> mapx
-  pro --> webmap
+  serviceconfiguration[Import Service Configuration]
+  serverconfiguration["Environment specific datasource and sharing (DTAP)"]
+  databasehint["Generate mapping to data sources per environment (DTAP)"]
+  layer1 --> pro
+  layer2 --> pro
+  layer3 --> pro
+  pro --> maplayer
+  maplayer --> serviceconfiguration
   pro --> addon
+  addon --> serviceconfiguration
+  addon --> databasehint
+  mapx --> databasehint
+  databasehint --> serverconfiguration
+  mapx --> serviceconfiguration
+  serviceconfiguration --> git
+  serviceconfiguration --> serverconfiguration
   addon --> mapx
   mapx --> git
+  serverconfiguration --> git
+  databasehint --> git
   git --> pipeline
-  transfer --> pipeline
   pipeline --> portal
 ```
 
 ### ✅ Step-by-Step Deployment Flow
 
-1. **Create your image map in ArcGIS Pro**
-    Drag and drop your image files into the map.
-    Create pyramids if needed.
+1. **Create your multi-db map in ArcGIS Pro**
+    Drag and drop your layers from different database sources into the map.
     Design your layer symbology, labels, pop-ups, etc.
 
-2. **Publish as Web Map to ArcGIS Portal**
-   Use “Share as Web Map” to publish the image layer to your Portal.
+2. **Publish as Web Layer to ArcGIS Portal**
+   Use “Share” — “Web Layer” — “Publish as Web Layer” to publish the web layer to your Portal.
       
-⚠ Before publishing check the _Allow assignment of unique numeric IDs for sharing web layers_ under map properties — General.
+⚠ Before publishing check the _Allow assignment of unique numeric IDs for sharing web layers_ under map properties — General. This is required for GaiaBuilder to identify layers correctly.
 
 3. **Configure the Portal item**
    
@@ -63,9 +74,29 @@ graph LR
    * 👥 Group permissions
    * 🏷️ Tags and categories
 
-4. ** Set the database hint **
-   After setting the default database hint, you can set the per layer hint by clicking on the _Load Active Map_ button under Add-In tab — Export Map to JSON chevron down — Generate Mapx JSON Import configuration.
-   ![Generate Mapx JSON Import configuration](Generate_Mapx_JSON_Import_configuration.png.png)
+4. **Generate MAPX JSON import configuration**
+   
+   Open “Add-In tab” — “Export Map to JSON chevron” — “Generate MAPX JSON import configuration”.
+   ![Generate MAPX JSON import configuration](img_638923309592003056.png) 
+
+   After entering the Default database hint, and Default database map filename, using the tool, you can set the per layer hint by clicking on the _Load Active Map_ button under Add-In tab — Export Map to JSON chevron down — Generate Mapx JSON Import configuration.
+
+<Details><Summary>Example configuration for virtual DTAP environment strategy.</Summary>
+Our configuration has four layers, spanning over three databases, trolley lines and stations in asset.
+
+![Our configuration](img_638923312407145166.png)
+</Details>
+
+#### Database Hint Resolution
+Order:
+1. Per-layer databaseHint (non-null / present)
+2. defaulthint (fallback)
+
+Rules:
+- Omit databaseHint or set null to inherit defaulthint.
+- Each value must match a registered datasource alias on the target server.
+- Semicolon acts as a delimiter for multiple hints; keep it for consistency (e.g., asset_info_dev;).
+- If you change layer composition and serviceLayerId shifts, regenerate the MAPX JSON import configuration.
 
 5. **Import service configuration**
    This allows GaiaBuilder to recreate or sync services in other environments from the exported JSON. 
@@ -81,8 +112,10 @@ Our configuration has been designed to support a virtual DTAP (Development, Test
 </Details>
 
 6. **Configure environments**
-   Remove the environments you do not want to configure for this deployment. Then set the Datasources created in step 4, prepend the database hint with the environment prefix or suffix, e.g. `dev.`, `test.`, `acc.`, `prod.`.
+   Remove the environments you do not want to configure for this deployment. Then set the Datasources created in step 4, ensure the database hint file matches with the environment, e.g. `dev.`, `test.`, `acc.`, `prod.` matches DEV, TEST, ACC, PROD.
    The sharing configuration is also set per environment, tying in the datasources, portal item rewrites, and group sharing.
+
+   The semicolon is required for postfix database hints, like 'demo_dev;', to distinguish it from a username or schema with a similar name. It's optional otherwise, ensuring robust literal lookups when needed.
 <Details><Summary>Example dev.databasehint.json from our environment.</Summary>
 
 ```json
@@ -92,7 +125,7 @@ Our configuration has been designed to support a virtual DTAP (Development, Test
       "layerName": "LetterFeatures",
       "username": "demo",
       "serviceLayerId": 3,
-      "databaseHint": "demo_dev;"
+      "databaseHint": null
     },
     {
       "layerName": "Parcels of San Diego County",
@@ -129,54 +162,53 @@ Our configuration has been designed to support a virtual DTAP (Development, Test
 ```json
 {
     "servers": {
-
-        "ACC_IMAGE": {        
-            "portalFolder": "acc",        
-            "serverFolder": "ACC",
-            "datasources": [],
-            "sharing": {
-                "esriEveryone": "false",
-                "groups": [
-                    "Demo ACC"
-                ],
-                "organization": "false"
-            }
-        },
-        "DEV_IMAGE": {
-            "portalFolder": "dev",        
+        "DEV": {
+            "portalFolder": "dev",
             "serverFolder": "DEV",
-            "datasources": [],
-            "sharing": {
-                "esriEveryone": "false",
-                "groups": [
-                    "Demo DEV"
-                ],
-                "organization": "false"
-            }
+            "portalLogo": "thumbnail_dev.png",
+            "portalTitle": "Multi DB Map Demo --DEV--_MIL1",
+            "datasources": [
+                {
+                    "datajson": "dev.databasehint.json"
+                }
+            ],
+            "sharingjson": "dev.sharing.json"
         },
-        "PROD_IMAGE": {
-            "portalFolder": "prod",        
-            "serverFolder": "PROD",
-            "datasources": [],
-            "sharing": {
-                "esriEveryone": "false",
-                "groups": [
-                    "Demo PROD"
-                ],
-                "organization": "false"
-            }
-        },
-        "TEST_IMAGE": {
-            "portalFolder": "test",        
+        "TEST": {
+            "portalFolder": "test",
             "serverFolder": "TEST",
-            "datasources": [],
-            "sharing": {
-                "esriEveryone": "false",
-                "groups": [
-                    "Demo TEST"
-                ],
-                "organization": "false"
-            }
+            "portalLogo": "thumbnail_test.png",
+            "portalTitle": "Multi DB Map Demo --TEST--_MIL1",
+            "datasources": [
+                {
+                    "datajson": "test.databasehint.json"
+                }
+            ],
+            "sharingjson": "test.sharing.json"
+        },
+        "ACC": {
+            "portalFolder": "acc",
+            "serverFolder": "ACC",
+            "portalLogo": "thumbnail_acc.png",
+            "portalTitle": "Multi DB Map Demo --ACC--_MIL1",
+            "datasources": [
+                {
+                    "datajson": "acc.databasehint.json"
+                }
+            ],
+            "sharingjson": "acc.sharing.json"
+        },
+        "PROD": {
+            "portalFolder": "prod",
+            "serverFolder": "PROD",
+            "portalLogo": "thumbnail_prod.png",
+            "portalTitle": "Multi DB Map Demo --PROD--_MIL1",
+            "datasources": [
+                {
+                    "datajson": "prod.databasehint.json"
+                }
+            ],
+            "sharingjson": "prod.sharing.json"
         }
     }
 }
@@ -211,7 +243,7 @@ Our configuration has been designed to support a virtual DTAP (Development, Test
 
 This example works on any runner or agent that supports PowerShell and Python (with Conda) [^1]:
 
-It is identitical to the Publish a Map Service script, but some parameters are not used.
+It is identical to the Publish a Map Service script, but some parameters are not used.
 
 ```powershell
 & "$env:CondaHook"
