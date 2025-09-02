@@ -1,0 +1,1140 @@
+{
+    "layers": [
+        {
+            "id": 1,
+            "popupInfo": {
+                "expressionInfos": [],
+                "fieldInfos": [
+                    {
+                        "fieldName": "objectid",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": false,
+                        "label": "OBJECTID",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "desc_",
+                        "isEditable": true,
+                        "label": "Description",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "line",
+                        "isEditable": true,
+                        "label": "LINE",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "website",
+                        "isEditable": true,
+                        "label": "Website",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "notes",
+                        "isEditable": true,
+                        "label": "Notes",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "st_length(shape)",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": false,
+                        "label": "st_length(shape)",
+                        "visible": true
+                    }
+                ],
+                "mediaInfos": [],
+                "popupElements": [
+                    {
+                        "fieldInfos": [
+                            {
+                                "fieldName": "objectid",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": false,
+                                "label": "OBJECTID",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "desc_",
+                                "isEditable": true,
+                                "label": "Description",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "line",
+                                "isEditable": true,
+                                "label": "LINE",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "website",
+                                "isEditable": true,
+                                "label": "Website",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "notes",
+                                "isEditable": true,
+                                "label": "Notes",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "st_length(shape)",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": false,
+                                "label": "st_length(shape)",
+                                "visible": true
+                            }
+                        ],
+                        "type": "fields"
+                    }
+                ],
+                "title": "{desc_}"
+            }
+        },
+        {
+            "id": 2,
+            "popupInfo": {
+                "expressionInfos": [],
+                "fieldInfos": [
+                    {
+                        "fieldName": "objectid",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": false,
+                        "label": "OBJECTID",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "city",
+                        "isEditable": true,
+                        "label": "CITY",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "type",
+                        "isEditable": true,
+                        "label": "Type",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "trolleyline",
+                        "isEditable": true,
+                        "label": "Trolley Line",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "name",
+                        "isEditable": true,
+                        "label": "NAME",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "website",
+                        "isEditable": true,
+                        "label": "Website",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "notes",
+                        "isEditable": true,
+                        "label": "Notes",
+                        "visible": true
+                    }
+                ],
+                "mediaInfos": [],
+                "popupElements": [
+                    {
+                        "fieldInfos": [
+                            {
+                                "fieldName": "objectid",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": false,
+                                "label": "OBJECTID",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "city",
+                                "isEditable": true,
+                                "label": "CITY",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "type",
+                                "isEditable": true,
+                                "label": "Type",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "trolleyline",
+                                "isEditable": true,
+                                "label": "Trolley Line",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "name",
+                                "isEditable": true,
+                                "label": "NAME",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "website",
+                                "isEditable": true,
+                                "label": "Website",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "notes",
+                                "isEditable": true,
+                                "label": "Notes",
+                                "visible": true
+                            }
+                        ],
+                        "type": "fields"
+                    }
+                ],
+                "title": "{name}"
+            }
+        },
+        {
+            "id": 3,
+            "popupInfo": {
+                "expressionInfos": [],
+                "fieldInfos": [
+                    {
+                        "fieldName": "objectid",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": false,
+                        "label": "objectid",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "name",
+                        "isEditable": true,
+                        "label": "name",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "st_area(shape)",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": false,
+                        "label": "st_area(shape)",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "st_length(shape)",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": false,
+                        "label": "st_length(shape)",
+                        "visible": true
+                    }
+                ],
+                "mediaInfos": [],
+                "popupElements": [
+                    {
+                        "fieldInfos": [
+                            {
+                                "fieldName": "objectid",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": false,
+                                "label": "objectid",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "name",
+                                "isEditable": true,
+                                "label": "name",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "st_area(shape)",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": false,
+                                "label": "st_area(shape)",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "st_length(shape)",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": false,
+                                "label": "st_length(shape)",
+                                "visible": true
+                            }
+                        ],
+                        "type": "fields"
+                    }
+                ],
+                "title": "{name}"
+            }
+        },
+        {
+            "id": 4,
+            "popupInfo": {
+                "expressionInfos": [],
+                "fieldInfos": [
+                    {
+                        "fieldName": "objectid_1",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": false,
+                        "label": "objectid_1",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "apn",
+                        "isEditable": true,
+                        "label": "apn",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "apn_8",
+                        "isEditable": true,
+                        "label": "apn_8",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "parcelid",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "parcelid",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "own_name1",
+                        "isEditable": true,
+                        "label": "own_name1",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "own_name2",
+                        "isEditable": true,
+                        "label": "own_name2",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "own_name3",
+                        "isEditable": true,
+                        "label": "own_name3",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "fractint",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": true,
+                        "label": "fractint",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "own_addr1",
+                        "isEditable": true,
+                        "label": "own_addr1",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "own_addr2",
+                        "isEditable": true,
+                        "label": "own_addr2",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "own_addr3",
+                        "isEditable": true,
+                        "label": "own_addr3",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "own_addr4",
+                        "isEditable": true,
+                        "label": "own_addr4",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "own_zip",
+                        "isEditable": true,
+                        "label": "own_zip",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_juri",
+                        "isEditable": true,
+                        "label": "situs_juri",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_stre",
+                        "isEditable": true,
+                        "label": "situs_stre",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_suff",
+                        "isEditable": true,
+                        "label": "situs_suff",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_post",
+                        "isEditable": true,
+                        "label": "situs_post",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_pre_",
+                        "isEditable": true,
+                        "label": "situs_pre_",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_addr",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "situs_addr",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_frac",
+                        "isEditable": true,
+                        "label": "situs_frac",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_buil",
+                        "isEditable": true,
+                        "label": "situs_buil",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_suit",
+                        "isEditable": true,
+                        "label": "situs_suit",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "situs_comm",
+                        "isEditable": true,
+                        "label": "situs_comm",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "legldesc",
+                        "isEditable": true,
+                        "label": "legldesc",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "asr_land",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "asr_land",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "asr_impr",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "asr_impr",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "asr_total",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "asr_total",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "doctype",
+                        "isEditable": true,
+                        "label": "doctype",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "docnmbr",
+                        "isEditable": true,
+                        "label": "docnmbr",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "docdate",
+                        "isEditable": true,
+                        "label": "docdate",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "acreage",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": true,
+                        "label": "acreage",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "taxstat",
+                        "isEditable": true,
+                        "label": "taxstat",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "ownerocc",
+                        "isEditable": true,
+                        "label": "ownerocc",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "tranum",
+                        "isEditable": true,
+                        "label": "tranum",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "asr_zone",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "asr_zone",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "nucleus_zo",
+                        "isEditable": true,
+                        "label": "nucleus_zo",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "asr_landus",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "asr_landus",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "nucleus_us",
+                        "isEditable": true,
+                        "label": "nucleus_us",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "submap",
+                        "isEditable": true,
+                        "label": "submap",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "subname",
+                        "isEditable": true,
+                        "label": "subname",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "unitqty",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "unitqty",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "x_coord",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": true,
+                        "label": "x_coord",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "y_coord",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": true,
+                        "label": "y_coord",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "multi",
+                        "isEditable": true,
+                        "label": "multi",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "overlay_ju",
+                        "isEditable": true,
+                        "label": "overlay_ju",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "sub_type",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "sub_type",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "addrno",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "addrno",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "addrfrac",
+                        "isEditable": true,
+                        "label": "addrfrac",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "addrunit",
+                        "isEditable": true,
+                        "label": "addrunit",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "roadpdir",
+                        "isEditable": true,
+                        "label": "roadpdir",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "roadname",
+                        "isEditable": true,
+                        "label": "roadname",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "roadsfx",
+                        "isEditable": true,
+                        "label": "roadsfx",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "zip",
+                        "isEditable": true,
+                        "label": "zip",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "objectid",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 0
+                        },
+                        "isEditable": true,
+                        "label": "objectid",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "st_area(shape)",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": false,
+                        "label": "st_area(shape)",
+                        "visible": true
+                    },
+                    {
+                        "fieldName": "st_length(shape)",
+                        "format": {
+                            "digitSeparator": false,
+                            "places": 6
+                        },
+                        "isEditable": false,
+                        "label": "st_length(shape)",
+                        "visible": true
+                    }
+                ],
+                "mediaInfos": [],
+                "popupElements": [
+                    {
+                        "fieldInfos": [
+                            {
+                                "fieldName": "objectid_1",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": false,
+                                "label": "objectid_1",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "apn",
+                                "isEditable": true,
+                                "label": "apn",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "apn_8",
+                                "isEditable": true,
+                                "label": "apn_8",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "parcelid",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "parcelid",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "own_name1",
+                                "isEditable": true,
+                                "label": "own_name1",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "own_name2",
+                                "isEditable": true,
+                                "label": "own_name2",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "own_name3",
+                                "isEditable": true,
+                                "label": "own_name3",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "fractint",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": true,
+                                "label": "fractint",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "own_addr1",
+                                "isEditable": true,
+                                "label": "own_addr1",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "own_addr2",
+                                "isEditable": true,
+                                "label": "own_addr2",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "own_addr3",
+                                "isEditable": true,
+                                "label": "own_addr3",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "own_addr4",
+                                "isEditable": true,
+                                "label": "own_addr4",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "own_zip",
+                                "isEditable": true,
+                                "label": "own_zip",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_juri",
+                                "isEditable": true,
+                                "label": "situs_juri",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_stre",
+                                "isEditable": true,
+                                "label": "situs_stre",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_suff",
+                                "isEditable": true,
+                                "label": "situs_suff",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_post",
+                                "isEditable": true,
+                                "label": "situs_post",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_pre_",
+                                "isEditable": true,
+                                "label": "situs_pre_",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_addr",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "situs_addr",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_frac",
+                                "isEditable": true,
+                                "label": "situs_frac",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_buil",
+                                "isEditable": true,
+                                "label": "situs_buil",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_suit",
+                                "isEditable": true,
+                                "label": "situs_suit",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "situs_comm",
+                                "isEditable": true,
+                                "label": "situs_comm",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "legldesc",
+                                "isEditable": true,
+                                "label": "legldesc",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "asr_land",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "asr_land",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "asr_impr",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "asr_impr",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "asr_total",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "asr_total",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "doctype",
+                                "isEditable": true,
+                                "label": "doctype",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "docnmbr",
+                                "isEditable": true,
+                                "label": "docnmbr",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "docdate",
+                                "isEditable": true,
+                                "label": "docdate",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "acreage",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": true,
+                                "label": "acreage",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "taxstat",
+                                "isEditable": true,
+                                "label": "taxstat",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "ownerocc",
+                                "isEditable": true,
+                                "label": "ownerocc",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "tranum",
+                                "isEditable": true,
+                                "label": "tranum",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "asr_zone",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "asr_zone",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "nucleus_zo",
+                                "isEditable": true,
+                                "label": "nucleus_zo",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "asr_landus",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "asr_landus",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "nucleus_us",
+                                "isEditable": true,
+                                "label": "nucleus_us",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "submap",
+                                "isEditable": true,
+                                "label": "submap",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "subname",
+                                "isEditable": true,
+                                "label": "subname",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "unitqty",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "unitqty",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "x_coord",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": true,
+                                "label": "x_coord",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "y_coord",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": true,
+                                "label": "y_coord",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "multi",
+                                "isEditable": true,
+                                "label": "multi",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "overlay_ju",
+                                "isEditable": true,
+                                "label": "overlay_ju",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "sub_type",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "sub_type",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "addrno",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "addrno",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "addrfrac",
+                                "isEditable": true,
+                                "label": "addrfrac",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "addrunit",
+                                "isEditable": true,
+                                "label": "addrunit",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "roadpdir",
+                                "isEditable": true,
+                                "label": "roadpdir",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "roadname",
+                                "isEditable": true,
+                                "label": "roadname",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "roadsfx",
+                                "isEditable": true,
+                                "label": "roadsfx",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "zip",
+                                "isEditable": true,
+                                "label": "zip",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "objectid",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 0
+                                },
+                                "isEditable": true,
+                                "label": "objectid",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "st_area(shape)",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": false,
+                                "label": "st_area(shape)",
+                                "visible": true
+                            },
+                            {
+                                "fieldName": "st_length(shape)",
+                                "format": {
+                                    "digitSeparator": false,
+                                    "places": 6
+                                },
+                                "isEditable": false,
+                                "label": "st_length(shape)",
+                                "visible": true
+                            }
+                        ],
+                        "type": "fields"
+                    }
+                ],
+                "title": "{own_name1}"
+            }
+        }
+    ]
+}

@@ -1,9 +1,9 @@
-﻿Multi DB Map Config
+﻿Advanced Sharing Config
 ===================
-### 🆕 Advanced configuration of datasource per layer
-As of version 3.11 different layers can connect to different databases with the same database user, enhancing the database hints by providing a per layer hint.
+### 🆕 Advanced configuration of sharing per environment
+As of version 3.11, sharing configurations can be customized per environment, allowing for environment-specific group permissions, portal folders, and item rewrites.
 
-**Note:** In the example below, [advanced sharing configurations](../Advanced Sharing Configurations/README.md) are also shown. These are optional and can be used independently of the multi-DB setup.
+**Note:** In the example below, multi-DB map configurations are also shown. These are optional and can be used independently of the advanced sharing setup.
 
 ### 🧠 Assumptions
 
@@ -154,8 +154,25 @@ Our configuration has been designed to support a virtual DTAP (Development, Test
 
 </Details>
 
+<Details><Summary>Example dev.sharing.json for advanced sharing.</Summary>
+
+```json
+{
+    "esriEveryone": "false",
+    "groups": [
+        "Demo DEV"
+    ],
+    "organization": "false",
+    "parent": "",
+    "unshare": "true",
+    "unsharegroups": []
+}
+```
+
+</Details>
+
 7. **(Optional) Edit server configuration manually**
-   For advanced scenarios, edit the server JSON directly to override publishing behavior.
+   For advanced scenarios, edit the server JSON directly to override publishing behavior, including custom sharing per environment.
 
 <Details>
 <Summary>Expand for example Server.json</Summary>
@@ -292,18 +309,12 @@ env:
   PASSWORD: $(PASSWORD)
   API_KEY: $(API_KEY)  # Use either this or USER/PASSWORD, not all together
 ```
-
 This ensures your credentials and API keys do not appear in logs or version control.
-
 
 ---
 After deployment, verify your map service in the ArcGIS REST Services Directory or ArcGIS Pro Catalog before promoting to higher environments.
 
-### Seamless Import Back into ArcGIS Pro
-To import the map seamlessly back into ArcGIS Pro while automatically applying the database hints to the layers, use the `dev.databasehint.json` file (or the equivalent for your environment) instead of directly using `map.mapx.json`. In the GaiaBuilder Add-In, select the option to import using the database hint JSON. This will load the map structure and apply the per-layer database hints directly during import, ensuring connections to the correct datasources without manual reconfiguration.
-
 
 [^1]: ## 🧾 GaiaBuilder CLI Options
 InstallMapserviceTool and the light version (without an arcpy dependency) command line options are documented [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallMapserviceTool)
-
 

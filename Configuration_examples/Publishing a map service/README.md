@@ -843,7 +843,7 @@ env:
   API_KEY: $(API_KEY)  # Use either this or USER/PASSWORD, not all together
 ```
 
-This ensures your credentials do not appear in logs or version control.
+This ensures your credentials and API keys do not appear in logs or version control.
 
 ---
 After deployment, verify your map service in the ArcGIS REST Services Directory or ArcGIS Pro Catalog before promoting to higher environments.

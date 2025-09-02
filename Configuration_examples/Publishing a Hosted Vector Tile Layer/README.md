@@ -372,7 +372,7 @@ env:
   PASSWORD: $(PASSWORD)
   API_KEY: $(API_KEY)  # Use either this or USER/PASSWORD, not all together
 ```
-This ensures your credentials do not appear in logs or version control.
+This ensures your credentials and API keys do not appear in logs or version control.
 
 ---
 
