@@ -44,7 +44,7 @@ As a portal admin, you can create an API Key with specific privileges to allow G
 GaiaBuilder requires a minimal set of privileges to function effectively. As of version 3.11, features like creating groups are not supported. Below is a transformed representation of the necessary privileges, optimized for least privilege access, using a nested structure.
 
 ### General Privileges
-- [ ] View
+- [x] View
   - Allow application to view members of the organization.
 
 ### Content Privileges
