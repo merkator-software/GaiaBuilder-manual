@@ -1,4 +1,4 @@
-# Publishing an Experience Builder App
+﻿# Publishing an Experience Builder App
 
 This guide builds on the steps described in [Publishing a Map Service](../Publishing%20a%20map%20service/README.md). This means there is already a webmap published in Portal.
 
@@ -221,13 +221,13 @@ python $scriptPath $args
 ```
 
 ### 🔐 Environment Variables
-
-Avoid using `-u` and `-p` arguments directly in CI environments. Instead, securely set these values using your CI/CD environment's secret store:
-
+The -u and -p arguments are not safe to use in most CI environments and are intended for standalone use only.
+Instead, set these values securely using your CI/CD environment's secret store. As of version 3.11, you can use either `USER` and `PASSWORD` or an `API_KEY` for authentication, depending on your needs. See [Security Best Practices](../../docs/Security-Best-Practices.md) for details.
 ```yaml
 env:
-    USER: $(USER)
-    PASSWORD: $(PASSWORD)
+  USER: $(USER)
+  PASSWORD: $(PASSWORD)
+  API_KEY: $(API_KEY)  # Use either this or USER/PASSWORD, not all together
 ```
 
 ---

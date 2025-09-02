@@ -1,4 +1,4 @@
-# Copying and Styling Vector Tile Layers
+﻿# Copying and Styling Vector Tile Layers
 
 In this example we demonstrate the publishing and sharing of a vector tile service in a virtual DTAP environment in ArcGIS Enterprise.
 
@@ -238,12 +238,13 @@ python $scriptPath $args
 
 ### 🔐 Environment Variables
 
-Avoid using `-u` and `-p` arguments directly in CI environments. Instead, securely set these values using your CI/CD environment's secret store:
-
+The -u and -p arguments are not safe to use in most CI environments and are intended for standalone use only.
+Instead, set these values securely using your CI/CD environment's secret store. As of version 3.11, you can use either `USER` and `PASSWORD` or an `API_KEY` for authentication, depending on your needs. See [Security Best Practices](../../docs/Security-Best-Practices.md) for details.
 ```yaml
 env:
-    USER: $(USER)
-    PASSWORD: $(PASSWORD)
+  USER: $(USER)
+  PASSWORD: $(PASSWORD)
+  API_KEY: $(API_KEY)  # Use either this or USER/PASSWORD, not all together
 ```
 
 ---

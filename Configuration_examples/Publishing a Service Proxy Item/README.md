@@ -269,12 +269,15 @@ python $scriptPath $args
 
 Securely set these values using your CI/CD environment's secret store, note that the GIS_PROXY_USER can differ from the deployment agent with access to the :
 
+The -u and -p arguments are not safe to use in most CI environments and are intended for standalone use only.
+Instead, set these values securely using your CI/CD environment's secret store. As of version 3.11, you can use either `USER` and `PASSWORD` or an `API_KEY` for authentication, depending on your needs. See [Security Best Practices](../../docs/Security-Best-Practices.md) for details.
 ```yaml
 env:
-    USER: $(USER)
-    PASSWORD: $(PASSWORD)
-    GIS_PROXY_USER: $(GIS_PROXY_USER)
-    GIS_PROXY_PASSWORD: $(GIS_PROXY_PASSWORD)
+  USER: $(USER)
+  PASSWORD: $(PASSWORD)
+  API_KEY: $(API_KEY)  # Use either this or USER/PASSWORD, not all together
+  GIS_PROXY_USER: $(GIS_PROXY_USER)
+  GIS_PROXY_PASSWORD: $(GIS_PROXY_PASSWORD)
 ```
 
 ---

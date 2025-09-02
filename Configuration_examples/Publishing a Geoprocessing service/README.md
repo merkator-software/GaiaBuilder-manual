@@ -239,14 +239,13 @@ if ($LASTEXITCODE -ne 0) {
 ```
 
 ### 🔐 Environment Variables
-
 The -u and -p arguments are not safe to use in most CI environments and are intended for standalone use only.
-Instead, set these values securely using your CI/CD environment's secret store:
-
+Instead, set these values securely using your CI/CD environment's secret store. As of version 3.11, you can use either `USER` and `PASSWORD` or an `API_KEY` for authentication, depending on your needs. See [Security Best Practices](../../docs/Security-Best-Practices.md) for details.
 ```yaml
 env:
   USER: $(USER)
   PASSWORD: $(PASSWORD)
+  API_KEY: $(API_KEY)  # Use either this or USER/PASSWORD, not all together
 ```
 
 This ensures your credentials do not appear in logs or version control.
