@@ -32,7 +32,8 @@ As a portal admin, you can create an API Key with specific privileges to allow G
 2. Set Expiration date (up to one year).
 3. Set Referrer URLs (this needs to match the `referer` in the `gaiaBuilder.ini` on the server) and click "Next".
 4. Set Privileges (see details below) and click "Next".
-5. Create API key now and copy the API key to the secret store of your environment, for example, Library in Azure DevOps.
+5. Click "Skip" on Restrict item access, in general GaiaBuilder needs to manage more than 100 items.
+6. Create API key now and copy the API key to the secret store of your environment, for example, Library in Azure DevOps.
 
 ### Best Practices for API_KEY
 - **Generate Secure Keys**: Ensure API keys are cryptographically strong, with a minimum length of 32 characters.

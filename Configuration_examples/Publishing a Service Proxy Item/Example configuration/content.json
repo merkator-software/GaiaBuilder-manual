@@ -1,0 +1,122 @@
+{
+  "action": "deployProxy",
+  "contentSelect": 1,
+  "sourcePortal": "https://demo.gaiabuilder.com/portal/",
+  "sourceGroup": "",
+  "sourceGroupId": "",
+  "sourceFolder": "",
+  "sourceFolderId": "",
+  "sourceUser": "demo.professional.plus",
+  "portalLogo": null,
+  "portalFolder": "",
+  "protected": "false",
+  "content_status": "",
+  "contentUser": "demo.professional.plus",
+  "overwrite_existing": "false",
+  "allow_layer_delete": "false",
+  "allow_field_delete": "false",
+  "items": [
+    {
+      "type": "Map Service",
+      "title": "Service Proxy — Demo --DEV--",
+      "name": "Service Proxy — Demo --DEV--",
+      "itemId": "613e140caa744f9cbdd0f1c64ee74202",
+      "sourceServiceItemId": "",
+      "descriptionjson": "613e140caa744f9cbdd0f1c64ee74202.json",
+      "datajson": "613e140caa744f9cbdd0f1c64ee74202.data.json",
+      "metadata": "",
+      "datafile": "",
+      "resourcejson": "613e140caa744f9cbdd0f1c64ee74202.resources.json",
+      "relationjson": "613e140caa744f9cbdd0f1c64ee74202.relations.json",
+      "servicejson": null,
+      "servicewebhooks": null,
+      "portalLogo": null,
+      "rewrites": {
+        "environmentRewrite": "--DEV--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+      },
+      "sourceUrl": "https://demo.gaiabuilder.com/portal/sharing/servers/613e140caa744f9cbdd0f1c64ee74202/rest/services/DEV/San_Diego_Letters_MIL1/MapServer",
+      "itemIdRewrites": [
+        "613e140caa744f9cbdd0f1c64ee74202"
+      ],
+      "categories": [],
+      "sharing": null,
+      "portalFolder": null
+    }
+  ],
+  "excluded_items": [],
+  "servers": {
+    "DEV": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--DEV--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+      },
+      "portalLogo": "thumbnail_dev.png",
+      "portalFolder": "dev",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": [
+          "Demo DEV"
+        ]
+      },
+      "layersuffix": ""
+    },
+    "TEST": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--TEST--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/TEST"
+      },
+      "portalLogo": "thumbnail_test.png",
+      "portalFolder": "test",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": [
+          "Demo TEST"
+        ]
+      },
+      "layersuffix": ""
+    },
+    "ACC": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--ACC--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/ACC"
+      },
+      "portalLogo": "thumbnail_acc.png",
+      "portalFolder": "acc",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": [
+          "Demo ACC"
+        ]
+      },
+      "layersuffix": ""
+    },
+    "PROD": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--PROD--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/PROD"
+      },
+      "portalLogo": "thumbnail_prod.png",
+      "portalFolder": "prod",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": [
+          "Demo PROD"
+        ]
+      },
+      "layersuffix": ""
+    }
+  }
+}
