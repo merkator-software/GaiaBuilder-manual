@@ -50,17 +50,17 @@ GaiaBuilder requires a minimal set of privileges to function effectively. As of 
 
 ### Content Privileges
 - [x] Create, update, and delete
-  - Allow application to create, edit, and delete the application owner's content.
+  - (Required) Allow application to create, edit, and delete the application owner's content.
 - [x] Publish hosted feature layers
-  - Allow application to publish hosted feature layers from shapefiles, CSVs, etc.
+  - (Optional) Allow application to publish hosted feature layers from shapefiles, CSVs, etc.
 - [x] Publish server-based layers
   - This privilege grants the ability to publish layers powered by services from federated server sites. These services often reference registered data from geodatabases or file-based data sources.
 - [x] Register data stores
-  - This privilege grants the ability to register data stores to the portal.
+  - (Optional) This privilege grants the ability to register data stores to the portal.
 - [x] Reassign ownership
   - Allow application to reassign content to other members within your organization.
 - [x] Publish web tools
-  - This privilege grants the ability to publish web tools backed by geoprocessing services from federated server sites.
+  - (Optional) This privilege grants the ability to publish web tools backed by geoprocessing and print services from federated server sites.
 
 ### Sharing Privileges
 - [x] Share with portal
