@@ -1,18 +1,29 @@
+$exitcode = 0
+Write-Host $($env:server)
 $manual_build_list = $($env:manual_build_list)
+$includecontent = "1"
+if ($env:includecontent -eq "0")
+{
+    $includecontent = "0"
+}
 
 $temp = @()
 
 ## define the list of content.json files to be build
 $content = @()
-## define the list of mapservice configuration files to be build
 $build = @()
-
-#default exitcode is 0, non zero exitcode will fail the build
-$exitcode = 0
+$gpservices =@()
 
 if ($manual_build_list.Length -gt 0){
     Write-Output "Activating manual build from list"
-    $temp = $manual_build_list -split ','
+    if ($manual_build_list -eq "*")
+    {
+        $temp = Get-ChildItem -Path .\ -Filter *.json -Name -Recurse
+    }
+    else
+    {
+        $temp = $manual_build_list -split ','
+    }
 }
 else{
     ## get all the changed files
@@ -31,19 +42,37 @@ For ($i=0; $i -lt $temp.Length; $i++)
     $fulldir = Join-Path $dir $path_no_file
     
     $cffile = Join-Path $fulldir "content.json"
+    $gpfile = Join-Path $fulldir "gpservice.json"
+    Write-Host $gpfile
+    Test-Path $gpfile
     $aprxjsonfile = Join-Path $fulldir $filename
     
     If ($name -match '.aprx.json$')
     {
-        If (-Not $build.Contains($aprxjsonfile))
+        # Huidige CI strategie rolt services uit naar MAPSO enterprise, de *.online.aprx.json is een specifieke configuratie voor ArcGIS online.
+        # CI pipeline voor services verwacht de server entry MAPSO in de config. Deze key mist in de .online.aprx.json waardoor de CI pipeline faalt.
+        # --> ERROR:root:Unexpected error while deploying the mapservice: 'MAPSO'
+        If ($name -match '.online.aprx.json$')
         {
-            $build += $aprxjsonfile
-            Write-Host "Added APRX.JSON $aprxjsonfile to build list"
+            Write-Host "Found ArcGIS Online configuration file, skipping $name in CI pipeline"
         }
-        Else
+        ElseIf(Test-Path $aprxjsonfile)
         {
-            Write-Host "File $name already added to build list"
+            If (-Not $build.Contains($aprxjsonfile))
+            {
+                $build += $aprxjsonfile
+                Write-Host "Added APRX.JSON $aprxjsonfile to build list"
+            }
+            Else
+            {
+                Write-Host "File $name already added to build list"
+            }
         }
+        Else 
+        {
+            Write-Host "File $aprxjsonfile does not exist"
+        }
+
     }
     ElseIf (Test-Path $cffile)
     {
@@ -55,6 +84,18 @@ For ($i=0; $i -lt $temp.Length; $i++)
         Else
         {
             Write-Host "File $cffile already added to Content list"
+        }
+    }
+    ElseIf (Test-Path $gpfile)
+    {
+        If (-Not $gpservices.Contains($gpfile))
+        {
+            $gpservices += $gpfile
+            Write-Host "Added $gpfile to GPService list"
+        }
+        Else
+        {
+            Write-Host "File $gpfile already added to GPService list"
         }
     }        
     Else
@@ -84,19 +125,23 @@ For ($i=0; $i -lt $temp.Length; $i++)
         $match_pattern = -join($match_pattern,'.*aprx.json')
         Write-Host $match_pattern $name
         $mapfiles = Get-ChildItem (Resolve-Path .\) -Recurse -Include $match_pattern
+        Write-Host $mapfiles
         For ($j=0; $j -lt $mapfiles.Length; $j++)
         {
-            $mapfile = $mapfiles[$j]
+            $mapfile =  $mapfiles[$j]
             If($mapfile) #empty strings will be ignored by this test
             {
-                If (-Not $build.Contains($mapfile))
+                If(Test-Path $mapfile)
                 {
-                    $build += $mapfile
-                    Write-Host "Added $mapfile to build list"
-                }
-                Else
-                {
-                    Write-Host "File $mapfile already added to build list"
+                    If (-Not $build.Contains($mapfile))
+                    {
+                        $build += $mapfile
+                        Write-Host "Added $mapfile to build list"
+                    }
+                    Else
+                    {
+                        Write-Host "File $mapfile already added to build list"
+                    }
                 }
             }
         }
@@ -105,21 +150,37 @@ For ($i=0; $i -lt $temp.Length; $i++)
 
 For ($i=0; $i -lt $build.Length; $i++)
 {
+    $rw = $($env:rewrite_connection)
+    $restore_param = ""
+    if ($rw -eq "1" -or $rw -eq $null){
+        $restore_param = "-q true"
+    }
     $buildthis = $build[$i]
-    $arguments = "D:\GaiaBuilderServerTools\InstallMapservice_lite.py -f $buildthis -s $($env:server) -r false -q true -c true -d false -h true -i true -a true -z true -m true -t false"
+    $arguments = "D:\GaiaBuilderServerTools\InstallMapservice_lite.py -f $buildthis -s $($env:server) -r false $restore_param -c true -d false -h true -i true -a true -z true -m true -t false"
     Write-Host $arguments
     ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
     $process =  Start-Process -FilePath "D:\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
     $exitcode = $exitcode + $process.ExitCode
 }
 
-For ($i=0; $i -lt $content.Length; $i++)
+For ($i=0; $i -lt $gpservices.Length; $i++)
 {
-    $buildthis = $content[$i]
-    $arguments = "D:\GaiaBuilderServerTools\InstallContent_lite.py -f $buildthis -s $($env:server)"
+    $buildthis = $gpservices[$i]
+    $arguments = "D:\GaiaBuilderServerTools\InstallGeoProcessor_lite.py -f $buildthis -s $($env:server)"
     Write-Host $arguments
     ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
     $process =  Start-Process -FilePath "D:\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
     $exitcode = $exitcode + $process.ExitCode
+}
+if ($includecontent -eq "1"){
+    For ($i=0; $i -lt $content.Length; $i++)
+    {
+        $buildthis = $content[$i]
+        $arguments = "D:\GaiaBuilderServerTools\InstallContent_lite.py -f $buildthis -s $($env:server)"
+        Write-Host $arguments
+        ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
+        $process =  Start-Process -FilePath "D:\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
+        $exitcode = $exitcode + $process.ExitCode
+    }
 }
 exit $exitcode
