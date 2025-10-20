@@ -1,4 +1,4 @@
-{
+﻿{
   "action": "publishSD",
   "stageScript": "stage.py",
   "toolbox": "Demo_GP_Service.pyt",
@@ -29,6 +29,6 @@
   "serverconfiguration": "server.json",
   "serviceType": "GPServer",
   "summary": "Contoso GP service summary example.",
-  "tags": "Geoprocessing,Service,Contoso,Example,Basic math,Add",
+  "tags": "Geoprocessing,Service,Contoso,Example,Basic math,Add,Divide",
   "uselimitations": "For demonstration purposes only."
 }
