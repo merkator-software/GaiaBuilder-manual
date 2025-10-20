@@ -1,4 +1,4 @@
-﻿#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Name:        InstallMapserviceTool
 # Purpose:     Example code running a custom tool, staging and publishing
 #
@@ -12,11 +12,41 @@ import xml.dom.minidom as DOM
 
 #modify this function to run your toolbox
 def runTheTool(toolbox):
-    # Run the tool and set to a result object
+    # Import the toolbox with the 'basicmath' alias
     arcpy.ImportToolbox(toolbox, 'basicmath')
     
-    result = arcpy.basicmath.AddNumbers(1,2)
-    return [result]
+    # List to store results
+    results = []
+    
+    # Run AddNumbers tool with valid inputs (1 + 2)
+    try:
+        add_result = arcpy.basicmath.AddNumbers(1, 2)
+        results.append(add_result)
+        arcpy.AddMessage(f"AddNumbers result: {add_result}")
+    except Exception as e:
+        arcpy.AddError(f"AddNumbers failed: {str(e)}")
+    
+    # Run DivideNumbers tool with valid inputs (10 ÷ 2)
+    try:
+        div_result = arcpy.basicmath.DivideNumbers(10, 2)
+        results.append(div_result)
+        arcpy.AddMessage(f"DivideNumbers result: {div_result}")
+    except Exception as e:
+        arcpy.AddError(f"DivideNumbers failed: {str(e)}")
+    
+    # Test DivideNumbers with division by zero (10 ÷ 0)
+    try:
+        div_zero_result = arcpy.basicmath.DivideNumbers(10, 0)
+        results.append(div_zero_result)
+        arcpy.AddMessage("DivideNumbers with zero: No error caught (unexpected)")
+    except Exception as e:
+        expected_error = "Error: Division by zero is not allowed."
+        if str(e) == expected_error:
+            arcpy.AddMessage(f"DivideNumbers correctly caught division by zero: {str(e)}")
+        else:
+            arcpy.AddError(f"DivideNumbers with zero failed with unexpected error: {str(e)}")
+    
+    return results
 
 
 #do not modify code below

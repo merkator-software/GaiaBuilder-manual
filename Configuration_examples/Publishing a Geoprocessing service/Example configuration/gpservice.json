@@ -1,4 +1,4 @@
-﻿{
+{
   "action": "publishSD",
   "stageScript": "stage.py",
   "toolbox": "Demo_GP_Service.pyt",
