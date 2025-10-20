@@ -1,4 +1,4 @@
-#-------------------------------------------------------------------------------
+﻿#-------------------------------------------------------------------------------
 # Name:        InstallMapserviceTool
 # Purpose:     Example code running a custom tool, staging and publishing
 #
@@ -33,18 +33,6 @@ def runTheTool(toolbox):
         arcpy.AddMessage(f"DivideNumbers result: {div_result}")
     except Exception as e:
         arcpy.AddError(f"DivideNumbers failed: {str(e)}")
-    
-    # Test DivideNumbers with division by zero (10 ÷ 0)
-    try:
-        div_zero_result = arcpy.basicmath.DivideNumbers(10, 0)
-        results.append(div_zero_result)
-        arcpy.AddMessage("DivideNumbers with zero: No error caught (unexpected)")
-    except Exception as e:
-        expected_error = "Error: Division by zero is not allowed."
-        if str(e) == expected_error:
-            arcpy.AddMessage(f"DivideNumbers correctly caught division by zero: {str(e)}")
-        else:
-            arcpy.AddError(f"DivideNumbers with zero failed with unexpected error: {str(e)}")
     
     return results
 

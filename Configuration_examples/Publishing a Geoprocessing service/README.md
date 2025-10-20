@@ -173,7 +173,8 @@ Modify the runTheTool function in stage.py and set the result to a result object
 
 The toolbox is the relative or absolute path to the Python toolbox file (pyt) that contains the GP tool. The function should import the toolbox and call the GP tool with the required parameters.
 
-The result parameter is the output of the GP tool, which will be used to create the Service Definition, the tool should be run with the parameters that you want to test. In this example, we are adding two numbers (1 and 2) using the `AddNumbers` GP tool.
+The result parameter is the output of the GP tool, which will be used to create the Service Definition, the tool should be run with the parameters that you want to test. In this example, we are adding two numbers (1 and 2) using the `AddNumbers` GP tool, and the numerator 10 with the denominator 2 for the `DivideNumbers` GP tool.
+
 
 ```python
 import arcpy
@@ -200,18 +201,6 @@ def runTheTool(toolbox):
         arcpy.AddMessage(f"DivideNumbers result: {div_result}")
     except Exception as e:
         arcpy.AddError(f"DivideNumbers failed: {str(e)}")
-    
-    # Test DivideNumbers with division by zero (10 ÷ 0)
-    try:
-        div_zero_result = arcpy.basicmath.DivideNumbers(10, 0)
-        results.append(div_zero_result)
-        arcpy.AddMessage("DivideNumbers with zero: No error caught (unexpected)")
-    except Exception as e:
-        expected_error = "Error: Division by zero is not allowed."
-        if str(e) == expected_error:
-            arcpy.AddMessage(f"DivideNumbers correctly caught division by zero: {str(e)}")
-        else:
-            arcpy.AddError(f"DivideNumbers with zero failed with unexpected error: {str(e)}")
     
     return results
 ```
