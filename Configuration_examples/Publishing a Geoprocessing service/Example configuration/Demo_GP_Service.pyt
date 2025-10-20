@@ -6,12 +6,12 @@ import arcpy
 
 class Toolbox(object):
     def __init__(self):
-        """Define the toolbox (the name of the toolbox is the name of the is the name of the class)."""
+        """Define the toolbox (the name of the toolbox is the name of the class)."""
         self.label = "Basic Math Tools"
 					  
         self.alias = "basicmath"
 		# List of tool classes associated with this toolbox
-        self.tools = [AddNumbers]
+        self.tools = [AddNumbers, DivideNumbers]
 
 class AddNumbers(object):
 						   

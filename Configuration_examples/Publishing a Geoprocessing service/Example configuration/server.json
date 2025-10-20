@@ -1,4 +1,4 @@
-{
+﻿{
   "servers": {
     "ACC": {
       "serverFolder": "ACC",
@@ -12,7 +12,7 @@
         "organization": "false",
         "public": "false"
       },
-      "name": "Add_Number_Service_ACC",
+      "name": "Add_And_Divide_Number_Service_ACC",
       "portalLogo": "gp_thumbnail_acc.png"
     },
     "PROD": {
@@ -27,7 +27,7 @@
         "organization": "false",
         "public": "false"
       },
-      "name": "Add_Number_Service_PROD",
+      "name": "Add_And_Divide_Number_Service_PROD",
       "portalLogo": "gp_thumbnail_prod.png"
     },
     "TEST": {
@@ -42,7 +42,7 @@
         "organization": "false",
         "public": "false"
       },
-      "name": "Add_Number_Service_TEST",
+      "name": "Add_And_Divide_Number_Service_TEST",
       "portalLogo": "gp_thumbnail_test.png"
     },
     "DEV": {
@@ -57,7 +57,7 @@
         "organization": "false",
         "public": "false"
       },
-      "name": "Add_Number_Service_DEV",
+      "name": "Add_And_Divide_Number_Service_DEV",
       "portalLogo": "gp_thumbnail_dev.png"
     }
   }

@@ -16,7 +16,7 @@
   "maxUsageTime": 600,
   "maxWaitTime": 60,
   "minInstancesPerNode": 1,
-  "name": "Add_Number_Service_DEV",
+  "name": "Add_And_Divide_Number_Service_DEV",
   "portalFolder": "dev",
   "portalLogo": "gp_thumbnail_dev.png",
   "recycleInterval": 24,
