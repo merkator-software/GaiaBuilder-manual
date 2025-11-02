@@ -43,22 +43,18 @@ resources:
 
 <Details><Summary>Example pipeline configuration for updating on the pipeline for Azure Devops</Summary>
 ```yaml
-
 trigger:
 - none
-
 resources:
   webhooks:
     - webhook: VertigisUpdate
       connection: ArcGIS Enterprise Development
-
 stages:
 - stage: 'Download_Vertigis'
   jobs:
   - job: 'Download'
     pool:
       name: 'ArcgisBaseDeployment'
-
     steps:
     - checkout: self
       persistCredentials: true

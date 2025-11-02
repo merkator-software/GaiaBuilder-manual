@@ -106,17 +106,14 @@ clientid = <clientid>
 
 <Details><Summary>Example pipeline configuration for updating on the pipeline for Azure Devops</Summary>
 ```yaml
-
 trigger:
 - develop #set this to your branch name or to none if you only want to run this automatically
-
 stages:
 - stage: 'Download_Vertigis'
   jobs:
   - job: 'Download'
     pool:
       name: 'ArcgisBaseDeployment'
-
     steps:
     - checkout: self
       persistCredentials: true
@@ -162,7 +159,6 @@ stages:
           git add -A
           git commit -m "Update from pipeline"
           git push origin HEAD:develop
-
 ```
 </Details>
 
