@@ -74,7 +74,8 @@ clientid = <clientid>
 - 💡 **Environments** In our example, we did not uncheck the **Dev** environment, this can be ammended by removing the `DEV` section under servers in a text editor, and  (see [Environments field reference](../../docs/Environments.md)), and then check that permissions, locks, and folder structure are set as needed for your deployment scenario.
 - 🌍 **Select** **DEV** as the source environment.
 
-<details><summary>Example GaiaBuilder Content Project Configuration</summary>
+<details>
+<summary>Example GaiaBuilder Content Project Configuration</summary>
 
 ![create gaiabuilder content project](create-content-project.png)
 

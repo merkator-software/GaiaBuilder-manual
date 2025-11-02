@@ -20,7 +20,8 @@ You are an ArcGIS Enterprise user with administrative privileges:
 - Set the webhook name
 - Set the service connection name
 - Grant access to the pipelines
-<Details><Summary>Example webhook configuration in Azure Devops</Summary>
+<Details>
+<Summary>Example webhook configuration in Azure Devops</Summary>
 ![create new service connection](service-connection.png)
 </Details>
 
@@ -93,7 +94,11 @@ stages:
     - Type: Items
     - Items: Select one item to trigger the webhook on, it is not adviced to select all items because it will make the devops run frequently without any useful updates
     - Event: Select the update trigger event or all events
-    - Webhook URL: Specify the Devops URL, you need to insert your Devops organization name in the URL and the webhookname in the URL, see the placeholders in the example below
-<Details><Summary>Example webhook configuration</Summary>
+    - Webhook URL: Specify the Devops URL, you need to insert yourDevops organization name in the URL and the webhookname in the URL, see the placeholders in the example below
+
+<Details>
+<Summary>Example webhook configuration</Summary>
+
 ![create webhook](webhook.png)
+
 </Details>
