@@ -41,7 +41,8 @@ resources:
    **Make sure you add installcontent.log to the .gitignore to prevent an endless commit-trigger loop**
    **Make sure the pipeline has privileges to push to the remote**
 
-<Details><Summary>Example pipeline configuration for updating on the pipeline for Azure Devops</Summary>
+Example pipeline configuration for updating on the pipeline for Azure Devops
+
 ```yaml
 trigger:
 - none
@@ -83,7 +84,7 @@ stages:
           git commit -m "Update from pipeline"
           git push origin HEAD:develop
 ```
-</Details>
+
 
 3. **Create the webhook**
 - Open your portal and go to the organization settings and select webhooks

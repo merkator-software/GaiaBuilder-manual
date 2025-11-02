@@ -104,7 +104,7 @@ clientid = <clientid>
    **Make sure you add installcontent.log to the .gitignore to prevent an endless commit-trigger loop**
    **Make sure the pipeline has privileges to push to the remote**
 
-<Details><Summary>Example pipeline configuration for updating on the pipeline for Azure Devops</Summary>
+Example pipeline configuration for updating on the pipeline for Azure Devops
 ```yaml
 trigger:
 - develop #set this to your branch name or to none if you only want to run this automatically
@@ -160,7 +160,6 @@ stages:
           git commit -m "Update from pipeline"
           git push origin HEAD:develop
 ```
-</Details>
 
 
 9. **Integrate into your CI/CD system**
