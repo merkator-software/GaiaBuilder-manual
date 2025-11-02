@@ -105,7 +105,7 @@ clientid = <clientid>
    **Make sure the pipeline has privileges to push to the remote**
 
 <Details><Summary>Example pipeline configuration for updating on the pipeline for Azure Devops</Summary>
-````yaml
+```yaml
 
 trigger:
 - develop #set this to your branch name or to none if you only want to run this automatically
@@ -163,7 +163,7 @@ stages:
           git commit -m "Update from pipeline"
           git push origin HEAD:develop
 
-````
+```
 </Details>
 
 

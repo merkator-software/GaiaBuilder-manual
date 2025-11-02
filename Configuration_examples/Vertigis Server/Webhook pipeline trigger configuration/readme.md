@@ -20,7 +20,9 @@ You are an ArcGIS Enterprise user with administrative privileges:
 - Set the webhook name
 - Set the service connection name
 - Grant access to the pipelines
+<Details><Summary>Example webhook configuration in Azure Devops</Summary>
 ![create new service connection](service-connection.png)
+</Details>
 
 2. **Create the Devops Pipeline**
    This pipeline will download the JSON data from the Vertigis Server and save it to the GIT. 
