@@ -22,6 +22,7 @@ You are an ArcGIS Enterprise user with administrative privileges:
 - Grant access to the pipelines
 <Details>
 <Summary>Example webhook configuration in Azure Devops</Summary>
+
 ![create new service connection](service-connection.png)
 </Details>
 

@@ -66,7 +66,7 @@ clientid = <clientid>
    * 🏷️ Tags and categories
 
 4. **Create the content project**
-![create new content project](create_content_project.png)
+![create new content project](create_new_content_project.png)
 - 📁 **Set the location** for the `content.json` inside a Git-initialized or cloned folder.  
 - 🔖 **Set the type** of the content project to Vertigis Server items
 - 🆔 **Add the required item IDs** — in our example, we manually select the Template `itemId` .  
@@ -77,7 +77,7 @@ clientid = <clientid>
 <details>
 <summary>Example GaiaBuilder Content Project Configuration</summary>
 
-![create gaiabuilder content project](create-content-project.png)
+![create new content project](create_content_project.png)
 
 </details>
 
