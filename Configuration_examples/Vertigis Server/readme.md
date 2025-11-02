@@ -72,7 +72,7 @@ clientid = <clientid>
 - 🔖 **Set the type** of the content project to Vertigis Server items
 - 🆔 **Add the required item IDs** — in our example, we manually select the Template `itemId` .  
 - ✅ **Verify** that Template is successfully listed in the overview.  
-- 💡 **Environments** In our example, we did not uncheck the **Dev** environment, this can be ammended by removing the `DEV` section under servers in a text editor, and  (see [Environments field reference](../../docs/Environments.md)), and then check that permissions, locks, and folder structure are set as needed for your deployment scenario.
+- 💡 **Environments** In our example, we did not uncheck the **Dev** environment, this can be amendedby removing the `DEV` section under servers in a text editor, and  (see [Environments field reference](../../docs/Environments.md)), and then check that permissions, locks, and folder structure are set as needed for your deployment scenario.
 - 🌍 **Select** **DEV** as the source environment.
 
 <details>

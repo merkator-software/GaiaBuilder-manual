@@ -57,7 +57,7 @@ graph LR
 - 📁 **Set the location** for the `content.json` inside a Git-initialized or cloned folder.  
 - 🆔 **Add the required item IDs** — in our example, we manually select the web map `itemId` and the Experience Builder `itemId`.  
 - ✅ **Verify** that the web map and Experience Builder app are successfully listed in the overview.  
-- 💡 **Environments** In our example, we did not uncheck the **Dev** environment, this can be ammended by removing the `DEV` section under servers in a text editor, and  (see [Environments field reference](../../docs/Environments.md)), and then check that permissions, locks, and folder structure are set as needed for your deployment scenario.
+- 💡 **Environments** In our example, we did not uncheck the **Dev** environment, this can be amendedby removing the `DEV` section under servers in a text editor, and  (see [Environments field reference](../../docs/Environments.md)), and then check that permissions, locks, and folder structure are set as needed for your deployment scenario.
 - 🌍 **Select** **DEV** as the source environment.
 
 ![create new content project](create_new_content_project.png)
