@@ -66,6 +66,7 @@ clientid = <clientid>
    * 🏷️ Tags and categories
 
 4. **Create the content project**
+
 ![create new content project](create_new_content_project.png)
 - 📁 **Set the location** for the `content.json` inside a Git-initialized or cloned folder.  
 - 🔖 **Set the type** of the content project to Vertigis Server items
