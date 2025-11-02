@@ -42,7 +42,7 @@ resources:
    **Make sure the pipeline has privileges to push to the remote**
 
 <Details><Summary>Example pipeline configuration for updating on the pipeline for Azure Devops</Summary>
-````yaml
+```yaml
 
 trigger:
 - none
@@ -86,7 +86,7 @@ stages:
           git add -A
           git commit -m "Update from pipeline"
           git push origin HEAD:develop
-````
+```
 </Details>
 
 3. **Create the webhook**
