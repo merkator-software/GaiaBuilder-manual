@@ -209,6 +209,7 @@ This ensures your credentials do not appear in logs or version control.
 
 **API_KEY is not supported on this workflow**
 
-
+[^1]: ## 🧾 GaiaBuilder CLI Options
+InstallGeoProcessorTool and the light version (without an arcpy dependency) command line options are documented [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallGeoProcessorTool)
 
 
