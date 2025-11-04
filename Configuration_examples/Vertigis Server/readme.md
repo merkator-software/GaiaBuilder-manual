@@ -42,7 +42,7 @@ graph LR
   pipelinedeploy --> portal
   pipelinedeploy --> vertigisserverprd
 
-  click pipelinecommit "#pipeline-commit"
+  click pipelinecommit "https://github.com/merkator-software/GaiaBuilder-manual/blob/master/Configuration_examples/Vertigis%20Server/readme.md#pipeline-commit"
 ```
 
 ### Prepare the build server
