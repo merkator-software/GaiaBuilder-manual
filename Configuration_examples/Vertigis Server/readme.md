@@ -65,7 +65,7 @@ clientid = <clientid>
    * 📜 Terms of use
    * 🏷️ Tags and categories
 
-4. **Create the content project**
+3. **Create the content project**
 
 ![create new content project](create_new_content_project.png)
 - 📁 **Set the location** for the `content.json` inside a Git-initialized or cloned folder.  
@@ -82,7 +82,7 @@ clientid = <clientid>
 
 </details>
 
-5. **Commit and push to version control**
+4. **Commit and push to version control**
    Store the JSON files in Git (or other VCS) for reproducible deployments and rollback support.
 
    <Details><Summary>List of the files stored in git on our environment</Summary>
@@ -95,7 +95,7 @@ clientid = <clientid>
    * `content.json`
 </Details>
 
-6. **Create Vertigis Download & Restore pipeline based on GIT trigger**
+5. **Create Vertigis Download & Restore pipeline based on GIT trigger**
    This pipeline will download the JSON data from the Vertigis Server and save it to the GIT. In this example the pipeline is configured to trigger on the develop branch. This means that when you commit from your own system the Portal part of the content, the pipeline will automatically run and update the Vertigis part of the content.action
    As an alternative, you can consider configuring a webhook on Portal for ArcGIS which will trigger the pipeline. An example step-bystep configuration is available on [Webhook pipeline trigger configuration](./Webhook pipeline trigger configuration/README.md)
    The pipeline has 4 main steps: 
@@ -164,7 +164,7 @@ stages:
 ```
 
 
-9. **Integrate into your CI/CD system**
+6. **Integrate into your CI/CD system**
     See See [Publishing an Experience Builder App](../Publishing an experience builder app/README.md) for details on configuring the deployment pipeline for deploying this content project to the other stages in your environment.
     You can run GaiaBuilder in any automation environment:
 
