@@ -1,5 +1,5 @@
-# Manage Vertigis Server items
-=====================
+Manage Vertigis Server items
+============================
 
 ### 🧠 Assumptions
 
