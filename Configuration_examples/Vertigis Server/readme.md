@@ -179,7 +179,7 @@ stages:
 
 ## 🧪 Generic Deployment Script (PowerShell)
 
-This example works on any runner or agent that supports PowerShell and Python (with Conda) [^1]:
+This example works on any runner or agent that supports PowerShell and Python (with Conda):
 
 ```powershell
 & "$env:CondaHook"
@@ -208,8 +208,5 @@ env:
 This ensures your credentials do not appear in logs or version control.
 
 **API_KEY is not supported on this workflow**
-
-[^1]: ## 🧾 GaiaBuilder CLI Options
-InstallGeoProcessorTool and the light version (without an arcpy dependency) command line options are documented [here](https://github.com/merkator-software/GaiaBuilder-manual/wiki/InstallGeoProcessorTool)
 
 
