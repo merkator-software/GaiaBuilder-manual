@@ -41,6 +41,8 @@ graph LR
   git --> pipelinedeploy
   pipelinedeploy --> portal
   pipelinedeploy --> vertigisserverprd
+
+  click pipelinecommit "#pipeline-commit"
 ```
 
 ### Prepare the build server
@@ -95,7 +97,7 @@ clientid = <clientid>
    * `content.json`
 </Details>
 
-6. **Create Vertigis Download & Restore pipeline based on GIT trigger**
+6. [**Create Vertigis Download & Restore pipeline based on GIT trigger**](#pipeline-commit)
    This pipeline will download the JSON data from the Vertigis Server and save it to the GIT. In this example the pipeline is configured to trigger on the develop branch. This means that when you commit from your own system the Portal part of the content, the pipeline will automatically run and update the Vertigis part of the content.action
    As an alternative, you can consider configuring a webhook on Portal for ArcGIS which will trigger the pipeline. An example step-bystep configuration is available on [Webhook pipeline trigger configuration](./Webhook pipeline trigger configuration/README.md)
    The pipeline has 4 main steps: 
