@@ -5,7 +5,7 @@
 
 You are an ArcGIS Pro user who knows how to:
 
-* Publish a web service and web map
+* Publish a web service and Web Layer
 * Configure thumbnails, metadata, terms of use, and group sharing
 * High level knowledge of GaiaBuilder to manage deployments through JSON
 * Use version control systems like Git, Subversion or Bitbucket
@@ -34,8 +34,14 @@ graph LR
 1. **Create your map in ArcGIS Pro**
    Design your layer symbology, labels, pop-ups, etc.
 
-2. **Publish as Web Map to ArcGIS Portal**
-   Use “Share as Web Map” to publish the map to your Portal.
+2. **Publish as Web Layer to ArcGIS Portal**
+   Use “Share as Web Layer” to publish the map to your Portal.
+
+<details>
+<summary>Expand for example Share Layer configuration in ArcGIS Pro</summary>
+
+![Share Layer configuration in ArcGIS Pro](example_share_layer_configuration.png)
+</details>
 
 3. **Configure the Portal item**
    
