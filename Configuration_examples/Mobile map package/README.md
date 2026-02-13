@@ -29,6 +29,7 @@ graph LR
   pro --> addon
   addon --> mapx
   mapx --> git
+  mapx --> aprx
   aprx --> git
   git --> pipeline
   pipeline --> portal
