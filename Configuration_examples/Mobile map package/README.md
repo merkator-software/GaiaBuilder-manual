@@ -25,7 +25,7 @@ graph LR
   portal[ArcGIS Enterprise Portal]
 
   pro --> mmpk
-  MMPK -.->|only the ItemID| aprx
+  mmpk -.->|only the ItemID| aprx
   pro --> addon
   addon --> mapx
   mapx --> git
