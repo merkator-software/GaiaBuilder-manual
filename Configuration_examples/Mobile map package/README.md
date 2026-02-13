@@ -47,8 +47,9 @@ graph LR
 
 <details>
 <summary>Expand for example Package Mobile Map in ArcGIS Pro</summary>
-![Package Mobile Map in ArcGIS Pro](image.png)
-![Share Mobile Map in ArcGIS Pro](example_share_layer_configuration.png)
+
+![Example Package Mobile Map](example_package_mobile_map.png)
+
 </details>
 
 3. **Configure the Portal item**
@@ -691,6 +692,7 @@ graph LR
 6. **Keep ArcGIS Enterprise assigned itemIDs (for OTAP)**
    Required when your OTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
    Optional if each environment has its own dedicated Portal, then you can select Keep ItemIDs from source, to keep the same itemID across environments.
+  ⚠️ Note: MD5 Hash from URL Path is not available for mobile map packages, since the mmpk file is not hosted on the server but rather copied to the server's disk and referenced in the service definition.
 
 7. **(Optional) Edit server configuration manually**
    For mobile map package it is essential to change the mmpk file name to avoid overriding map packages client side.
