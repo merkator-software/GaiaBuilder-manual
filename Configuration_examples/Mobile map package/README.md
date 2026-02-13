@@ -42,6 +42,7 @@ graph LR
 
 2. **Share your map as a Mobile map package**
    Use “Mobile Map” to create a mobile map package that can be downloaded from your Portal.
+   - For this example, we used data from our EGDB, each dataset unique in our virtual DTAP.
    - We checked the Reference online content option to avoid including data in the package, which keeps it lightweight for this example.
 
 <details>
