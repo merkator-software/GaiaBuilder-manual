@@ -1,0 +1,135 @@
+{
+    "action": "publishMobileMapPackage",
+    "aprx": "SD_MMPK.aprx",
+    "categories": [],
+    "contentUser": "demo.professional.plus",
+    "content_status": "",
+    "credits": "",
+    "description": "",
+    "locator": null,
+    "lyrx": null,
+    "lyrxjson": null,
+    "mapx": "SD_MMPK.mapx",
+    "mapxjson": "SD_MMPK.mapx.json",
+    "mmpk": "SD_MMPK.mmpk",
+    "mmpk_clip": "SELECT",
+    "mmpk_extent": "MAXOF",
+    "mmpk_reference_online_content": "EXCLUDE_SERVICE_LAYERS",
+    "mmpk_select_related_rows": "KEEP_ALL_RELATED_ROWS",
+    "name": "MMPK DEV",
+    "origin": {
+        "document": "SD_MMPK.mapx.json",
+        "documentType": "Mapxjson",
+        "environments": "TEST  ;ACC  ;PROD  ;DEV  ",
+        "imagepath": "",
+        "importlayerconfig": "true",
+        "itemid": "Keep ArcGIS Enterprise assigned ItemIDs",
+        "metadatafromlayer": "false",
+        "server": "DEV",
+        "serviceType": "Mobile Map Package (mmpk)",
+        "serviceurl": "e2832b55374a4e7b8fcd4e9babb990c2"
+    },
+    "portalFolder": "DEV",
+    "portalLogo": null,
+    "portalTitle": "MMPK DEV",
+    "portaldescription": "",
+    "protected": "false",
+    "rewrite_inputs": {
+        "environmentRewrite": "--DEV--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+    },
+    "servers": {
+        "ACC": {
+            "name": "MMPK ACC",
+            "portalTitle": "MMPK ACC",
+            "mmpk": "SD_MMPK_ACC.mmpk",
+            "portalLogo": "thumbnail_acc.png",
+            "datasources": [
+                {
+                    "databasehint": "demo_acc"
+                }
+            ],
+            "rewrite_outputs": {
+                "environmentRewrite": "--ACC--",
+                "webUrl": "https://demo.gaiabuilder.com/server/rest/services/ACC"
+            },
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": [
+                    "Demo ACC"
+                ],
+                "organization": "true"
+            }
+        },
+        "DEV": {
+            "name": "MMPK DEV",
+            "portalTitle": "MMPK DEV",
+            "mmpk": "SD_MMPK_DEV.mmpk",
+            "portalLogo": "thumbnail_dev.png",
+            "datasources": [
+                {
+                    "databasehint": "demo_dev"
+                }
+            ],
+            "rewrite_outputs": {
+                "environmentRewrite": "--DEV--",
+                "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+            },
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": [
+                    "Demo DEV"
+                ],
+                "organization": "true"
+            }
+        },
+        "PROD": {
+            "name": "MMPK PROD",
+            "portalTitle": "MMPK PROD",
+            "mmpk": "SD_MMPK_PROD.mmpk",
+            "portalLogo": "thumbnail_prod.png",
+            "datasources": [
+                {
+                    "databasehint": "demo_prod"
+                }
+            ],
+            "rewrite_outputs": {
+                "environmentRewrite": "--PROD--",
+                "webUrl": "https://demo.gaiabuilder.com/server/rest/services/PROD"
+            },
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": [
+                    "Demo DEV"
+                ],
+                "organization": "true"
+            }
+        },
+        "TEST": {
+            "name": "MMPK TEST",
+            "portalTitle": "MMPK TEST",
+            "mmpk": "SD_MMPK_TEST.mmpk",
+            "portalLogo": "thumbnail_test.png",
+            "datasources": [
+                {
+                    "databasehint": "demo_test"
+                }
+            ],
+            "rewrite_outputs": {
+                "environmentRewrite": "--TEST--",
+                "webUrl": "https://demo.gaiabuilder.com/server/rest/services/TEST"
+            },
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": [
+                    "Demo DEV"
+                ],
+                "organization": "true"
+            }
+        }
+    },
+    "sourceitemid": "e2832b55374a4e7b8fcd4e9babb990c2",
+    "summary": "",
+    "tags": "",
+    "uselimitations": ""
+}
