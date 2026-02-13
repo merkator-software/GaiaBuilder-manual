@@ -40,15 +40,15 @@ graph LR
 1. **Create your map in ArcGIS Pro**
    Design your layer symbology, labels, pop-ups, etc.
 
-2. **Share your map as a Mobile map package**
+2. **Package your Mobile Map**
    Use “Mobile Map” to create a mobile map package that can be downloaded from your Portal.
    - For this example, we used data from our EGDB, each dataset unique in our virtual DTAP.
    - We checked the Reference online content option to avoid including data in the package, which keeps it lightweight for this example.
 
 <details>
-<summary>Expand for example Share Layer configuration in ArcGIS Pro</summary>
-
-![Share Layer configuration in ArcGIS Pro](example_share_layer_configuration.png)
+<summary>Expand for example Package Mobile Map in ArcGIS Pro</summary>
+![Package Mobile Map in ArcGIS Pro](image.png)
+![Share Mobile Map in ArcGIS Pro](example_share_layer_configuration.png)
 </details>
 
 3. **Configure the Portal item**
@@ -673,6 +673,11 @@ graph LR
 
    ![Import service configuration button](import_service_configuration.png)
 
+   Reminder, when setting options in step 2, you need to repeat those options in the Import Service Configuration step, for GaiaBuilder to know how to deploy the mobile map package in other environments. For example:
+   * If you have configured a locator in step 2, you need to define a locator in the Import Service Configuration step.
+   * If you have checked Clip in step 2, then you need to select CLIP under Clip Features in the Import Service Configuration step. 
+   
+
    ⚠️ Caution: Importing will overwrite any manual changes made outside of GaiaBuilder. Only use if this environment is fully managed through JSON.
 
 <Details><Summary>Example configuration for virtual DTAP environment strategy.</Summary>
@@ -680,6 +685,8 @@ graph LR
 ![Our configuration](example_mmpk_parameters.png)
 
 </Details>
+   
+   
 
 6. **Keep ArcGIS Enterprise assigned itemIDs (for OTAP)**
    Required when your OTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
@@ -791,15 +798,15 @@ graph LR
 8. **Commit and push to version control**
    Store the JSON files in Git (or other VCS) for reproducible deployments and rollback support.
 
-   <Details><Summary>List of the files stored in git on our environment</Summary>
+<Details><Summary>List of the files stored in git on our environment</Summary>
 
-📄 SD_MMPK.aprx.json
-📄 SD_MMPK.mapx.json
-📄 thumbnail_acc.png
-📄 thumbnail_dev.png
-📄 thumbnail_prod.png
-📄 thumbnail_test.png
-📄 thumbnail.png
+* 📄 SD_MMPK.aprx.json
+* 📄 SD_MMPK.mapx.json
+* 📄 thumbnail_acc.png
+* 📄 thumbnail_dev.png
+* 📄 thumbnail_prod.png
+* 📄 thumbnail_test.png
+* 📄 thumbnail.png
 
 </Details>
 
