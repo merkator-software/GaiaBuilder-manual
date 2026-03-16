@@ -1,4 +1,6 @@
 $exitcode = 0
+$gaiabuilderPath = "C:\GaiaBuilder"
+$pythonpath = "C:\Program Files\ArcGIS\Server\framework\runtime\ArcGIS\bin\Python\envs\arcgispro-py3\python.exe"
 Write-Host $($env:server)
 $manual_build_list = $($env:manual_build_list)
 $includecontent = "1"
@@ -156,31 +158,46 @@ For ($i=0; $i -lt $build.Length; $i++)
         $restore_param = "-q true"
     }
     $buildthis = $build[$i]
-    $arguments = "D:\GaiaBuilderServerTools\InstallMapservice_lite.py -f $buildthis -s $($env:server) -r false $restore_param -c true -d false -h true -i true -a true -z true -m true -t false"
-    Write-Host $arguments
-    ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
-    $process =  Start-Process -FilePath "D:\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
-    $exitcode = $exitcode + $process.ExitCode
+    $analize= Invoke-Expression  "& '$pythonpath'  $gaiabuilderPath\GaiaBuilder.py -f $buildthis -a listservers -q $($env:server) "
+    $servers = $analize.split(',')
+    For ($j=0; $j -lt $servers.Count; $j++){
+        $server = $servers[$j]
+        $arguments = "$gaiabuilderPath\InstallMapservice_lite.py -f $buildthis -s $server -r false $restore_param -c true -d false -h true -i true -a true -z true -m true -t false"
+        Write-Host $arguments
+        ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
+        $process =  Start-Process -FilePath $pythonpath -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
+        $exitcode = $exitcode + $process.ExitCode
+    }
 }
 
 For ($i=0; $i -lt $gpservices.Length; $i++)
 {
     $buildthis = $gpservices[$i]
-    $arguments = "D:\GaiaBuilderServerTools\InstallGeoProcessor_lite.py -f $buildthis -s $($env:server)"
-    Write-Host $arguments
-    ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
-    $process =  Start-Process -FilePath "D:\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
-    $exitcode = $exitcode + $process.ExitCode
+    $analize= Invoke-Expression  "& '$pythonpath'  $gaiabuilderPath\GaiaBuilder.py -f $buildthis -a listservers -q $($env:server) "
+    $servers = $analize.split(',')
+    For ($j=0; $j -lt $servers.Count; $j++){
+        $server = $servers[$j]
+        $arguments = "$gaiabuilderPath\InstallGeoProcessor_lite.py -f $buildthis -s $server"
+        Write-Host $arguments
+        ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
+        $process =  Start-Process -FilePath "$pythonpath" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
+        $exitcode = $exitcode + $process.ExitCode
+    }
 }
 if ($includecontent -eq "1"){
     For ($i=0; $i -lt $content.Length; $i++)
     {
         $buildthis = $content[$i]
-        $arguments = "D:\GaiaBuilderServerTools\InstallContent_lite.py -f $buildthis -s $($env:server)"
-        Write-Host $arguments
-        ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
-        $process =  Start-Process -FilePath "D:\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
-        $exitcode = $exitcode + $process.ExitCode
+        $analize= Invoke-Expression  "& '$pythonpath'  $gaiabuilderPath\GaiaBuilder.py -f $buildthis -a listservers -q $($env:server) "
+        $servers = $analize.split(',')
+        For ($j=0; $j -lt $servers.Count; $j++){
+            $server = $servers[$j]
+            $arguments = "$gaiabuilderPath\InstallContent_lite.py -f $buildthis -s $server"
+            Write-Host $arguments
+            ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
+            $process =  Start-Process -FilePath "$pythonpath" -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
+            $exitcode = $exitcode + $process.ExitCode
+        }
     }
 }
 exit $exitcode
