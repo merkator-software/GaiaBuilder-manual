@@ -1,0 +1,22 @@
+[
+    {
+        "role_name": "Workflow Administrator",
+        "description": "Role with all privileges.",
+        "workflow_privileges": "[\"adminAdvanced\",\"jobAssignGroup\",\"jobForceStop\",\"jobUpdateHolds\",\"jobUpdateAttachments\",\"queryUpdate\",\"jobAssignIndividual\",\"jobAssignAny\",\"jobCreate\",\"jobReopenClosed\",\"jobUpdateDate\",\"jobUpdateDescription\",\"jobUpdateName\",\"jobUpdateOwner\",\"jobUpdatePriority\",\"jobUpdateStatus\",\"jobUpdateNotes\",\"AOIOverideOverlap\",\"jobUpdateDependencies\",\"jobUpdateParentJob\",\"jobUpdateAOI\",\"jobClose\",\"jobUpdateExtendedProperties\",\"jobUpdateVersions\",\"pathAssignAny\",\"workflowSetStepCurrent\",\"jobheldUpdateProperties\",\"jobheldAddComments\",\"jobheldAddAttachments\",\"jobUpdateLocation\",\"jobDelete\",\"jobUpgrade\",\"jobDeleteMap\",\"viewManagePage\",\"viewWorkPage\",\"viewCreatePanel\",\"viewDetailsPanelAttachments\",\"viewDetailsPanelProperties\",\"viewDetailsPanelDiagram\",\"viewDetailsPanelLocation\",\"viewDetailsPanelNotes\",\"viewDetailsPanelHistory\",\"viewDetailsPanelHolds\",\"viewDetailsPanelComments\",\"viewCustomSearch\"]"
+    },
+    {
+        "role_name": "Workflow Designer",
+        "description": "Role with all privileges except advanced administration.",
+        "workflow_privileges": "[\"adminBasic\",\"jobAssignGroup\",\"jobUpdateHolds\",\"jobUpdateAttachments\",\"queryUpdate\",\"jobAssignIndividual\",\"jobAssignAny\",\"jobCreate\",\"jobReopenClosed\",\"jobUpdateDate\",\"jobUpdateDescription\",\"jobUpdateName\",\"jobUpdateOwner\",\"jobUpdatePriority\",\"jobUpdateStatus\",\"jobUpdateNotes\",\"AOIOverideOverlap\",\"jobUpdateDependencies\",\"jobUpdateParentJob\",\"jobUpdateAOI\",\"jobClose\",\"jobUpdateExtendedProperties\",\"jobUpdateVersions\",\"pathAssignAny\",\"workflowSetStepCurrent\",\"jobheldUpdateProperties\",\"jobheldAddComments\",\"jobheldAddAttachments\",\"jobDelete\",\"jobUpgrade\",\"jobDeleteMap\",\"jobUpdateLocation\"]"
+    },
+    {
+        "role_name": "Manage Jobs - Basic",
+        "description": "Role with basic privileges to manage jobs. Privileges assigned are assign job to group, assign job to individual, update holds, attachments and queries",
+        "workflow_privileges": "[\"jobAssignGroup\",\"jobUpdateHolds\",\"jobUpdateAttachments\",\"jobUpdateNotes\",\"queryUpdate\",\"jobAssignIndividual\",\"viewWorkPage\",\"viewCreatePanel\",\"viewDetailsPanelAttachments\",\"viewDetailsPanelProperties\",\"viewDetailsPanelLocation\",\"viewDetailsPanelNotes\",\"viewDetailsPanelComments\",\"viewCustomSearch\"]"
+    },
+    {
+        "role_name": "Manage Jobs - Advanced",
+        "description": "Role with advanced privileges to manage jobs. Privileges assigned are assign job to any, update job owner, create a new job, re-open a closed job, update a job's location, delete a job update job properties, override location overlap and update job date",
+        "workflow_privileges": "[\"jobAssignAny\",\"jobCreate\",\"jobReopenClosed\",\"jobUpdateDate\",\"jobUpdateDescription\",\"jobUpdateName\",\"jobDelete\",\"jobUpdateOwner\",\"jobUpdatePriority\",\"jobUpdateStatus\",\"AOIOverideOverlap\",\"jobUpdateExtendedProperties\",\"jobUpdateLocation\",\"jobUpdateHolds\",\"jobUpdateNotes\",\"jobUpdateParentJob\",\"jobUpdateVersions\",\"viewManagePage\",\"viewWorkPage\",\"viewCreatePanel\",\"viewDetailsPanelAttachments\",\"viewDetailsPanelProperties\",\"viewDetailsPanelDiagram\",\"viewDetailsPanelLocation\",\"viewDetailsPanelNotes\",\"viewDetailsPanelHistory\",\"viewDetailsPanelHolds\",\"viewDetailsPanelComments\",\"viewCustomSearch\"]"
+    }
+]

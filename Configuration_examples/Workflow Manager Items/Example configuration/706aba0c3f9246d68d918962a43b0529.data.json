@@ -1,0 +1,15 @@
+{
+    "groupId": "afce0a08145043c38acaed7e14e8db9d",
+    "workflowSchema": {
+        "itemId": "1c8931e85b284d83aed04deb101a409b"
+    },
+    "workflowLocations": {
+        "itemId": "69777484077c4d0b94701813a62f03bc"
+    },
+    "viewSchema": {
+        "itemId": "01bdf7a27a1448d584206b3960ba62f5"
+    },
+    "cleanupTask": {
+        "itemId": "6ef209f8f1484d3288879194666c6566"
+    }
+}

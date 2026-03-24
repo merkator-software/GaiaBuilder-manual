@@ -1,0 +1,97 @@
+[
+    {
+        "lookup_type": "status",
+        "lookup_name": "Created",
+        "value": 1
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "Ready",
+        "value": 2
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "In Progress",
+        "value": 3
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "Incomplete",
+        "value": 4
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "Revised",
+        "value": 5
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "Pending",
+        "value": 6
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "On Hold",
+        "value": 7
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "Approved",
+        "value": 8
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "Completed",
+        "value": 9
+    },
+    {
+        "lookup_type": "status",
+        "lookup_name": "Closed",
+        "value": 10
+    },
+    {
+        "lookup_type": "priority",
+        "lookup_name": "Low",
+        "value": 0
+    },
+    {
+        "lookup_type": "priority",
+        "lookup_name": "Medium",
+        "value": 5
+    },
+    {
+        "lookup_type": "priority",
+        "lookup_name": "High",
+        "value": 10
+    },
+    {
+        "lookup_type": "percentComplete",
+        "lookup_name": "X-Small",
+        "value": 1
+    },
+    {
+        "lookup_type": "percentComplete",
+        "lookup_name": "Small",
+        "value": 2
+    },
+    {
+        "lookup_type": "percentComplete",
+        "lookup_name": "Medium",
+        "value": 3
+    },
+    {
+        "lookup_type": "percentComplete",
+        "lookup_name": "Large",
+        "value": 5
+    },
+    {
+        "lookup_type": "percentComplete",
+        "lookup_name": "X-Large",
+        "value": 8
+    },
+    {
+        "lookup_type": "percentComplete",
+        "lookup_name": "XX-Large",
+        "value": 13
+    }
+]

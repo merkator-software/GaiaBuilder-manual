@@ -1,0 +1,1 @@
+This example contains the full configuration after `WorkflowManager.py -f Configuration_examples\Workflow Manager Items\content.json -s DEV -a export` has been executed. 

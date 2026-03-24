@@ -1,0 +1,47 @@
+[
+    {
+        "search_id": "rrUF60TFQCe2K0vtgSsYpA",
+        "search_name": "My Jobs",
+        "definition": "{\"q\":\"\\\"assignedType='User' AND closed=0 AND assignedTo='\\\" + $currentUser + \\\"' \\\"\",\"fields\":[\"assignedTo\",\"jobName\",\"dueDate\",\"jobTemplateName\",\"currentStep\",\"priority\",\"jobStatus\"],\"displayNames\":[\"Assigned To\",\"Name\",\"Due\",\"Type\",\"Step\",\"Priority\",\"Status\"],\"sortFields\":[{\"field\":\"jobName\",\"sortOrder\":\"Asc\"},{\"field\":\"priority\",\"sortOrder\":\"Asc\"}],\"start\":0,\"num\":50}",
+        "search_type": "Standard",
+        "sort_index": 1000
+    },
+    {
+        "search_id": "OnjS_8SoR6-iLE3oMCN44A",
+        "search_name": "My Group Jobs",
+        "definition": "{\"q\":\"\\\"assignedType='Group' AND closed=0 AND assignedTo IN (\\\" + userGroups($currentUser) + ')' \",\"fields\":[\"assignedTo\",\"jobName\",\"dueDate\",\"jobTemplateName\",\"currentStep\",\"priority\",\"jobStatus\"],\"displayNames\":[\"Assigned To\",\"Name\",\"Due\",\"Type\",\"Step\",\"Priority\",\"Status\"],\"sortFields\":[{\"field\":\"jobName\",\"sortOrder\":\"Asc\"},{\"field\":\"priority\",\"sortOrder\":\"Asc\"}],\"start\":0,\"num\":50}",
+        "search_type": "Standard",
+        "sort_index": 2000
+    },
+    {
+        "search_id": "L46soUSzRD62LqwFvp5pVQ",
+        "search_name": "All Jobs",
+        "definition": "{\"q\":\"closed=0\",\"fields\":[\"assignedTo\",\"jobName\",\"dueDate\",\"jobTemplateName\",\"currentStep\",\"priority\",\"jobStatus\"],\"displayNames\":[\"Assigned To\",\"Name\",\"Due\",\"Type\",\"Step\",\"Priority\",\"Status\"],\"sortFields\":[{\"field\":\"jobName\",\"sortOrder\":\"Asc\"},{\"field\":\"priority\",\"sortOrder\":\"Asc\"}],\"start\":0,\"num\":50}",
+        "search_type": "Standard",
+        "sort_index": 3000
+    },
+    {
+        "search_id": "KPHh4-l1SaKRkO8eZLoeEA",
+        "search_name": "Job Type Chart",
+        "definition": "{\"fields\":[\"job_template_name\"],\"displayNames\":[\"Type\"],\"sortFields\":[{\"field\":\"job_template_name\",\"sortOrder\":\"Asc\"}],\"start\":0,\"num\":50}",
+        "search_type": "Chart",
+        "color_ramp": "Default",
+        "sort_index": 2000
+    },
+    {
+        "search_id": "m1nOdfkvQAmPL4s3sUuvkw",
+        "search_name": "Job Status Chart",
+        "definition": "{\"fields\":[\"job_status\"],\"displayNames\":[\"Status\"],\"sortFields\":[{\"field\":\"job_status\",\"sortOrder\":\"Asc\"}],\"start\":0,\"num\":50}",
+        "search_type": "Chart",
+        "color_ramp": "Default",
+        "sort_index": 2000
+    },
+    {
+        "search_id": "syvlYUxjSkCtER2UdNqkOw",
+        "search_name": "Job Priority Chart",
+        "definition": "{\"fields\":[\"priority\"],\"displayNames\":[\"Priority\"],\"sortFields\":[{\"field\":\"priority\",\"sortOrder\":\"Asc\"}],\"start\":0,\"num\":50}",
+        "search_type": "Chart",
+        "color_ramp": "Default",
+        "sort_index": 3000
+    }
+]

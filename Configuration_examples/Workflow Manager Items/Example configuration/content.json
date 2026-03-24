@@ -1,0 +1,119 @@
+{
+  "action": "deployWorkflowManagerConfig",
+  "contentSelect": 1,
+  "sourcePortal": "https://demo.gaiabuilder.com/portal/",
+  "sourceGroup": "Workflow Manager Admin demo-workflow",
+  "sourceGroupId": "afce0a08145043c38acaed7e14e8db9d",
+  "sourceFolder": "",
+  "sourceFolderId": "",
+  "sourceUser": "portaladmin",
+  "portalLogo": null,
+  "portalFolder": "",
+  "protected": "false",
+  "content_status": "",
+  "contentUser": null,
+  "overwrite_existing": "false",
+  "allow_layer_delete": "false",
+  "allow_field_delete": "false",
+  "items": [
+    {
+      "type": "Workflow",
+      "title": "demo-workflow",
+      "name": "demo-workflow",
+      "itemId": "706aba0c3f9246d68d918962a43b0529",
+      "sourceServiceItemId": "",
+      "descriptionjson": "706aba0c3f9246d68d918962a43b0529.json",
+      "datajson": "706aba0c3f9246d68d918962a43b0529.data.json",
+      "metadata": "",
+      "datafile": "",
+      "resourcejson": "706aba0c3f9246d68d918962a43b0529.resources.json",
+      "relationjson": "706aba0c3f9246d68d918962a43b0529.relations.json",
+      "servicejson": null,
+      "servicewebhooks": null,
+      "portalLogo": "",
+      "rewrites": {
+        "environmentRewrite": "--DEV--",
+        "title": "demo-workflow",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+      },
+      "sourceUrl": "https://demo.gaiabuilder.com/portal/sharing/rest/content/items/706aba0c3f9246d68d918962a43b0529",
+      "itemIdRewrites": [
+        "706aba0c3f9246d68d918962a43b0529"
+      ],
+      "categories": [],
+      "sharing": null,
+      "portalFolder": null
+    }
+  ],
+  "excluded_items": [],
+  "servers": {
+    "DEV": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--DEV--",
+        "title": "demo-workflow-dev",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+      },
+      "portalLogo": null,
+      "portalFolder": "",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": []
+      },
+      "layersuffix": ""
+    },
+    "TEST": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--TEST--",
+        "title": "demo-workflow-test",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/TEST"
+      },
+      "portalLogo": null,
+      "portalFolder": "",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": []
+      },
+      "layersuffix": ""
+    },
+    "ACC": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--ACC--",
+        "title": "demo-workflow-staging",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/ACC"
+      },
+      "portalLogo": null,
+      "portalFolder": "",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": []
+      },
+      "layersuffix": ""
+    },
+    "PRD": {
+      "protected": "false",
+      "rewrites": {
+        "environmentRewrite": "--PROD--",
+        "title": "demo-workflow-production",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/PROD"
+      },
+      "portalLogo": null,
+      "portalFolder": "",
+      "content_status": null,
+      "sharing": {
+        "esriEveryone": "false",
+        "organization": "false",
+        "groups": []
+      },
+      "layersuffix": ""
+    }
+  }
+}
