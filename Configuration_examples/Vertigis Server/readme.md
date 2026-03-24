@@ -185,12 +185,11 @@ This example works on any runner or agent that supports PowerShell and Python (w
 & "$env:CondaHook"
 conda activate "$env:CondaEnv_GaiaBuilder"
 
-$scriptPath = "C:\GaiaBuilder\ConnectVertigis.py"
+$scriptPath = "C:\GaiaBuilder\InstallContent_lite.py"
 
 $args = @(
   "-f", $env:manual_build_list,   # Required: Relative path to the JSON config file (MapService definition)
   "-s", $env:server,              # Required: Server config name from JSON / global INI
-  "-a", "true",                   # Optional (default download): download / restore the Vertigis items
 )
 
 python $scriptPath $args
@@ -198,7 +197,7 @@ python $scriptPath $args
 
 ### 🔐 Environment Variables
 The -u and -p arguments are not safe to use in most CI environments and are intended for standalone use only.
-Instead, set these values securely using your CI/CD environment's secret store. As of version 3.11, you can use either `USER` and `PASSWORD` or an `API_KEY` for authentication, depending on your needs. See [Security Best Practices](../../docs/Security-Best-Practices.md) for details.
+Instead, set these values securely using your CI/CD environment's secret store. As of version 3.11, you can use either `USER` and `PASSWORD` for authentication, depending on your needs. See [Security Best Practices](../../docs/Security-Best-Practices.md) for details.
 ```yaml
 env:
   USER: $(USER)
