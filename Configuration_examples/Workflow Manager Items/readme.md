@@ -129,7 +129,7 @@ stages:
       inputs:
         scriptSource: 'filePath'
         scriptPath: 'C:/GaiaBuilder/GaiaBuilderServerTools/WorkflowManager.py' #update this to your GaiaBuilder path on the build server
-        arguments: '-f Configuration_examples\Workflow Manager Items\content.json -s DEV -a export' #update the  -f parameter to the relative path of the content.json file in this repo
+        arguments: '-f Configuration_examples\Workflow Manager Items\content.json -s DEV -a export' #update the -f parameter to the relative path of the content.json file in this repo, update the -s parameter to your source Portal / environment
         pythonInterpreter: 'C:\Program Files\ArcGIS\Server\framework\runtime\ArcGIS\bin\Python\envs\arcgis242\python.exe' #update this to your Python install path on the build server
       env:
         USER : $(username)
