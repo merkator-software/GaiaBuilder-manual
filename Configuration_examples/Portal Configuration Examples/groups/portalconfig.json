@@ -1,0 +1,32 @@
+{
+    "action": "configurePortal",
+    "groups": [
+        {
+            "groupConfig": "c488799abf854e468fcfc7233458294a.json",
+            "groupId": "c488799abf854e468fcfc7233458294a",
+            "itemIdRewrites": [],
+            "name": "Demo DEV",
+            "rewrites": {
+                "arcgis": "https://demo.gaiabuilder.com/server",
+                "groupname": "Demo DEV"
+            },
+            "sourceUrl": "https://demo.gaiabuilder.com/portal/home/group.html?id=c488799abf854e468fcfc7233458294a",
+            "thumbnail": null
+        }
+    ],
+    "servers": {
+        "DEV": {
+            "rewrites": {
+                "arcgis": "https://demo.gaiabuilder.com/arcgis/",
+                "groupname": "Demo DEV"
+            }
+        },
+        "PROD": {
+            "rewrites": {
+                "arcgis": "https://demo.gaiabuilder.com/arcgis/",
+                "groupname": "Demo Group from pipeline"
+            }
+        }
+    },
+    "sourcePortal": "https://demo.gaiabuilder.com/portal/"
+}

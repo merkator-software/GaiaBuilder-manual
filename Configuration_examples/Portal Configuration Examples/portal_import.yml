@@ -1,0 +1,85 @@
+# GaiaBuilder Demo Pipeline — Configure Portal
+# This pipeline runs ConfigurePortal.py to import the portal config and commits to GIT
+
+trigger:
+  none
+
+parameters:
+  - name: server
+    displayName: Target Environment
+    type: string
+    default: DEV
+    values:
+      - DEV
+      - TEST
+      - ACC
+      - PROD
+  - name: config
+    displayName: Configuration
+    type: string
+    default: "portal_configuration/roles/portalconfig.json"
+      
+# Specify the agent pool configured for GaiaBuilder demos
+pool:
+  name: 'GaiaBuilder-Demo'
+  demands:
+    - CondaEnv_GaiaBuilder  # Requires this Conda environment on agent
+    - CondaHook             # Requires activation hook script
+    
+# Load secret and environment variables from a variable group
+variables:
+  - group: demo.gaiabuilder.com  # Supplies USER, PASSWORD, manual_build_list, server, etc.
+
+steps:
+- checkout: self
+  persistCredentials: true
+- task: PowerShell@2
+  name: GitConfig
+  inputs:
+    targetType: 'inline'
+    script: |
+      git config --global user.email "pipeline@dev.azure.com"  
+      git config --global user.name "Azure DevOps Pipeline"
+
+- task: PowerShell@2
+  displayName: "📦 ConfigurePortal using GaiaBuilder"
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Activate the required Conda environment
+      & "$env:CondaHook"
+      conda activate "$env:CondaEnv_GaiaBuilder"
+
+      # Define the path to the content installer script
+      $scriptPath = "C:\GaiaBuilder\ConfigurePortal.py"
+
+      # Required arguments:
+      # -f: Path to the build list JSON file
+      # -s: Target server config name
+      $args = @(
+        "-f", "${{ parameters.config }}",
+        "-s", "${{ parameters.server }}",
+        "-a", "import"
+      )
+
+      # Execute the GaiaBuilder ConfigurePortal script
+      Write-Host "Executing GaiaBuilder ConfigurePortal with args: $args"
+      python $scriptPath $args
+      
+      if ($LASTEXITCODE -ne 0) {
+        Write-Host "❌ ERROR: ConfigurePortal  failed with exit code $LASTEXITCODE" -ForegroundColor Red
+        exit $LASTEXITCODE
+      } else {
+        Write-Host "✅ ConfigurePortal executed successfully"
+      }
+  env:
+    USER: $(USER)         # Injected credentials from variable group
+    PASSWORD: $(PASSWORD)
+- task: PowerShell@2
+  name: Gitcommit
+  inputs:
+    targetType: 'inline'
+    script: |
+      git add -A
+      git commit -m "Update from pipeline"
+      git push origin HEAD:develop

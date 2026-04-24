@@ -1,0 +1,21 @@
+{
+    "action": "configurePortal",
+    "portalresources": {
+        "config": "portalresources.json",
+        "itemIdRewrites": [],
+        "rewrites": {}
+    },
+    "servers": {
+        "DEV": {
+            "rewrites": {
+                "arcgis": "https://demo.gaiabuilder.com/arcgis/"
+            }
+        },
+        "PROD": {
+            "rewrites": {
+                "arcgis": "https://demo.gaiabuilder.com/arcgis/"
+            }
+        }
+    },
+    "sourcePortal": "https://demo.gaiabuilder.com/portal/"
+}

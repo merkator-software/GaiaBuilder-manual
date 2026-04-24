@@ -1,0 +1,8 @@
+{
+    "id": "qmYqhlRrLKM12Sm5",
+    "description": "This viewer must be a member of groups and can only see content from that group and not the content shared with the organization",
+    "name": "Viewer Limited",
+    "privileges": [
+        "portal:user:joinGroup"
+    ]
+}

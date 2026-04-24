@@ -1,0 +1,52 @@
+{
+    "id": "c488799abf854e468fcfc7233458294a",
+    "title": "Demo DEV",
+    "isInvitationOnly": true,
+    "owner": "demo.professional.plus",
+    "description": null,
+    "snippet": null,
+    "tags": [
+        "GaiaBuilder",
+        "Demo",
+        "Dev"
+    ],
+    "typeKeywords": [],
+    "phone": null,
+    "sortField": "added",
+    "sortOrder": "desc",
+    "isViewOnly": false,
+    "featuredItemsId": null,
+    "thumbnail": null,
+    "created": 1749687055843,
+    "modified": 1751010066191,
+    "access": "public",
+    "capabilities": [],
+    "isFav": false,
+    "isReadOnly": false,
+    "protected": false,
+    "autoJoin": false,
+    "notificationsEnabled": false,
+    "provider": null,
+    "providerGroupName": null,
+    "leavingDisallowed": false,
+    "hiddenMembers": false,
+    "membershipAccess": "org",
+    "displaySettings": {
+        "itemTypes": ""
+    },
+    "orgId": "0123456789ABCDEF",
+    "properties": {
+        "isFeatured": true,
+        "featuredItemIds": [
+            "e9639468788547c791d8db3d44fcfe50",
+            "0691dc321d7741efb9c9e5fe617183d5"
+        ]
+    },
+    "userMembership": {
+        "username": "demo.professional.plus",
+        "memberType": "owner",
+        "applications": 0
+    },
+    "collaborationInfo": {},
+    "groupid": "c488799abf854e468fcfc7233458294a"
+}

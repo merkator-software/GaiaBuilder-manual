@@ -1,0 +1,10 @@
+{
+    "id": "LltdpxQUFc6cyiv4",
+    "description": "This editor must be a member of groups and can only see content from that group and not the content shared with the organization, can Geocode and edit data",
+    "name": "Editor limited",
+    "privileges": [
+        "features:user:edit",
+        "portal:user:joinGroup",
+        "premium:user:geocode"
+    ]
+}

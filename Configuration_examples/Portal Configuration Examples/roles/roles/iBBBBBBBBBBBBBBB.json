@@ -1,0 +1,18 @@
+{
+    "id": "iBBBBBBBBBBBBBBB",
+    "description": "Data Editor",
+    "name": "Data Editor",
+    "privileges": [
+        "features:user:edit",
+        "portal:user:joinGroup",
+        "portal:user:viewOrgGroups",
+        "portal:user:viewOrgItems",
+        "portal:user:viewOrgUsers",
+        "premium:user:basemaps",
+        "premium:user:demographics",
+        "premium:user:elevation",
+        "premium:user:geocode",
+        "premium:user:networkanalysis",
+        "premium:user:places"
+    ]
+}

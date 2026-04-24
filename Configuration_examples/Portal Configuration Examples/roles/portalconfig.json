@@ -1,0 +1,38 @@
+{
+    "action": "configurePortal",
+    "roles": [
+        {
+            "config": "iAAAAAAAAAAAAAAA.json",
+            "id": "iAAAAAAAAAAAAAAA",
+            "name": "Viewer"
+        },
+        {
+            "config": "iBBBBBBBBBBBBBBB.json",
+            "id": "iBBBBBBBBBBBBBBB",
+            "name": "Data Editor"
+        },
+        {
+            "config": "qmYqhlRrLKM12Sm5.json",
+            "id": "qmYqhlRrLKM12Sm5",
+            "name": "Viewer Limited"
+        },
+        {
+            "config": "LltdpxQUFc6cyiv4.json",
+            "id": "LltdpxQUFc6cyiv4",
+            "name": "Editor limited"
+        }
+    ],
+    "servers": {
+        "DEV": {
+            "rewrites": {
+                "arcgis": "https://demo.gaiabuilder.com/arcgis/"
+            }
+        },
+        "PROD": {
+            "rewrites": {
+                "arcgis": "https://demo.gaiabuilder.com/arcgis/"
+            }
+        }
+    },
+    "sourcePortal": "https://demo.gaiabuilder.com/portal/"
+}
