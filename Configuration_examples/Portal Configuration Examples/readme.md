@@ -39,6 +39,9 @@ graph LR
   creategroup --> groupdev
   createrole --> rolesdev
   createresource --> resourcesdev
+  groupdev --> pipelinecommit
+  rolesdev --> pipelinecommit
+  resourcesdev --> pipelinecommit
   json --> git
   git --> pipelinecommit
   pipelinecommit --> git
