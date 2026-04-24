@@ -13,8 +13,11 @@ You are an ArcGIS Pro user who knows how to:
 ---
 ###
 Portal configurations such as groups and roles can be managed by GaiaBuilder. This includes also the Portal Homepage and other resources.
-You can create a JSON config for an individual group or multiple groups
-Roles and Resources are all managed by one central JSON config
+
+You can create a JSON config for an individual group or multiple groups. Group membership is not included. Content shared with a group is managed from the Content.Json. This is just the barebone group configuration
+
+Roles and Resources are all managed by one central JSON config.
+
 
 ---
 ### Overview
@@ -52,7 +55,6 @@ graph LR
 ### ✅ Step-by-Step Deployment Flow
 
 1. **Create Groups, Roles and Resources**
-    Create the Groups, Roles and Resources. 
 
 2. **Configure the Group or Portal Home Page**
    
@@ -94,7 +96,8 @@ You can combine groups, roles and resources into one JSON, but it is adviced to 
 7.  **Run the pipeline to import the configurations and commit to GIT**
 The pipeline will read the JSON config and save the portal config for the configured groups, all roles or all resources to the GIT and commit the resources
 
-8. **Run the pipeline to configure the next stage(s)**
+8. **Run the pipeline to configure groups, roles or resources on the next stage(s)**
+Run the config pipeline to configure the groups, roles or resources on the next stage(s) of your Portal DTAP
 
 ---
 
