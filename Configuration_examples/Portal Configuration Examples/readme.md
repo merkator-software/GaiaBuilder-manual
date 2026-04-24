@@ -30,7 +30,6 @@ graph LR
   git[Git Repository]
   pipelinecommit[CI/CD Pipeline download and commit]
   pipelinedeploy[CI/CD Pipeline publish]
-  portal[ArcGIS Enterprise Portal Production]
   creategroup[Create Group]
   createrole[Create Roles]
   createresource[Create Resources]
@@ -45,7 +44,6 @@ graph LR
   json --> git
   git --> pipelinecommit
   pipelinecommit --> git
-  json --> git
   git --> pipelinedeploy
   pipelinedeploy --> groupprd
   pipelinedeploy --> rolesprd
