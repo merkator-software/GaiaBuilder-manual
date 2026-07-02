@@ -32,6 +32,18 @@ else{
     $files = $(git diff-tree --name-only -r --no-commit-id HEAD)
     $temp = $files -split ' '
     $count = $temp.Length
+    if ($manual_build_list.Length -eq 0)
+    {
+        Write-Host "Found 0 changed files in git diff, will try a git log instead to get the changed files from a merge commit"
+        $changed = $(git log -m --name-status -1 --first-parent --pretty="format:")
+        For ($i=0; $i -lt $changed.Length; $i++)
+        {
+            Write-Host $changed
+            $file = $changed -split '\t'
+            $temp += $file
+        }
+    }
+    $count = $temp.Length
     Write-Host "Total changed files $count files"
 }   
 For ($i=0; $i -lt $temp.Length; $i++)
