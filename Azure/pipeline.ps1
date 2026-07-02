@@ -4,9 +4,14 @@ $pythonpath = "C:\Program Files\ArcGIS\Server\framework\runtime\ArcGIS\bin\Pytho
 Write-Host $($env:server)
 $manual_build_list = $($env:manual_build_list)
 $includecontent = "1"
+$publish_sd_to_online = "1"
 if ($env:includecontent -eq "0")
 {
     $includecontent = "0"
+}
+if ($env:publish_sd_to_online -eq "0")
+{
+    $publish_sd_to_online = "0"
 }
 
 $temp = @()
@@ -57,18 +62,13 @@ For ($i=0; $i -lt $temp.Length; $i++)
     
     $cffile = Join-Path $fulldir "content.json"
     $gpfile = Join-Path $fulldir "gpservice.json"
-    Write-Host $gpfile
-    Test-Path $gpfile
     $aprxjsonfile = Join-Path $fulldir $filename
     
     If ($name -match '.aprx.json$')
     {
-        # Huidige CI strategie rolt services uit naar MAPSO enterprise, de *.online.aprx.json is een specifieke configuratie voor ArcGIS online.
-        # CI pipeline voor services verwacht de server entry MAPSO in de config. Deze key mist in de .online.aprx.json waardoor de CI pipeline faalt.
-        # --> ERROR:root:Unexpected error while deploying the mapservice: 'MAPSO'
-        If ($name -match '.online.aprx.json$')
+        If ($name -match '.online.aprx.json$' -and $publish_sd_to_online -eq "0")
         {
-            Write-Host "Found ArcGIS Online configuration file, skipping $name in CI pipeline"
+            Write-Host "Found ArcGIS Online configuration file, skipping $name in CI pipeline because publishing to Online is blocked"
         }
         ElseIf(Test-Path $aprxjsonfile)
         {
