@@ -7,7 +7,7 @@
   "description": "Contoso Python Geoprocessing service example.",
   "extensions": [
   ],
-  "executionType": "Asynchronous",
+  "executionType": "Synchronous",
   "copyData": "true",
   "maxIdleTime": 1800,
   "maxInstancesPerNode": 3,
