@@ -43,7 +43,7 @@
 		    
 		],
 		"sharing": {
-			"public": "false",
+			"esriEveryone": "false",
 			"organization": "false",
 			"groups":["TestDemoGroep"]
 		}
@@ -55,7 +55,7 @@
 		  
 		],
 		"sharing": {
-			"public": "false",
+			"esriEveryone": "false",
 			"organization": "false",
 			"groups":["AccDemoGroep"]
 		}
@@ -68,7 +68,7 @@
 		  
 		],
 		"sharing": {
-			"public": "false",
+			"esriEveryone": "false",
 			"organization": "false",
 			"groups":["DemoGroep"]
 		}

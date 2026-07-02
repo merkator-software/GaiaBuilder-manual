@@ -25,7 +25,7 @@
         "datasources": [
         ],
         "sharing": {
-            "public": "false",
+            "esriEveryone": "false",
             "organization": "false",
             "groups":["TestDemoGroep"]
         }
@@ -36,7 +36,7 @@
         "datasources": [
         ],
         "sharing": {
-            "public": "false",
+            "esriEveryone": "false",
             "organization": "false",
             "groups":["AccDemoGroep"]
         }
@@ -48,7 +48,7 @@
         "datasources": [
         ],
         "sharing": {
-            "public": "false",
+            "esriEveryone": "false",
             "organization": "false",
             "groups":["DemoGroep"]
         }
