@@ -16,7 +16,33 @@ if ($env:publish_sd_to_online -eq "0")
 
 $temp = @()
 
+function Find-ConfigUpward {
+    param(
+        [Parameter(Mandatory)]
+        [string]$FullDir,
+
+        [Parameter(Mandatory)]
+        [string]$FileName = "portalconfig.json"
+    )
+
+    $currentDir = Get-Item $FullDir
+    $found = $null
+
+    while ($currentDir.Parent -ne $null) {
+        $currentDir = $currentDir.Parent
+        $candidate = Join-Path $currentDir.FullName $FileName
+
+        if (Test-Path $candidate) {
+            $found = $candidate
+            break
+        }
+    }
+
+    return $found
+}
+
 ## define the list of content.json files to be build
+$portalconfig = @()
 $content = @()
 $build = @()
 $gpservices =@()
@@ -61,7 +87,11 @@ For ($i=0; $i -lt $temp.Length; $i++)
     $fulldir = Join-Path $dir $path_no_file
     
     $cffile = Join-Path $fulldir "content.json"
+    $cffile_up = Find-ConfigUpward -FullDir $fulldir -FileName "content.json"
     $gpfile = Join-Path $fulldir "gpservice.json"
+    $gpfile_up = Find-ConfigUpward -FullDir $fulldir -FileName "gpservice.json"
+    $portalconfigfile = Join-Path $fulldir "portalconfig.json"
+    $portalconfigfile_up = Find-ConfigUpward -FullDir $fulldir -FileName "portalconfig.json"
     $aprxjsonfile = Join-Path $fulldir $filename
     
     If ($name -match '.aprx.json$')
@@ -88,6 +118,31 @@ For ($i=0; $i -lt $temp.Length; $i++)
         }
 
     }
+    ElseIf (Test-Path $portalconfigfile)
+    {
+        If (-Not $portalconfig.Contains($portalconfigfile))
+        {
+            $portalconfig += $portalconfigfile
+            Write-Host "Added $portalconfigfile to PortalConfig list"
+        }
+        Else
+        {
+            Write-Host "File $portalconfigfile already added to PortalConfig list"
+        }
+    }
+    ElseIf (Test-Path $portalconfigfile_up)
+    {
+        If (-Not $portalconfig.Contains($portalconfigfile_up))
+        {
+            $portalconfig += $portalconfigfile_up
+            Write-Host "Added $portalconfigfile_up to PortalConfig list"
+        }
+        Else
+        {
+            Write-Host "File $portalconfigfile_up already added to PortalConfig list"
+        }
+    }
+
     ElseIf (Test-Path $cffile)
     {
         If (-Not $content.Contains($cffile))
@@ -98,6 +153,18 @@ For ($i=0; $i -lt $temp.Length; $i++)
         Else
         {
             Write-Host "File $cffile already added to Content list"
+        }
+    }
+    ElseIf (Test-Path $cffile_up)
+    {
+        If (-Not $content.Contains($cffile_up))
+        {
+            $content += $cffile_up
+            Write-Host "Added $cffile_up to Content list"
+        }
+        Else
+        {
+            Write-Host "File $cffile_up already added to Content list"
         }
     }
     ElseIf (Test-Path $gpfile)
@@ -111,7 +178,19 @@ For ($i=0; $i -lt $temp.Length; $i++)
         {
             Write-Host "File $gpfile already added to GPService list"
         }
-    }        
+    }
+    ElseIf (Test-Path $gpfile_up)
+    {
+        If (-Not $gpservices.Contains($gpfile_up))
+        {
+            $gpservices += $gpfile_up
+            Write-Host "Added $gpfile_up to GPService list"
+        }
+        Else
+        {
+            Write-Host "File $gpfile_up already added to GPService list"
+        }
+    }
     Else
     {
         ## construct the .aprx.json filename from the map or layer file name
