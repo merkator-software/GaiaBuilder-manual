@@ -130,7 +130,7 @@ For ($i=0; $i -lt $temp.Length; $i++)
             Write-Host "File $portalconfigfile already added to PortalConfig list"
         }
     }
-    ElseIf (Test-Path $portalconfigfile_up)
+    ElseIf ($portalconfigfile_up -ne $null -and (Test-Path $portalconfigfile_up))
     {
         If (-Not $portalconfig.Contains($portalconfigfile_up))
         {
@@ -155,7 +155,7 @@ For ($i=0; $i -lt $temp.Length; $i++)
             Write-Host "File $cffile already added to Content list"
         }
     }
-    ElseIf (Test-Path $cffile_up)
+    ElseIf ($cffile_up -ne $null -and (Test-Path $cffile_up))
     {
         If (-Not $content.Contains($cffile_up))
         {
@@ -179,7 +179,7 @@ For ($i=0; $i -lt $temp.Length; $i++)
             Write-Host "File $gpfile already added to GPService list"
         }
     }
-    ElseIf (Test-Path $gpfile_up)
+    ElseIf ($gpfile_up -ne $null -and (Test-Path $gpfile_up))
     {
         If (-Not $gpservices.Contains($gpfile_up))
         {
@@ -238,6 +238,20 @@ For ($i=0; $i -lt $temp.Length; $i++)
                 }
             }
         }
+    }
+}
+For ($i=0; $i -lt $portalconfig.Length; $i++)
+{
+    $buildthis = $portalconfig[$i]
+    $analize= Invoke-Expression  "& '$pythonpath'  $gaiabuilderPath\GaiaBuilder.py -f $buildthis -a listservers -q $($env:server) "
+    $servers = $analize.split(',')
+    For ($j=0; $j -lt $servers.Count; $j++){
+        $server = $servers[$j]
+        $arguments = "$gaiabuilderPath\ConfigurePortal.py -f $buildthis -s $server -a configure"
+        Write-Host $arguments
+        ## -PassThru -Wait -NoNewWindow will show the output from the python process in the devops logging
+        $process =  Start-Process -FilePath $pythonpath -ArgumentList $arguments  -PassThru -Wait -NoNewWindow
+        $exitcode = $exitcode + $process.ExitCode
     }
 }
 
