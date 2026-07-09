@@ -15,6 +15,8 @@ You are an ArcGIS Pro user who knows how to:
 
 ```mermaid
 graph LR
+
+  prepare["Prepare the Cloud storage and EGDB Mosaic"]
   pro[ArcGIS Pro]
   addon[GaiaBuilder Add-In]
   git[Git Repository]
@@ -22,8 +24,8 @@ graph LR
   portal[ArcGIS Enterprise Portal]
   image[Share webmap to image server]
   mapx[Export image map to .mapx.json]
-  transfer["Copy image files to the transfer folder (optional). This can be skipped if it's a shared folder."]
 
+  prepare --> pro
   pro --> image
   pro --> addon
   addon --> mapx
@@ -35,16 +37,34 @@ graph LR
 
 ### ✅ Step-by-Step Deployment Flow
 
-1. **Create your image map in ArcGIS Pro**
-    Drag and drop your image files into the map.
-    Create pyramids if needed.
-    Design your layer symbology, labels, pop-ups, etc.
+1. **Prepare the system**
+    Create a UNC networkshare and mount it locally and configure it in ArcGIS Pro
+    ![Create File share](fileshare_local.png)
 
-2. **Publish as Web Map to ArcGIS Portal**
-   Use “Share as Web Map” to publish the image layer to your Portal.
+    Register the UNC networkshare on your ArcGIS Server (in this example the Hosting ArcGIS Server is also licensed as Image Server):
+    ![Register Fileshare](register1.png)
+    ![Register Fileshare](register2.png)
+    ![Register Fileshare](register3.png)
 
-3. **Configure the Portal item**
-   
+    Create the ACS Connection file and copy it to the Network Share
+
+    Create the SDE Connection file and copy it to the Network Share
+
+    ![Files](connection_files.png)
+
+2. **Create the Mosaic and load the data**
+    Create the Mosaic using the SDE file in the EGDB
+    ![Create Mosaic](create_mosaic.png)
+
+    Add the rasters to the Mosaic, ensure you're using the ACS file from the networkshare
+    ![Add Rasters](add_rasters.png)
+
+
+3. **Create your image map in ArcGIS Pro**
+    Share the Mosaic as a Image Service in your Portal. Right click the Mosaic in the SDE connection and choose Share as Web Layer
+    ![Add Rasters](share.png)
+
+4. **Configure the Portal item**
    Set:
    * 🔖 Thumbnail
    * 📄 Title
@@ -55,14 +75,13 @@ graph LR
    * 👥 Group permissions
    * 🏷️ Tags and categories
 
-4. ** Copy the source image to the transfer folder**
-   This is the folder where GaiaBuilder will find the source image files to publish. In our case this is `C:\Transfer\` but it can be any folder or share accessible by the GaiaBuilder agent.
-   Ensure the source image is copied to the transfer folder before running the deployment script. It is not adviced to add the image to the repository, as it can be large and is not needed for version control.
-   >⚠️ Caution: Ensure the source image is accessible by the agent.
 
 5. **Import service configuration**
    This allows GaiaBuilder to recreate or sync services in other environments from the exported JSON. 
    
+   ![Import service configuration button](import_service_configuration.png)
+   - Choose ImageService in the Service type dropdown
+   - Provide the full path of the Mosaic dataset in your EGDB using the SDE file in the Image Data Path parameter
    ![Import service configuration button](import_service_configuration.png)
    
    >⚠️ Caution: Importing will overwrite any manual changes made outside of GaiaBuilder. Only use if this environment is fully managed through JSON.
@@ -71,8 +90,6 @@ graph LR
 Our configuration has been designed to support a virtual DTAP (Development, Test, Acceptance, Production) environment strategy. Each environment has its own folder in the ArcGIS Portal and a dedicated server folder.
 The image server is a seperate ArcGIS Server site, which is configured and added to both the GaiaBuilder.ini file and registerednotep in the GaiaBuilder Environment Registry hosted table.
 
-
-![Our configuration](import_image_service_configuration.png)
 </Details>
 
 6. **Apply MD5 hash (for OTAP)**
@@ -202,7 +219,6 @@ Instead, set these values securely using your CI/CD environment's secret store. 
 env:
   USER: $(USER)
   PASSWORD: $(PASSWORD)
-  API_KEY: $(API_KEY)  # Use either this or USER/PASSWORD, not all together
 ```
 
 This ensures your credentials and API keys do not appear in logs or version control.
