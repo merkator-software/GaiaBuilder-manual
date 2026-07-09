@@ -98,11 +98,6 @@ graph LR
    
    >⚠️ Caution: Importing will overwrite any manual changes made outside of GaiaBuilder. Only use if this environment is fully managed through JSON.
 
-<Details><Summary>Example configuration for virtual DTAP environment strategy.</Summary>
-Our configuration has been designed to support a virtual DTAP (Development, Test, Acceptance, Production) environment strategy. Each environment has its own folder in the ArcGIS Portal and a dedicated server folder.
-The image server is a seperate ArcGIS Server site, which is configured and added to both the GaiaBuilder.ini file and registerednotep in the GaiaBuilder Environment Registry hosted table.
-
-</Details>
 
 6. **Apply MD5 hash (for OTAP)**
 
