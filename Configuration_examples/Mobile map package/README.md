@@ -689,8 +689,8 @@ graph LR
    
    
 
-6. **Keep ArcGIS Enterprise assigned itemIDs (for OTAP)**
-   Required when your OTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
+6. **Keep ArcGIS Enterprise assigned itemIDs (for DTAP)**
+   Required when your DTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
    Optional if each environment has its own dedicated Portal, then you can select Keep ItemIDs from source, to keep the same itemID across environments.
   ⚠️ Note: MD5 Hash from URL Path is not available for mobile map packages, since the mmpk file is not hosted on the server but rather copied to the server's disk and referenced in the service definition.
 

@@ -75,8 +75,8 @@ The image server is a seperate ArcGIS Server site, which is configured and added
 ![Our configuration](import_image_service_configuration.png)
 </Details>
 
-6. **Apply MD5 hash (for OTAP)**
-   Required when your OTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
+6. **Apply MD5 hash (for DTAP)**
+   Required when your DTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
    Optional if each environment has its own dedicated Portal.
 
 7. **(Optional) Edit server configuration manually**

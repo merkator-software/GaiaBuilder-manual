@@ -99,9 +99,9 @@ graph LR
    >⚠️ Caution: Importing will overwrite any manual changes made outside of GaiaBuilder. Only use if this environment is fully managed through JSON.
 
 
-6. **Apply MD5 hash (for OTAP)**
+6. **Apply MD5 hash (for DTAP)**
 
-   Required when your OTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
+   Required when your DTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
    Optional if each environment has its own dedicated Portal.
 
 7. **(Optional) Edit server configuration manually**
