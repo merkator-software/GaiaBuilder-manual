@@ -23,7 +23,7 @@ graph LR
   pipeline[CI/CD Pipeline]
   portal[ArcGIS Enterprise Portal]
   image[Share webmap to image server]
-  mapx[Export image map to .mapx.json]
+  mapx[Export service configuration to .mapx.json]
 
   prepare --> pro
   pro --> image
@@ -31,40 +31,49 @@ graph LR
   addon --> mapx
   mapx --> git
   git --> pipeline
-  transfer --> pipeline
+  image --> mapx
   pipeline --> portal
 ```
 
 ### ✅ Step-by-Step Deployment Flow
 
 1. **Prepare the system**
+
     Create a UNC networkshare and mount it locally and configure it in ArcGIS Pro
+
     ![Create File share](fileshare_local.png)
 
     Register the UNC networkshare on your ArcGIS Server (in this example the Hosting ArcGIS Server is also licensed as Image Server):
+
     ![Register Fileshare](register1.png)
     ![Register Fileshare](register2.png)
     ![Register Fileshare](register3.png)
 
-    Create the ACS Connection file and copy it to the Network Share
+    Create the ACS Connection file(s) and copy it to the Network Share
 
-    Create the SDE Connection file and copy it to the Network Share
+    Create the SDE Connection file(s) and copy it to the Network Share
 
     ![Files](connection_files.png)
 
 2. **Create the Mosaic and load the data**
+
     Create the Mosaic using the SDE file in the EGDB
+
     ![Create Mosaic](create_mosaic.png)
 
     Add the rasters to the Mosaic, ensure you're using the ACS file from the networkshare
+
     ![Add Rasters](add_rasters.png)
 
 
 3. **Create your image map in ArcGIS Pro**
+
     Share the Mosaic as a Image Service in your Portal. Right click the Mosaic in the SDE connection and choose Share as Web Layer
+
     ![Add Rasters](share.png)
 
 4. **Configure the Portal item**
+
    Set:
    * 🔖 Thumbnail
    * 📄 Title
@@ -77,12 +86,15 @@ graph LR
 
 
 5. **Import service configuration**
+
    This allows GaiaBuilder to recreate or sync services in other environments from the exported JSON. 
    
    ![Import service configuration button](import_service_configuration.png)
+
    - Choose ImageService in the Service type dropdown
    - Provide the full path of the Mosaic dataset in your EGDB using the SDE file in the Image Data Path parameter
-   ![Import service configuration button](import_service_configuration.png)
+
+   ![Import service configuration button](import.png)
    
    >⚠️ Caution: Importing will overwrite any manual changes made outside of GaiaBuilder. Only use if this environment is fully managed through JSON.
 
@@ -93,10 +105,12 @@ The image server is a seperate ArcGIS Server site, which is configured and added
 </Details>
 
 6. **Apply MD5 hash (for OTAP)**
+
    Required when your OTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
    Optional if each environment has its own dedicated Portal.
 
 7. **(Optional) Edit server configuration manually**
+
    For advanced scenarios, edit the server JSON directly to override publishing behavior.
 
 <Details>
@@ -106,8 +120,8 @@ The image server is a seperate ArcGIS Server site, which is configured and added
 {
     "servers": {
 
-        "ACC_IMAGE": {        
-            "portalFolder": "acc",        
+        "ACC_IMAGE": {
+            "portalFolder": "acc",
             "serverFolder": "ACC",
             "datasources": [],
             "sharing": {
@@ -119,7 +133,7 @@ The image server is a seperate ArcGIS Server site, which is configured and added
             }
         },
         "DEV_IMAGE": {
-            "portalFolder": "dev",        
+            "portalFolder": "dev",
             "serverFolder": "DEV",
             "datasources": [],
             "sharing": {
@@ -131,7 +145,7 @@ The image server is a seperate ArcGIS Server site, which is configured and added
             }
         },
         "PROD_IMAGE": {
-            "portalFolder": "prod",        
+            "portalFolder": "prod",
             "serverFolder": "PROD",
             "datasources": [],
             "sharing": {
@@ -160,6 +174,7 @@ The image server is a seperate ArcGIS Server site, which is configured and added
 </Details>
 
 8. **Commit and push to version control**
+
    Store the JSON files in Git (or other VCS) for reproducible deployments and rollback support.
 
    <Details><Summary>List of the files stored in git on our environment</Summary>
@@ -171,6 +186,7 @@ The image server is a seperate ArcGIS Server site, which is configured and added
 </Details>
 
 9. **Integrate into your CI/CD system**
+
     You can run GaiaBuilder in any automation environment:
 
 * GitHub Actions
