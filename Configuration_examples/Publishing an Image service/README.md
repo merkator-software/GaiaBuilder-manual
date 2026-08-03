@@ -40,8 +40,8 @@ graph LR
     Create pyramids if needed.
     Design your layer symbology, labels, pop-ups, etc.
 
-2. **Publish as Web Map to ArcGIS Portal**
-   Use “Share as Web Map” to publish the image layer to your Portal.
+2. **Create your image service in Portal for ArcGIS with ArcGIS Pro**
+   Right click the imagary for the context menu and use “Share as Web Map” to publish the image layer to your Portal.
 
 3. **Configure the Portal item**
    
@@ -55,7 +55,7 @@ graph LR
    * 👥 Group permissions
    * 🏷️ Tags and categories
 
-4. ** Copy the source image to the transfer folder**
+4. **Copy the source image to the transfer folder**
    This is the folder where GaiaBuilder will find the source image files to publish. In our case this is `C:\Transfer\` but it can be any folder or share accessible by the GaiaBuilder agent.
    Ensure the source image is copied to the transfer folder before running the deployment script. It is not adviced to add the image to the repository, as it can be large and is not needed for version control.
    >⚠️ Caution: Ensure the source image is accessible by the agent.

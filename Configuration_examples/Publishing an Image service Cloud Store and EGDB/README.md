@@ -66,7 +66,7 @@ graph LR
     ![Add Rasters](add_rasters.png)
 
 
-3. **Create your image map in ArcGIS Pro**
+3. **Create your image service in Portal for ArcGIS with ArcGIS Pro**
 
     Share the Mosaic as a Image Service in your Portal. Right click the Mosaic in the SDE connection and choose Share as Web Layer
 
