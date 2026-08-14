@@ -18,7 +18,7 @@ graph LR
   pro[ArcGIS Pro]
   addon[GaiaBuilder Add-In]
   aptx[ArcGIS Pro Template]
-  mapx[mapx.json]
+  mapx[Mapx and Layouts]
   aprx[aprx.json]
   git[Git Repository]
   pipeline[CI/CD Pipeline]
