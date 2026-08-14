@@ -1,0 +1,43 @@
+{
+    "servers": {
+        "ACC": {
+            "portalFolder": "Acc_prject_template",
+            "datasources": [],
+            "rewrite_outputs": {
+                "environmentRewrite": "--ACC--",
+                "webUrl": "https://demo.gaiabuilder.com/server/rest/services/ACC"
+            },
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": [],
+                "organization": "false"
+            }
+        },
+        "PROD": {
+            "datasources": [],
+            "portalFolder": "Prod_prject_template",
+            "rewrite_outputs": {
+                "environmentRewrite": "--PROD--",
+                "webUrl": "https://demo.gaiabuilder.com/server/rest/services/PROD"
+            },
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": [],
+                "organization": "true"
+            }
+        },
+        "TEST": {
+            "datasources": [],
+            "portalFolder": "Test_prject_template",
+            "rewrite_outputs": {
+                "environmentRewrite": "--TEST--",
+                "webUrl": "https://demo.gaiabuilder.com/server/rest/services/TEST"
+            },
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": [],
+                "organization": "false"
+            }
+        }
+    }
+}

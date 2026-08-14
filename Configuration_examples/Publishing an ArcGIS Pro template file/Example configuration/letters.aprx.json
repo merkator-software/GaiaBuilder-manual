@@ -1,0 +1,53 @@
+{
+    "action": "publishTemplate",
+    "aprx": "Layout_light.aprx",
+    "aptx": "Layout_light.aptx",
+    "templateaprx": "template.aprx",
+    "categories": [],
+    "contentUser": "portaladmin",
+    "content_status": "",
+    "credits": "",
+    "description": "",
+    "include_toolbox": "false",
+    "lyrx": null,
+    "lyrxjson": null,
+    "mapdocuments": [
+        {
+            "mapx": "Layout_light_import.pagx",
+            "mapxjson": "Layout_light.pagx"
+        },
+        {
+            "mapx": "Layout_dark_import.pagx",
+            "mapxjson": "Layout_dark.pagx"
+        }
+    ],
+    "mapx": null,
+    "mapxjson": null,
+    "name": "Demo_project_template",
+    "origin": {
+        "document": "Layout_dark.pagx",
+        "documentType": "Mapx with DB rewrite",
+        "environments": "TEST  ;ACC  ;PROD  ;DEV  ",
+        "imagepath": "",
+        "importlayerconfig": "true",
+        "itemid": "Keep ArcGIS Enterprise assigned ItemIDs",
+        "metadatafromlayer": "false",
+        "server": "DEV",
+        "serviceType": "ArcGIS Pro Template (aptx)",
+        "serviceurl": "81eaa34cafad454f8f4aef93db902b44"
+    },
+    "portalFolder": "Dev_prject_template",
+    "portalLogo": "thumbnail.png",
+    "portalTitle": "Demo_project_template",
+    "portaldescription": "",
+    "protected": "false",
+    "rewrite_inputs": {
+        "environmentRewrite": "--DEV--",
+        "webUrl": "https://demo.gaiabuilder.com/server/rest/services/DEV"
+    },
+    "serverconfiguration": "letters.server.json",
+    "sourceitemid": "81eaa34cafad454f8f4aef93db902b44",
+    "summary": "",
+    "tags": "",
+    "uselimitations": ""
+}
