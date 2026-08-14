@@ -74,7 +74,7 @@ graph LR
 
 6. **Export the template aprx (option)**
 
-   To ensure the Python toolboxes, Tasks and other items that cannot be exported to JSON are carried over, you can export the current APRX to GIT. Before you do this, remove the Maps, Layouts and Geoprocessing History from the Pro Project, then save the aprx file into the same GIT directory where the Maps and Layouts are saved
+   To ensure the Python toolboxes, Tasks and other items that cannot be exported to JSON are carried over, you can export the current APRX to GIT. Before you do this, __remove the Maps, Layouts and Geoprocessing History from the Pro Project__, then save the aprx file into the same GIT directory where the Maps and Layouts are saved
 
 7. **Import service configuration**
 
