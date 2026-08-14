@@ -38,10 +38,12 @@ graph LR
 ### ✅ Step-by-Step Deployment Flow
 
 1. **Create your maps and layouts in ArcGIS Pro**
+
    For ArcGIS Pro templates, you can include multiple maps and layouts into one template. Prepare all the maps and templates you'd need in your project. 
    You can include python toolboxes and Tasks items as well
 
 2. **Package your Pro template to the DEV Portal**
+
    Use ArcGIS Pro Share Ribbon -> Project Template to share the template to you Development Portal
 
 <details>
@@ -72,6 +74,7 @@ graph LR
    To ensure the Python toolboxes, Tasks and other items that cannot be exported to JSON are carried over, you can export the current APRX to GIT. Before you do this, remove the Maps, Layouts and Geoprocessing History from the Pro Project, then save the aprx file into the same GIT directory where the Maps and Layouts are saved
 
 7. **Import service configuration**
+
    Run Import Service configuration to save all the portal configurations and deploy properties to JSON
 
    ![Import service configuration button](import_service_configuration.png)
@@ -90,6 +93,7 @@ graph LR
 </Details>
    
 8. **(Optional) Edit server configuration manually**
+
    When you opted to use a custom input aprx at step 6, include a reference to this file in the JSON:
 
    ```json
@@ -148,7 +152,8 @@ graph LR
 ```
 </Details>
 
-8. **Commit and push to version control**
+9. **Commit and push to version control**
+
    Store the JSON files in Git (or other VCS) for reproducible deployments and rollback support.
 
 <Details><Summary>List of the files stored in git on our environment</Summary>
@@ -162,7 +167,8 @@ graph LR
 
 </Details>
 
-9. **Integrate into your CI/CD system**
+10. **Integrate into your CI/CD system**
+
     You can run GaiaBuilder in any automation environment:
 
 * GitHub Actions
