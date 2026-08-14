@@ -67,7 +67,9 @@ graph LR
 5. **Export to GaiaBuilder JSON**
 
    When you have layouts in your project, export them using the Catalog view in Pro to your GIT repository, please note that this process won't remove database credentials during the process and we strongly recommend using data from Services instead to avoid databasecredentials. When the layouts contain one or more maps, these maps are exported with the layout and don't need to be exported separately.
+
    ![Example Save Layout](save_layout.png)
+
    Use the **GaiaBuilder Add-In** to export the standalone maps to export the maps to your GIT repository. When your map contains database credentials, use Export map to JSON, otherwise use Export Mapx to save these maps. 
 
 6. **Export the template aprx (option)**
