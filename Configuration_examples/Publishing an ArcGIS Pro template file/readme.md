@@ -73,6 +73,7 @@ graph LR
    Use the **GaiaBuilder Add-In** to export the standalone maps to export the maps to your GIT repository. When your map contains database credentials, use Export map to JSON, otherwise use Export Mapx to save these maps. 
 
 6. **Export the template aprx (option)**
+
    To ensure the Python toolboxes, Tasks and other items that cannot be exported to JSON are carried over, you can export the current APRX to GIT. Before you do this, remove the Maps, Layouts and Geoprocessing History from the Pro Project, then save the aprx file into the same GIT directory where the Maps and Layouts are saved
 
 7. **Import service configuration**
@@ -81,11 +82,16 @@ graph LR
 
    ![Import service configuration button](import_service_configuration.png)
 
-   Whether you select a Mapx or a Pagx as the Mapdocument, you'll have to select Mapx with DB rewrite to ensure the URLS will be updated using the rewrites. 
+   Whether you select a Mapx or a Pagx as the Mapdocument, you'll have to select Mapx with DB rewrite to ensure the URLS will be updated using the rewrites.
+
    If you have more than one Mapx or Pagx, expand the advanced section and provide the additional Maps and Layouts as Additional Mapdocuments
+
    Ensure that the input ArcGIS Server is listed as one of the output Environments to grab the default rewrites for each environment
+
    Choose Keep ArcGIS Enterprise assigned itemIDs (for DTAP) when your DTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
+
    Optional if each environment has its own dedicated Portal, then you can select Keep ItemIDs from source, to keep the same itemID across environments.
+
   ⚠️ Note: MD5 Hash from URL Path is not available for templates, since the templates doesn't contain a URL property to derive the new itemid from
 
 <Details><Summary>Example configuration for virtual DTAP environment strategy.</Summary>
@@ -102,10 +108,10 @@ graph LR
    "templateaprx": "template.aprx",
    ```
 
-   For ArcGIS Pro template files it is essential to change the template file name OR the portal folder when using a DTAP shares the same portal instance.
+   For ArcGIS Pro template files it is essential to change the template file name OR the portal folder when using a DTAP shares the same portal instance, in our example each server environment gets a unique foldername.
 
 <Details>
-<Summary>Expand to see example Map.Server.json on our server</Summary>
+<Summary>Expand to see example letters.Server.json on our server</Summary>
 
 ```json
 {
