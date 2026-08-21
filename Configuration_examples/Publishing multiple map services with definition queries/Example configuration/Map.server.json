@@ -1,0 +1,84 @@
+{
+    "servers": {
+        "ACC": {
+            "serverFolder": "ACC",
+            "portalFolder": "ACC",
+            "portalLogo": "thumbnail_acc.png",
+            "datasources": [
+                {
+                    "databasehint": "demo_acc"
+                }
+            ],
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": ["Demo ACC"],
+                "organization": "false"
+            },
+            "sharingFeatureService": {
+                "esriEveryone": "false",
+                "groups": ["Demo ACC"],
+                "organization": "false"
+            }
+        },
+        "DEV": {
+            "serverFolder": "DEV",
+            "portalFolder": "DEV",
+            "portalLogo": "thumbnail_dev.png",
+            "datasources": [
+                {
+                    "databasehint": "demo_dev"
+                }
+            ],
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": ["Demo DEV"],
+                "organization": "false"
+            },
+            "sharingFeatureService": {
+                "esriEveryone": "false",
+                "groups": ["Demo DEV"],
+                "organization": "false"
+            }
+        },
+        "PROD": {
+            "serverFolder": "PROD",
+            "portalFolder": "PROD",
+            "portalLogo": "thumbnail_prod.png",
+            "datasources": [
+                {
+                    "databasehint": "demo_prod"
+                }
+            ],
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": ["Demo PROD"],
+                "organization": "false"
+            },
+            "sharingFeatureService": {
+                "esriEveryone": "false",
+                "groups": ["Demo PROD"],
+                "organization": "false"
+            }
+        },
+        "TEST": {
+            "serverFolder": "TEST",
+            "portalFolder": "TEST",
+            "portalLogo": "thumbnail_test.png",
+            "datasources": [
+                {
+                    "databasehint": "demo_test"
+                }
+            ],
+            "sharing": {
+                "esriEveryone": "false",
+                "groups": ["Demo TEST"],
+                "organization": "false"
+            },
+            "sharingFeatureService": {
+                "esriEveryone": "false",
+                "groups": ["Demo TEST"],
+                "organization": "false"
+            }
+        }
+    }
+}
