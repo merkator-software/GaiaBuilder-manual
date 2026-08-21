@@ -713,9 +713,9 @@ graph LR
 }
 ```
 
-In this example the definition query will be applied to the layer with name 'LetterFeatures'. We ensure that the service has a unique name and portal title. As an alternative, you can opt to configure a unique ArcGIS Server folder 'serverFolder' and keep the 'name' property the same. Ensure both the sourceitemid and targetitemid are empty strings to ensure GaiaBuilder will handle the itemids properly. 
+  In this example the definition query will be applied to the layer with name 'LetterFeatures'. We ensure that the service has a unique name and portal title. As an alternative, you can opt to configure a unique ArcGIS Server folder 'serverFolder' and keep the 'name' property the same. Ensure both the sourceitemid and targetitemid are empty strings to ensure GaiaBuilder will handle the itemids properly. 
 
-Repeat step 6 for each unique service with definition query you want to publish. In the example configuration, we created 2 configurations Map_T.aprx.json and Map_D.aprx.json
+  Repeat step 6 for each unique service with definition query you want to publish. In the example configuration, we created 2 configurations Map_T.aprx.json and Map_D.aprx.json
 
 7. **(Optional) Edit server configuration manually**
    For advanced scenarios, edit the server JSON directly to override publishing behavior. If needed, you can generate a server JSON for each individual service, for instance when each service needs different sharing settings
