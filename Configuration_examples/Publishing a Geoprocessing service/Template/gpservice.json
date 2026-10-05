@@ -1,0 +1,32 @@
+{
+  "action": "publishSD",
+  "stageScript": "stage.py",
+  "toolbox": "demo_toolbox.pyt",
+  "content_status": "authoritative",
+  "protected": "true",
+  "credits": "Copyright <Your Organization>",
+  "description": "<Description of the Geoprocessing service>",
+  "extensions": [
+  ],
+  "executionType": "Asynchronous",
+  "copyData": "true",
+  "maxIdleTime": 1800,
+  "maxInstancesPerNode": 3,
+  "maxStartupTime": 300,
+  "maxUsageTime": 600,
+  "maxWaitTime": 60,
+  "minInstancesPerNode": 1,
+  "name": "Demo_GP_Service_DEV",
+  "portalFolder": "dev",
+  "portalLogo": "gp_thumbnail_dev.png",
+  "recycleInterval": 24,
+  "recycleStartTime": "00:00",
+  "serverFolder": "DEV",
+  "categories": [
+  ],
+  "serverconfiguration": "server.json",
+  "serviceType": "GPServer",
+  "summary": "<Summary of the Geoprocessing service>",
+  "tags": "Geoprocessing,Service",
+  "uselimitations": "<Use limitations text>"
+}

@@ -697,6 +697,8 @@ graph LR
    Required when your DTAP environments (Test, Acceptance, Production) share the same ArcGIS Portal instance.
    Optional if each environment has its own dedicated Portal.
 
+   This is controlled with the `targetitemid` property (see `Map.aprx.json`): set it to a hardcoded 32 character hexadecimal ItemID to apply the exact same ItemID across every environment, or leave it as an empty string to have GaiaBuilder generate the ItemID from a MD5 hash of the URL subfolder instead. The latter yields the same ItemID on every environment that shares a Portal, provided the webadaptor, service name and service folder are also the same there. Omitting the property instead assigns a random ItemID.
+
 7. **(Optional) Edit server configuration manually**
    For advanced scenarios, edit the server JSON directly to override publishing behavior.
 
