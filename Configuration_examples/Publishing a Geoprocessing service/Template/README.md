@@ -14,9 +14,9 @@ This folder is a starting point for deploying a new GP service with GaiaBuilder.
 ### Properties to change in gpservice.json
 Replace these for every new GP service:
 * `toolbox`: the filename of your toolbox .pyt file
-* `name`: the service name, by convention suffixed with the environment it's published to, e.g. `_DEV`, this should match the environment configured in `serverFolder`
-* `serverFolder`: the ArcGIS Server folder this DEV version of the service is published to
-* `portalFolder`: the Portal folder this DEV version of the service is published to
+* `name`: the service name. On a Virtual DTAP, where multiple environments share the same ArcGIS Server, suffix it with the environment it's published to by convention, e.g. `_DEV`, to keep the name unique and matching the environment configured in `serverFolder`. This isn't needed when each environment is a different physical stage
+* `serverFolder`: the ArcGIS Server folder this environment's version of the service is published to
+* `portalFolder`: the Portal folder this environment's version of the service is published to
 * `description`, `summary`, `tags`, `uselimitations`, `credits`: replace the placeholder text with information describing your own service
 * `portalLogo`: either add your own thumbnail image to this folder and update this property to its filename, or remove the property if you don't want a logo
 * `categories`: optional, add the content categories configured in your Portal, or leave the array empty
