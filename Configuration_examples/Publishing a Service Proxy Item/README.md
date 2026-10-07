@@ -55,12 +55,12 @@ graph LR
 * 🔗 Description
 * 📜 Terms of use
 * 🏷️ Tags and categories
-4. Note down the FQDN (Fully Qualified Domain Name e.g. https://demo.gaiabuilder.com/service/rest/service/DEV/San_Diego_Letters_MIL1/MapServer) of the mapservice in the dev environment
+4. Note down the URL (e.g. https://demo.gaiabuilder.com/service/rest/service/DEV/San_Diego_Letters_MIL1/MapServer) of the mapservice in the dev environment
 
 ### Step 2: Create a Service Proxy Item
-1. Using the FQDN of the webmap create new item
-2. Choose URL, and fill in the FQDN from the previous step
-3. Check the `Store credentials with service iem. Do not prompt for authentication`
+1. Go to the Portal Conent Page, Click create new Item
+2. Choose URL, and fill in the URL from the previous step
+3. Check the `Store credentials with service item. Do not prompt for authentication`
 4. Click Next, and enter the username and password of the service principle or named user.
 5. Configure the item Set:
 * 📄 Title
