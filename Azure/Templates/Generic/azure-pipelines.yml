@@ -1,0 +1,53 @@
+# Runs when files under sd_letters_service/ change on the develop branch.
+# Docs: https://learn.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=yaml
+trigger:
+  branches:
+    include:
+      - develop
+  paths:
+    include:
+      - sd_letters_service/**
+
+# Agents in this pool need PowerShell, and Python with the ArcGIS API for Python installed.
+pool:
+  name: 'Arcgis'
+
+# the variable group contains our credentials. Can be linked to Azure Key Vault.
+# Must contain portal_username and portal_password (secret)
+variables:
+- group: ArcGIS_Credentials
+
+# Parameters only apply to manual runs; CI runs always use the defaults (DEV, Git diff).
+# - server: target environment for ad-hoc publishes. For TEST/ACC/PROD we recommend a
+#   dedicated pipeline per environment so each has its own publish history.
+# - manual_build_list: comma-separated file paths relative to the repo root,
+#   e.g. "sd_letters_service/map.aprx.json".
+#   Leave blank to publish the files changed according to the Git diff.
+parameters:
+  - name: server
+    displayName: Target Environment
+    type: string
+    default: DEV
+    values:
+      - DEV
+      - TEST
+      - ACC
+      - PROD
+  - name: manual_build_list
+    displayName: Enter the files to publish (blank = use Git diff)
+    type: string
+    default: ' '
+
+# the powershell script will analyze the GIT diff or proceed with the manual input, the credentials are provided as environment variables to the task
+steps:
+- checkout: self
+  fetchDepth: 2 # this will ensure a GIT diff can be executed
+- task: PowerShell@2
+  displayName: Publish to ArcGIS
+  inputs:
+    filePath: 'C:/GaiaBuilder/pipeline.ps1'
+  env:
+    server: ${{ parameters.server }}
+    manual_build_list: ${{ parameters.manual_build_list }}
+    USER: $(portal_username)
+    PASSWORD: $(portal_password)
