@@ -41,6 +41,39 @@ function Find-ConfigUpward {
     return $found
 }
 
+## Expand one entry of the manual build list:
+##   "*"               -> all .json files in the working directory (recursive)
+##   "folder/*"        -> all .json files under that folder (recursive, nesting allowed, e.g. "a/b/c/*")
+##   anything else     -> returned as-is (a specific file)
+## Returned paths are always relative to the working directory.
+function Expand-BuildListEntry {
+    param(
+        [Parameter(Mandatory)]
+        [AllowEmptyString()]
+        [string]$Entry
+    )
+
+    $e = $Entry.Trim()
+    if ($e -eq "") { return @() }
+
+    if ($e -eq "*") {
+        return @(Get-ChildItem -Path .\ -Filter *.json -Name -Recurse)
+    }
+
+    if ($e -match '^(.+)[\\/]\*$') {
+        $folder = $Matches[1]
+        if (-not (Test-Path -LiteralPath $folder -PathType Container)) {
+            Write-Host "Folder '$folder' does not exist, skipping entry '$e'"
+            return @()
+        }
+        Write-Host "Scanning folder '$folder' for json files"
+        ## -Name returns paths relative to $folder, so prefix the folder to keep them relative to the working directory
+        return @(Get-ChildItem -LiteralPath $folder -Filter *.json -Name -Recurse | ForEach-Object { Join-Path $folder $_ })
+    }
+
+    return @($e)
+}
+
 ## define the list of content.json files to be build
 $portalconfig = @()
 $content = @()
@@ -49,13 +82,9 @@ $gpservices =@()
 
 if ($manual_build_list.Length -gt 0){
     Write-Output "Activating manual build from list"
-    if ($manual_build_list -eq "*")
+    foreach ($entry in ($manual_build_list -split ','))
     {
-        $temp = Get-ChildItem -Path .\ -Filter *.json -Name -Recurse
-    }
-    else
-    {
-        $temp = $manual_build_list -split ','
+        $temp += Expand-BuildListEntry -Entry $entry
     }
 }
 else{
