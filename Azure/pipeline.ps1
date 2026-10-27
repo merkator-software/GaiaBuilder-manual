@@ -5,6 +5,7 @@ Write-Host $($env:server)
 $manual_build_list = $($env:manual_build_list)
 $includecontent = "1"
 $publish_sd_to_online = "1"
+$fail_on_empty_manual_build_list = "1"
 if ($env:includecontent -eq "0")
 {
     $includecontent = "0"
@@ -12,6 +13,10 @@ if ($env:includecontent -eq "0")
 if ($env:publish_sd_to_online -eq "0")
 {
     $publish_sd_to_online = "0"
+}
+if ($env:fail_on_empty_manual_build_list -eq "0")
+{
+    $fail_on_empty_manual_build_list = "0"
 }
 
 $temp = @()
@@ -269,6 +274,13 @@ For ($i=0; $i -lt $temp.Length; $i++)
         }
     }
 }
+
+if ($manual_build_list.Length -gt 0 -and ($portalconfig.Length + $build.Length + $gpservices.Length + $content.Length) -eq 0 -and $fail_on_empty_manual_build_list -eq "1")
+{
+    Write-Error "manual_build_list was specified but no files could be resolved to a map service, geoprocessing service, content, or portal config item. Failing the build."
+    exit 1
+}
+
 For ($i=0; $i -lt $portalconfig.Length; $i++)
 {
     $buildthis = $portalconfig[$i]

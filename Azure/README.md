@@ -107,6 +107,7 @@ Key points:
 | `includecontent` | Set to `"0"` to skip publishing content items. Defaults to including content. |
 | `publish_sd_to_online` | Set to `"0"` to skip `.online.aprx.json` files (ArcGIS Online publishes). Defaults to publishing them. |
 | `rewrite_connection` | Set to `"0"` to skip restoring/rewriting the data source connection (`-q` flag) during map service builds. Defaults to restoring. |
+| `fail_on_empty_manual_build_list` | Set to `"0"` to allow the build to succeed even if `manual_build_list` was specified but none of its entries resolved to a map service, geoprocessing service, content, or portal config item. Defaults to failing the build in that case — a manual build list is an explicit request to publish something, so resolving nothing usually means a typo'd path or an empty wildcard. This check does not apply to the Git-diff mode: "nothing changed" is a normal, successful outcome there. |
 | `USER` / `PASSWORD` | Not read by the script itself — they are picked up by the underlying GaiaBuilder/`propy` Python processes for Portal authentication. |
 
 **1. Determine which files to build**

@@ -237,6 +237,7 @@ class GIT2Gaia(object):
         self.includecontent = os.getenv('includecontent','1')
         self.publish_sd_to_online = os.getenv('publish_sd_to_online','1')
         self.rewrite_connection = os.getenv('rewrite_connection','1')
+        fail_on_empty_manual_build_list = os.getenv('fail_on_empty_manual_build_list','1')
         exitcode = 0
         logging.basicConfig(level=logging.INFO)
         logger = logging.getLogger()
@@ -244,7 +245,8 @@ class GIT2Gaia(object):
         logfile ='git2gaia.log'
         self.fileHandler = FileHandler(filename=logfile, mode='a', encoding=None, delay=False)
         logger.addHandler(self.fileHandler)
-        if manual_build_list is not None and len(manual_build_list)>0:
+        manual_build_used = manual_build_list is not None and len(manual_build_list)>0
+        if manual_build_used:
             logging.info("Activating manual build from list")
             files = []
             for entry in manual_build_list.split(","):
@@ -253,6 +255,12 @@ class GIT2Gaia(object):
         else:
             changed_filepaths = self.getChangedFiles()
             self.analyzeChangedFiles(changed_filepaths)
+
+        total_queued = len(self.portalconfig) + len(self.mapservices) + len(self.gpservices) + len(self.content)
+        if manual_build_used and total_queued == 0 and fail_on_empty_manual_build_list == '1':
+            logging.error("manual_build_list was specified but no files could be resolved to a map service, geoprocessing service, content, or portal config item. Failing the build.")
+            return 1
+
         portalconfigresult = self.runGaiaBuilderForPortalConfig(server)
         mapserviceresult = self.runGaiaBuilderForMapservices(server)
         gpserviceresults = self.runGaiaBuilderForGPservices(server)
