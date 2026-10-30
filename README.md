@@ -53,6 +53,28 @@ Portal configurations supported by GaiaBuilder
 - Roles
 - Portal Homepage and other resources
 
+GaiaBuilder's publish scripts run under the ArcGIS Enterprise python environment and rely on `arcpy`. A pure ArcGIS Online setup has no licensed ArcGIS Enterprise install behind it, so no `arcpy` is available, and any item type whose publish path depends on it (building a Service Definition from an .aprx, Locator/Mobile Map packages, ArcGIS Pro Templates, etc.) is not supported there — only the item types below, which can be published through REST / the ArcGIS API for Python, are.
+
+The Item types in ArcGIS Online Supported by GaiaBuilder:
+- Vectortile services using a Vectortile package (VTPK)
+- Hosted Featureservices published via REST, without the data but with data schema updates
+- Hosted Featureservices published via REST, with a source FGDB uploaded to the organization
+- Web Maps
+- Web Scenes
+- Experience Builder applications
+- Instant Apps
+- Dashboards
+- Storymaps
+- Notebooks
+- ArcGIS Online Hub and Site Pages
+- Documents (PDF, Excel) and Images as binary Files
+- Zipped File Geodatabases and Zipped Shapefiles
+- Registered third party services as Items
+- Services with stored Credentials (proxy services)
+
+ArcGIS Online configurations supported by GaiaBuilder
+- Groups
+- Roles
 
 
 
