@@ -94,23 +94,24 @@ if ($manual_build_list.Length -gt 0){
 }
 else{
     ## get all the changed files
-    $files = $(git diff-tree --name-only -r --no-commit-id HEAD)
-    $temp = $files -split ' '
-    $count = $temp.Length
-    if ($manual_build_list.Length -eq 0)
+    $temp = @(git diff-tree --name-only -r --no-commit-id HEAD | Where-Object { $_.Trim() -ne '' })
+    Write-Host "git diff-tree found $($temp.Count) file(s): $($temp -join ', ')"
+
+    if ($temp.Count -eq 0)
     {
         Write-Host "Found 0 changed files in git diff, will try a git log instead to get the changed files from a merge commit"
-        $changed = $(git log -m --name-status -1 --first-parent --pretty="format:")
-        For ($i=0; $i -lt $changed.Length; $i++)
+        $changed = @(git log -m --name-status -1 --first-parent --pretty="format:" | Where-Object { $_.Trim() -ne '' })
+        foreach ($line in $changed)
         {
-            Write-Host $changed
-            $file = $changed -split '\t'
-            $temp += $file
+            Write-Host $line
+            $parts = $line -split "`t"
+            # last part is the file path (for renames, the new path)
+            $temp += $parts[-1]
         }
     }
-    $count = $temp.Length
+    $count = $temp.Count
     Write-Host "Total changed files $count files"
-}   
+}
 For ($i=0; $i -lt $temp.Length; $i++)
 {
     $name=$temp[$i]
@@ -251,7 +252,9 @@ For ($i=0; $i -lt $temp.Length; $i++)
         }
         $match_pattern = -join($match_pattern,'.*aprx.json')
         Write-Host $match_pattern $name
-        $mapfiles = Get-ChildItem (Resolve-Path .\) -Recurse -Include $match_pattern
+        ## .FullName so entries are plain strings like the rest of $build;
+        ## otherwise .Contains() below compares FileInfo objects by reference and never matches
+        $mapfiles = Get-ChildItem (Resolve-Path .\) -Recurse -Include $match_pattern | ForEach-Object { $_.FullName }
         Write-Host $mapfiles
         For ($j=0; $j -lt $mapfiles.Length; $j++)
         {
