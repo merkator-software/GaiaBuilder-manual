@@ -228,50 +228,67 @@ For ($i=0; $i -lt $temp.Length; $i++)
     }
     Else
     {
-        ## construct the .aprx.json filename from the map or layer file name
-        $mapfileparts = ($name -split '/', 0, "simplematch" )[-1] -split '.', 0, "simplematch"
-        $match_pattern = ''
-        $matched  = 0
-        For ($j=0; $j -lt $mapfileparts.Length -and $matched -lt 1; $j++)
+        ## 1) Look in the changed file's own folder: if it has exactly one .aprx.json, use that
+        $folder = Split-Path $name -Parent
+        if (-not $folder) { $folder = '.' }   # file in repo root
+
+        $folderAprx = @()
+        if (Test-Path $folder)
         {
-            if ($mapfileparts[$j] -match 'lyrx' -or $mapfileparts[$j] -match 'mapx' -or $mapfileparts[$j] -match 'aprx') 
+            $folderAprx = @(Get-ChildItem -Path $folder -Filter '*.aprx.json' -File -ErrorAction SilentlyContinue |
+                            ForEach-Object { $_.FullName })
+        }
+
+        if ($folderAprx.Count -eq 1)
+        {
+            Write-Host "Found exactly one .aprx.json in folder '$folder', using it for $name"
+            $mapfiles = $folderAprx
+        }
+        else
+        {
+            Write-Host "Found $($folderAprx.Count) .aprx.json file(s) in folder '$folder', falling back to name matching for $name"
+
+            ## 2) Fallback: construct the .aprx.json filename from the map or layer file name
+            $mapfileparts = ($name -split '/', 0, "simplematch")[-1] -split '.', 0, "simplematch"
+            $match_pattern = ''
+            $matched = 0
+            For ($j = 0; $j -lt $mapfileparts.Length -and $matched -lt 1; $j++)
             {
-                $matched = 1
-            }
-            else
-            {
-                if ($j -eq 0)
+                if ($mapfileparts[$j] -match 'lyrx' -or $mapfileparts[$j] -match 'mapx' -or $mapfileparts[$j] -match 'aprx')
+                {
+                    $matched = 1
+                }
+                elseif ($j -eq 0)
                 {
                     $match_pattern = $mapfileparts[$j]
                 }
                 else
                 {
-                    $match_pattern = -join($match_pattern,'.',$mapfileparts[$j])
+                    $match_pattern = -join ($match_pattern, '.', $mapfileparts[$j])
                 }
             }
+            $match_pattern = -join ($match_pattern, '.*aprx.json')
+            Write-Host "Searching for $match_pattern"
+
+            ## .FullName so entries are plain strings like the rest of $build
+            $mapfiles = @(Get-ChildItem (Resolve-Path .\) -Recurse -Include $match_pattern |
+                          ForEach-Object { $_.FullName })
         }
-        $match_pattern = -join($match_pattern,'.*aprx.json')
-        Write-Host $match_pattern $name
-        ## .FullName so entries are plain strings like the rest of $build;
-        ## otherwise .Contains() below compares FileInfo objects by reference and never matches
-        $mapfiles = Get-ChildItem (Resolve-Path .\) -Recurse -Include $match_pattern | ForEach-Object { $_.FullName }
-        Write-Host $mapfiles
-        For ($j=0; $j -lt $mapfiles.Length; $j++)
+
+        Write-Host "Matched aprx file(s): $($mapfiles -join ', ')"
+
+        foreach ($mapfile in $mapfiles)
         {
-            $mapfile =  $mapfiles[$j]
-            If($mapfile) #empty strings will be ignored by this test
+            if ($mapfile -and (Test-Path $mapfile))   # empty strings are skipped
             {
-                If(Test-Path $mapfile)
+                if (-not $build.Contains($mapfile))
                 {
-                    If (-Not $build.Contains($mapfile))
-                    {
-                        $build += $mapfile
-                        Write-Host "Added $mapfile to build list"
-                    }
-                    Else
-                    {
-                        Write-Host "File $mapfile already added to build list"
-                    }
+                    $build += $mapfile
+                    Write-Host "Added $mapfile to build list"
+                }
+                else
+                {
+                    Write-Host "File $mapfile already added to build list"
                 }
             }
         }
